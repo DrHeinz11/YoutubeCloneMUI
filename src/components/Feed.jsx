@@ -5,7 +5,7 @@ import SideBar from "./SideBar";
 const Feed = () => {
   return (
     <Stack
-      sx={{ flexDirection: { sx: "column", md: "row" }, background: "white" }}
+      sx={{ flexDirection: { sx: "column", md: "row" }, background: "#c1c1c1" }}
     >
       <Box
         sx={{
@@ -14,11 +14,11 @@ const Feed = () => {
           px: { sx: 0, md: 2 },
         }}
       >
-        <SideBar />
+        <SideBar />{" "}
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ mt: 1.5, color: "#fff" }}
+          sx={{ color: "#000" }}
         >
           Copyright 2022 FrancMartin
         </Typography>

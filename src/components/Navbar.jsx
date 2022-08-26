@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import { logo } from "../utils/constants";
-
+import SearchBar from "./SearchBar";
 const Navbar = () => {
   return (
     <Stack
@@ -12,12 +12,14 @@ const Navbar = () => {
       p={2}
       sx={{
         position: "sticky",
-        backgroundColor: "#ccc",
         top: 0,
         justifyContent: "space-between",
       }}
     >
-      <Box>hola esto es una prueba </Box> esto tambien es una prueba{" "}
+      <Link to="/ " style={{ display: "flex", alingItems: "center" }}>
+        <img src={logo} alt="logo" height={45} />
+      </Link>
+      <SearchBar />
     </Stack>
   );
 };

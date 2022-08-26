@@ -1,26 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {
-  Navbar,
-  VideoDetail,
-  Feed,
-  SearchFeed,
-  ChannelDetail,
-} from "./components";
 import { Box } from "@mui/material";
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Box sx={{ backgroundColor: "#ccc" }}>
-        <Navbar />
-        <Routes>
-          <Route path="/" exact elements={<Feed />} />
-          <Route path="/video/:id" elements={<VideoDetail />} />
-          <Route path="/channel/:id" elements={<ChannelDetail />} />
-          <Route path="/search/:searchTerm" elements={<SearchFeed />} />
-        </Routes>
-      </Box>
-    </BrowserRouter>
-  );
-};
+
+import {
+  ChannelDetail,
+  VideoDetail,
+  SearchFeed,
+  Navbar,
+  Feed,
+} from "./components";
+
+const App = () => (
+  <BrowserRouter>
+    <Box sx={{ backgroundColor: "#000" }}>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Feed />} />
+        <Route path="/video/:id" element={<VideoDetail />} />
+        <Route path="/channel/:id" element={<ChannelDetail />} />
+        <Route path="/search/:searchTerm" element={<SearchFeed />} />
+      </Routes>
+    </Box>
+  </BrowserRouter>
+);
 
 export default App;

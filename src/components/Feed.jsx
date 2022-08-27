@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import SideBar from "./SideBar";
+import { SideBar, Videos } from "../components";
 
 const Feed = () => {
   return (
     <Stack
-      sx={{ flexDirection: { sx: "column", md: "row" }, background: "#c1c1c1" }}
+      sx={{ flexDirection: { sx: "column", md: "row" }, background: "#000" }}
     >
       <Box
         sx={{
@@ -18,10 +18,17 @@ const Feed = () => {
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ color: "#000" }}
+          sx={{ color: "#fff" }}
         >
           Copyright 2022 FrancMartin
         </Typography>
+      </Box>
+      <Box>
+        <Typography variant="h4">
+          <span style={{ color: "#fc1503" }}>New</span>
+          <span style={{ color: "#fff" }}> Videos</span>
+        </Typography>
+        <Videos videos={[]} />
       </Box>
     </Stack>
   );

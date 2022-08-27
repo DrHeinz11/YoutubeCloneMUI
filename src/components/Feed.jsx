@@ -7,9 +7,11 @@ const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [videos, setVideos] = useState([]);
   useEffect(() => {
-    fetchFromApi(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      setVideos(data.items)
-    );
+    fetchFromApi(`search?part=snippet&q=${selectedCategory}`).then((data) => {
+      console.log(data);
+      console.log(data.items);
+      return setVideos(data.items);
+    });
   }, [selectedCategory]);
 
   return (

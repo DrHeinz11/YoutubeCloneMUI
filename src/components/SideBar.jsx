@@ -3,7 +3,7 @@ import React from "react";
 import { categories } from "../utils/constants";
 
 const selectedCategory = "New";
-const SideBar = () => (
+const SideBar = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
     direction="row"
     sx={{
@@ -16,6 +16,7 @@ const SideBar = () => (
       <button
         className="category-btn"
         key={category.name}
+        onClick={() => setSelectedCategory(category.name)}
         style={{
           background: category.name === selectedCategory && "#fc1503",
           color: "white",

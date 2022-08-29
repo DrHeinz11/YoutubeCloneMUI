@@ -37,13 +37,13 @@ const Feed = () => {
           Copyright 2022 FrancMartin
         </Typography>
       </Box>
-      <Box>
+      <Stack>
         <Typography variant="h4">
           <span style={{ color: "#fc1503" }}>{selectedCategory}</span>
           <span style={{ color: "#fff" }}> Videos</span>
         </Typography>
         <Videos videos={videos} />
-      </Box>
+      </Stack>
     </Stack>
   );
 };

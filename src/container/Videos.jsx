@@ -5,12 +5,12 @@ const Videos = ({ videos }) => {
     <Stack
       sx={{ color: "#fff" }}
       direction="row"
-      justifyContent={{ sm: "center", md: "start" }}
+      justifyContent="center"
       gap={2}
       flexWrap="wrap"
     >
       {videos.map((item, index) => (
-        <Box key={index} sx={{ margin: "0 auto" }}>
+        <Box key={index}>
           {item.id.videoId && <VideoCard video={item} />}
           {/*   {item.id.chennelId && <ChannelCard channelDetail={item} />}*/}
         </Box>

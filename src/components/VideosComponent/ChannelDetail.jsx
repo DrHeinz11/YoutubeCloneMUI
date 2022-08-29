@@ -1,7 +1,12 @@
-import React from "react";
+import { Box, Typography } from "@mui/material";
+import { CheckCircle } from "@mui/icons-material";
 
-const ChannelDetail = () => {
-  return <div>ChannelDetail</div>;
+const ChannelDetail = ({ dataChannel }) => {
+  return (
+    <Box>
+      <Typography color="white">ChannelDetail</Typography>
+    </Box>
+  );
 };
 
 export default ChannelDetail;

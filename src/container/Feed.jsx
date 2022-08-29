@@ -38,11 +38,13 @@ const Feed = () => {
         </Typography>
       </Box>
       <Stack>
-        <Typography variant="h4">
-          <span style={{ color: "#fc1503" }}>{selectedCategory}</span>
-          <span style={{ color: "#fff" }}> Videos</span>
-        </Typography>
-        <Videos videos={videos} />
+        <Stack spacing={2}>
+          <Typography variant="h4">
+            <span style={{ color: "#fc1503" }}>{selectedCategory}</span>
+            <span style={{ color: "#fff" }}> Videos</span>
+          </Typography>
+          <Videos videos={videos} />
+        </Stack>
       </Stack>
     </Stack>
   );

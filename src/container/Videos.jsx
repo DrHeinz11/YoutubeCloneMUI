@@ -3,7 +3,7 @@ import { VideoCard, ChannelCard } from "../components/VideosComponent";
 const Videos = ({ videos }) => {
   return (
     <Stack
-      sx={{ color: "#fff" }}
+      sx={{ color: "#fff", padding: "0 5px" }}
       direction="row"
       justifyContent="center"
       gap={2}

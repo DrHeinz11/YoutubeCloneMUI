@@ -14,6 +14,10 @@ const Navbar = () => {
         position: "sticky",
         top: 0,
         justifyContent: "space-between",
+        background: "rgba(204, 204, 204, 0.19)",
+        boxShadow: " 0 4px 30px rgba(0, 0, 0, 0.1)",
+        backdropFilter: " blur(12.2px)",
+        border: "1px solid rgba(204, 204, 204, 0.12)",
       }}
     >
       <Link to="/ " style={{ display: "flex", alingItems: "center" }}>

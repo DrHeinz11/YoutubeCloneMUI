@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 
-const ChannelDetail = ({ dataChannel }) => {
+const ChannelDetail = (props) => {
   return (
     <Box>
-      <Typography color="white">ChannelDetail</Typography>
+      <Typography color="white">`ChannelDetail:${props}`</Typography>
     </Box>
   );
 };

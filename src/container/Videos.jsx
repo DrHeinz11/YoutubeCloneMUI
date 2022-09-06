@@ -1,7 +1,6 @@
 import { Box, Stack } from "@mui/material";
 import { VideoCard } from "../components/VideosComponent";
 const Videos = ({ videos }) => {
-  console.log(videos);
   return (
     <Stack
       sx={{ color: "#fff", padding: "0 5px" }}

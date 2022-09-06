@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
-const SearchBar = () => {
-  const [search, setSearch] = useState("");
+const SearchBar = ({ setSelectedCategory }) => {
   const [keyboard, setKeyboard] = useState("");
+  const [search, setSearch] = useState(() => "");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setSearch(keyboard);
+    setSelectedCategory(keyboard);
   };
 
   return (

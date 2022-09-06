@@ -3,7 +3,7 @@ import { Box, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import { logo } from "../utils/constants";
 import { SearchBar } from "../components";
-const Navbar = () => {
+const Navbar = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <Stack
       direction="row"
@@ -23,7 +23,10 @@ const Navbar = () => {
       <Link to="/ " style={{ display: "flex", alingItems: "center" }}>
         <img src={logo} alt="logo" height={45} />
       </Link>
-      <SearchBar />
+      <SearchBar
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
     </Stack>
   );
 };

@@ -38,7 +38,9 @@ const Feed = ({ setSelectedCategory, selectedCategory }) => {
       <Stack>
         <Stack spacing={2}>
           <Typography variant="h4">
-            <span style={{ color: "#fc1503" }}>{selectedCategory}</span>
+            <span style={{ color: "#fc1503", textTransform: "capitalize" }}>
+              {selectedCategory}
+            </span>
             <span style={{ color: "#fff" }}> Videos</span>
           </Typography>
           <Videos videos={videos} />

@@ -6,14 +6,10 @@ const VideoPlayer = ({ videoUrl }) => {
   return (
     <div
       style={{
-        padding: "25px",
-        witdh: "50%",
-        height: "auto",
-        margin: "0 auto",
+        display: "flex",
+        justifyContent: "center",
       }}
-    >
-      <ReactPlayer url={videoUrl} controls={true} playing={true} />
-    </div>
+    ></div>
   );
 };
 

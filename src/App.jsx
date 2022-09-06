@@ -8,7 +8,7 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
   return (
     <BrowserRouter>
-      <Box sx={{ backgroundColor: "#000" }}>
+      <Box sx={{ backgroundColor: "#000", minHeight: "100vh" }}>
         <Navbar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}

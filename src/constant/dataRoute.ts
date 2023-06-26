@@ -3,60 +3,58 @@ import { CategoryData } from "../types";
 import { MdWatchLater } from "react-icons/md";
 
 export const categoryData: CategoryData[] = [
-    {
-      category: "Category",
-      id: 1,
-      dataRoute: [
-        {
-          route: "/series/all",
-          title: "Series/Tv-Show",
-          id: 12,
-          iconOptions: BsCollectionPlayFill,
-        },
-        {
-          route: "/movie/all",
-          title: "Movie",
-          id: 12,
-          iconOptions: BsCameraReelsFill,
-        },
-      ],
-    },
-    {
-      category: "Library",
-      id: 1,
-      dataRoute: [
-        {
-          route: "/see-later/",
-          title: "See Later",
-          id: 12,
-          iconOptions: MdWatchLater,
-        },
-        {
-          route: "/top-rated",
-          title: "Top rated",
-          id: 12,
-          iconOptions: BsFillStarFill,
-        },
-      ],
-    },
-    {
-      category: "Menu",
-      id: 1,
-      dataRoute: [
-        {
-          route: "/",
-          title: "Home",
-          id: 12,
-          iconOptions: BsHouseDoorFill,
-        },
-        {
-          route: "/discover",
-          title: "Discover",
-          id: 12,
-          iconOptions: BsFillCompassFill,
-        },
-      ],
-    },
-  ];
-  
-  
+  {
+    category: "Category",
+    id: "#001ABC",
+    dataRoute: [
+      {
+        route: "/series/all",
+        title: "Series/Tv-Show",
+        id: "#002DEF",
+        iconOptions: BsCollectionPlayFill,
+      },
+      {
+        route: "/movie/all",
+        title: "Movie",
+        id: "#003GHI",
+        iconOptions: BsCameraReelsFill,
+      },
+    ],
+  },
+  {
+    category: "Library",
+    id: "#004JKL",
+    dataRoute: [
+      {
+        route: "/see-later/",
+        title: "See Later",
+        id: "#005MNO",
+        iconOptions: MdWatchLater,
+      },
+      {
+        route: "/top-rated",
+        title: "Top rated",
+        id: "#006PQR",
+        iconOptions: BsFillStarFill,
+      },
+    ],
+  },
+  {
+    category: "Menu",
+    id: "#007STU",
+    dataRoute: [
+      {
+        route: "/",
+        title: "Home",
+        id: "#008VWX",
+        iconOptions: BsHouseDoorFill,
+      },
+      {
+        route: "/discover",
+        title: "Discover",
+        id: "#009YZA",
+        iconOptions: BsFillCompassFill,
+      },
+    ],
+  },
+];

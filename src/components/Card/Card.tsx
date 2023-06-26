@@ -12,7 +12,7 @@ const Card = ({
   titleName,
   viewsVideos,
   videoDuration,
-  idVideo
+  idVideo,
 }: CardDetails) => {
   return (
     <Stack
@@ -21,15 +21,14 @@ const Card = ({
       spacing={0}
       gap={4}
       p={4}
-      maxW={"md"}
       bgColor={"#fafafa"}
       boxShadow={"xl"}
       _hover={{ boxShadow: "dark-lg" }}
       borderRadius={"2xl"}
       minH={"355px"}
-      width={'355px'}
+      maxW={"355px"}
     >
-      <Box position={"relative"} maxW={'320px'}>
+      <Box position={"relative"} maxW={"320px"}>
         <Image
           src={srcImage}
           alt={srcImageAlt}
@@ -37,18 +36,20 @@ const Card = ({
           borderRadius={"xl"}
           w={"full"}
         />
-        <Image
-          src={srcChanell}
-          alt={srcChanellAlt}
-          position={"absolute"}
-          bottom={"-15px"}
-          left={4}
-          border={"1px"}
-          borderColor={"white"}
-          boxShadow={"xl"}
-          borderRadius={"xl"}
-          boxSize={"48px"}
-        />
+        {srcChanell && (
+          <Image
+            src={srcChanell}
+            alt={srcChanellAlt}
+            position={"absolute"}
+            bottom={"-15px"}
+            left={4}
+            border={"1px"}
+            borderColor={"white"}
+            boxShadow={"xl"}
+            borderRadius={"xl"}
+            boxSize={"48px"}
+          />
+        )}
         {videoDuration && (
           <Text
             position={"absolute"}

@@ -1,12 +1,17 @@
-import { Container, SimpleGrid } from "@chakra-ui/react";
+import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
 import Card from "./Card/Card";
-import useFetchFromAPI from "../api/useFetchFromAPI";
+import { useGetSearchVideosQuery } from "../store/reducers/apiFetch";
+import TopRated from "./TopRated";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const { data } = useFetchFromAPI("red velvet");
-  console.log(data);
+  const state = useSelector((store) => store.searchReducer);
+  const { data, isLoading, isError } = useGetSearchVideosQuery(state);
+  if (isLoading) return <Heading>Is loading</Heading>;
+  if (isError) return <Heading>Is error : {isError}</Heading>;
   return (
     <Container variant={"section"}>
+      <TopRated />
       <SimpleGrid
         minChildWidth={"300px"}
         justifyItems={"center"}

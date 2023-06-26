@@ -18,12 +18,12 @@ export type CardDetails = {
 interface DataRoute {
   route: string;
   title: string;
-  id: number;
+  id: string;
   iconOptions: IconType;
 }
 
 export interface CategoryData {
   category: string;
-  id?: number;
+  id?: string;
   dataRoute: DataRoute[];
 }

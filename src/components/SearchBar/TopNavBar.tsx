@@ -14,10 +14,10 @@ const TopNavbar = () => {
       spacing={0}
       gap={4}
       bgColor={"#fafafa"}
+      borderRadius={"xl"}
       px={4}
       py={2}
       w={'75vw'}
-      borderRadius={"xl"}
       justifyContent={"space-between"}
     >
       <MediaRedirectButton />

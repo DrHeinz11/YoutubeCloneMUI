@@ -21,7 +21,7 @@ const VideoContainer = ({ params: { id } }: Props) => {
   if (data) {
     console.log(data);
     return (
-      <Stack>
+      <Stack bgColor={"#fafafa"} borderRadius={"xl"} mx={4} my={2} p={4}>
         <VideoPlayer id={id} />
         {data.items.map((v) => (
           <DetailVideo

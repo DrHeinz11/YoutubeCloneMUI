@@ -1,10 +1,10 @@
 import { Stack } from "@chakra-ui/react";
-import { VideoPlayer } from "..";
-import { useGetDetailVideosQuery } from "../../store/reducers/apiFetch";
-import { IsError, Loader } from "../../components";
-import { DataDetailsVideos } from "../../types/typeAPI";
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
+import { VideoPlayer } from "..";
+import { Loader, IsError } from "../../components";
+import { useGetDetailVideosQuery } from "../../store/reducers/apiFetch";
+import { DataDetailsVideos } from "../../types/typeAPI";
 import DetailVideo from "./components/DetailVideo";
 
 type Props = { params: { id: string } };

@@ -1,9 +1,8 @@
 import { HStack, Heading } from "@chakra-ui/react";
-import { BsFillEyeFill } from "react-icons/bs";
 import { Link } from "wouter";
 import { HandleScrollToTop } from "../../../utils";
-import { useSidebarContext } from "../context/context";
 import { YoutubeIcon } from "../../../assets";
+import { useSidebarContext } from "../context/useSidebarContext";
 
 const ButtonLogo = () => {
   const { setFocus } = useSidebarContext();

@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { youtubeAPI } from "./reducers/apiFetch";
 import searchReducer from "./reducers/searchReducer";
 

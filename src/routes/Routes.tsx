@@ -1,5 +1,5 @@
 import { Route, Switch } from "wouter";
-import { HomeContainer, VideoContainer, VideoPlayer } from "../pages";
+import { HomeContainer, VideoContainer } from "../pages";
 
 const Routes = () => {
   //   const [location, navigate] = useLocation();

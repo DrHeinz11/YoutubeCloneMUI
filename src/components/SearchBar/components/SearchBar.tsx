@@ -3,9 +3,12 @@ import { useState } from "react";
 import { RiSearch2Line } from "react-icons/ri";
 import { searchKeyword } from "../../../store/reducers/searchReducer";
 import { useDispatch } from "react-redux";
+import { useLocation } from "wouter";
+import { navigate } from "wouter/use-location";
 
 const SearchBar = () => {
   const [texto, setTexto] = useState("");
+  const [location] = useLocation();
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
@@ -16,6 +19,11 @@ const SearchBar = () => {
     event.preventDefault();
     // Realiza alguna acción con el valor del campo de texto
     dispatch(searchKeyword(texto));
+    if (location !== "/") {
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    }
   };
 
   return (

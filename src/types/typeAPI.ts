@@ -78,7 +78,7 @@ export interface SnippetVideoDetails {
   description: string;
   liveBroadcastContent: string;
   localized: Localized;
-  publishedAt: Date;
+  publishedAt:string;
   tags: string[];
   thumbnails: ThumbnailsVideoDetails;
   title: string;

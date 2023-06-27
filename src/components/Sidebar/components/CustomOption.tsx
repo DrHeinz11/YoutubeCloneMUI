@@ -1,8 +1,8 @@
 import { HStack, Heading } from "@chakra-ui/react";
 import { Link as WouterLink } from "wouter";
 import { HandleScrollToTop } from "../../../utils";
-import { useSidebarContext } from "../context/context";
 import React from "react";
+import { useSidebarContext } from "../context/useSidebarContext";
 
 interface optionCustom {
   route: string;

@@ -1,9 +1,5 @@
 # YoutubeClone APP
 
-## Demo link:
-
-Access my site at [YoutubeApp](https://youtube-mui.netlify.app/)
-
 ## Table of Content:
 
 - [About The App](#About-the-app)

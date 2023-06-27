@@ -2,27 +2,27 @@ import * as React from "react"
 import { SVGProps } from "react"
 const LibraryIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={31}
-    height={31}
-    fill="none"
-    {...props}
+  xmlns="http://www.w3.org/2000/svg"
+  width={24}
+  height={25}
+  fill="none"
+  {...props}
+>
+  <g
+    stroke="#070707"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2.145}
+    clipPath="url(#a)"
   >
-    <g
-      stroke="#070707"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2.145}
-      clipPath="url(#a)"
-    >
-      <path d="M9.347 1.1h18.228c1.185 0 2.145.96 2.145 2.144v18.229c0 1.184-.96 2.144-2.145 2.144H9.347a2.145 2.145 0 0 1-2.145-2.144V3.244c0-1.184.96-2.144 2.145-2.144Z" />
-      <path d="M1.84 7.533v19.301a2.145 2.145 0 0 0 2.145 2.145h19.301M14.957 16.411V8.305a.773.773 0 0 1 1.18-.665l7.012 4.053a.773.773 0 0 1 0 1.33l-7.012 4.16a.772.772 0 0 1-1.18-.772Z" />
-    </g>
-    <defs>
-      <clipPath id="a">
-        <path fill="#fff" d="M30.792.028H.768v30.024h30.024z" />
-      </clipPath>
-    </defs>
-  </svg>
+    <path d="M6.857 1.528H21.43c.946 0 1.714.768 1.714 1.714v14.572c0 .947-.768 1.714-1.714 1.714H6.857a1.714 1.714 0 0 1-1.714-1.714V3.242c0-.946.767-1.714 1.714-1.714Z" />
+    <path d="M.857 6.671V22.1a1.714 1.714 0 0 0 1.714 1.714H18M11.342 13.768v-6.48a.617.617 0 0 1 .943-.532l5.606 3.24a.617.617 0 0 1 0 1.063l-5.606 3.326a.617.617 0 0 1-.943-.617Z" />
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" d="M24 .671H0v24h24z" />
+    </clipPath>
+  </defs>
+</svg>
 )
 export default LibraryIcon

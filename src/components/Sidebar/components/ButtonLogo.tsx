@@ -3,7 +3,7 @@ import { BsFillEyeFill } from "react-icons/bs";
 import { Link } from "wouter";
 import { HandleScrollToTop } from "../../../utils";
 import { useSidebarContext } from "../context/context";
-
+import { YoutubeIcon } from "../../../assets";
 
 const ButtonLogo = () => {
   const { setFocus } = useSidebarContext();
@@ -19,19 +19,18 @@ const ButtonLogo = () => {
       }
     >
       <HStack
-        mr="2"
         onClick={() => setFocus({ value: "home" })}
         _hover={{ opacity: 0.5 }}
       >
+        <YoutubeIcon />
         <Heading
           display="flex"
           flexDir="row"
           alignItems="center"
           as="h4"
-          fontSize="2xl"
+          fontSize="xl"
         >
-          M<BsFillEyeFill style={{ width: "1.5rem", height: "1.5rem" }} />{" "}
-          vieStream
+          YouTube-Stream
         </Heading>
       </HStack>
     </Link>

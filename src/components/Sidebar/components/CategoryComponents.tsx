@@ -14,7 +14,7 @@ const CategoryComponents = ({ category, dataRoute }: CategoryData) => {
             title={categoryData.title}
             key={categoryData.id}
           >
-            <categoryData.iconOptions />
+            <categoryData.iconOptions size={'20px'} />
           </CustomOption>
         ))}
       </Stack>

@@ -15,7 +15,7 @@ export type CardDetails = {
   idVideo: string;
 };
 
-interface DataRoute {
+export interface DataRoute {
   route: string;
   title: string;
   id: string;

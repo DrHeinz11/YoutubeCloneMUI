@@ -1,10 +1,9 @@
-import * as React from "react"
 import { SVGProps } from "react"
 const HistoryIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={31}
-    height={31}
+    width={24}
+    height={24}
     fill="none"
     {...props}
   >
@@ -15,18 +14,18 @@ const HistoryIcon = (props: SVGProps<SVGSVGElement>) => (
       strokeWidth={2.145}
       clipPath="url(#a)"
     >
-      <path d="M15.78 9.725v5.362l5.447 6.348" />
+      <path d="M12 8.433v4.286l4.354 5.074" />
       <g clipPath="url(#b)">
-        <path d="M1.84 15.088a13.94 13.94 0 1 0 13.94-13.94 15.505 15.505 0 0 0-10.723 4.29" />
-        <path d="m6.13 1.148-1.073 4.29 4.29 1.072" />
+        <path d="M.857 12.72A11.143 11.143 0 1 0 12 1.577a12.394 12.394 0 0 0-8.572 3.428" />
+        <path d="m4.285 1.577-.857 3.428 3.429.857" />
       </g>
     </g>
     <defs>
       <clipPath id="a">
-        <path fill="#fff" d="M.768.076h30.024V30.1H.768z" />
+        <path fill="#fff" d="M0 .72h24v24H0z" />
       </clipPath>
       <clipPath id="b">
-        <path fill="#fff" d="M.768.076h30.024V30.1H.768z" />
+        <path fill="#fff" d="M0 .72h24v24H0z" />
       </clipPath>
     </defs>
   </svg>

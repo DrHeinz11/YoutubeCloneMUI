@@ -6,3 +6,5 @@ export { default as LikedIcon } from './Liked.icon';
 export { default as ShortIcon } from './Short.icon';
 export { default as SubscriptionIcon } from './Subscription.icon';
 export { default as WatchLaterIcon } from './WatchLater.icon';
+export { default as YoutubeIcon } from './Youtube.icon';
+export * from './index';

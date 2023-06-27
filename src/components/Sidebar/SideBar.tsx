@@ -11,12 +11,11 @@ const SideBar = ({ ...defaultprops }) => {
     <Stack
       as="nav"
       pt="4"
-      pl="6"
+      pl="4"
       minW="264px"
       maxW="264px"
       borderInlineEnd="1px solid #c1c1c1"
-      justifyContent={{ base: "space-between", "2xl": "flex-start" }}
-      gap={8}
+      justifyContent={{ base: "space-around", "2xl": "flex-start" }}
       flex={1}
       bgColor={"#fafafa"}
       borderRadius={"xl"}

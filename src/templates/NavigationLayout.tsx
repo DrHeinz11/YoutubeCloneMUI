@@ -2,7 +2,7 @@ import { Box, Stack } from "@chakra-ui/react";
 import React from "react";
 import SideBar from "../components/Sidebar/SideBar";
 import { SideBarProvider } from "../components/Sidebar/context/context";
-import HeaderPublicity from "../components/HeaderPublicity";
+import TopNavbar from "../components/SearchBar/TopNavBar";
 
 type Props = { children: React.ReactNode };
 
@@ -16,7 +16,10 @@ const NavigationLayout = (props: Props) => {
           base: "repeat(2,1fr)",
           lg: "265px repeat(2, 1fr)",
         }}
-        gridTemplateRows={{ base: "repeat(2,fit-content)", lg: "auto repeat(2, 1fr)" }}
+        gridTemplateRows={{
+          base: "repeat(2,fit-content)",
+          lg: "auto repeat(2, 1fr)",
+        }}
         gap="0px 0px"
         gridAutoFlow="row"
         gridTemplateAreas={{
@@ -28,8 +31,8 @@ const NavigationLayout = (props: Props) => {
                             "SideBard Content Content"`,
         }}
       >
-        <Box as="nav" gridArea="Navbar">
-          <HeaderPublicity />
+        <Box as="nav" my={2} mx={4} gridArea="Navbar">
+          <TopNavbar />
         </Box>
         <Stack
           as="nav"
@@ -44,7 +47,7 @@ const NavigationLayout = (props: Props) => {
         >
           <SideBar display={"flex"} />
         </Stack>
-        <Box as="main" minH={'50vh'} gridArea="Content">
+        <Box as="main" minH={"50vh"} gridArea="Content">
           {props.children}
         </Box>
       </Box>

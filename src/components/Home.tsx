@@ -5,13 +5,19 @@ import {
   SimpleGrid,
   Spinner,
 } from "@chakra-ui/react";
-import Card from "./Card/Card";
+import Card from "../pages/Home/components/Card";
 import { useGetSearchVideosQuery } from "../store/reducers/apiFetch";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { HandleScrollToTop } from "../utils";
 
 const Home = () => {
   const state = useSelector((store) => store.searchReducer);
   const { data, isLoading, isError } = useGetSearchVideosQuery(state);
+  useEffect(() => {
+    HandleScrollToTop({ direction: "top", coordinate: 0, behavior: "smooth" });
+  }, [state]);
+
   if (isLoading)
     return (
       <Center boxSize={"full"}>

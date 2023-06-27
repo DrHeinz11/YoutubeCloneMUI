@@ -52,7 +52,7 @@ function OptionPopover(props: {
           <PopoverCloseButton />
           <HStack as={PopoverBody}>
             {["ASD", "ASD3", "ASD4"].map((item) => (
-              <Box bgColor={"red.100"} boxSize={"48px"}>
+              <Box key={item} bgColor={"red.100"} boxSize={"48px"}>
                 <Text>{item}</Text>
               </Box>
             ))}

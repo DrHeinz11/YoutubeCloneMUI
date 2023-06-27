@@ -42,7 +42,7 @@ const MainImage = () => (
     src={imageUrls.mainImage}
     aspectRatio="16/9"
     alt=""
-    objectFit="cover"
+    objectFit="fill"
     h="inherit"
     maxH={{ base: "150px", md: "225px" }}
     flex="1 0 250px"
@@ -84,8 +84,8 @@ const HeaderPublicity = () => {
       flexWrap="wrap"
       p={{ base: 2, md: 4 }}
       borderRadius="2xl"
-      mx={[2, 4]}
-      my={[1, 2]}
+      as="header"
+      minH={"260px"}
       gap={4}
     >
       <MainImage />

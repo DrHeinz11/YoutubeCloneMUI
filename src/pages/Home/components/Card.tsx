@@ -1,5 +1,5 @@
 import { Box, HStack, Heading, Image, Stack, Text } from "@chakra-ui/react";
-import { CardDetails } from "../../types";
+import { CardDetails } from "../../../types";
 import { Link as WouterLink } from "wouter";
 
 const Card = ({

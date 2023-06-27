@@ -8,11 +8,15 @@ import {
 const TopNavbar = () => {
   return (
     <HStack
+      position={"fixed"}
+      top={4}
+      zIndex={"overlay"}
       spacing={0}
       gap={4}
       bgColor={"#fafafa"}
       px={4}
       py={2}
+      w={'75vw'}
       borderRadius={"xl"}
       justifyContent={"space-between"}
     >

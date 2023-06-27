@@ -1,7 +1,5 @@
 import { Route, Switch } from "wouter";
-import Home from "../components/Home";
-import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
-import TopRated from "../components/TopRated";
+import { HomeContainer, VideoContainer, VideoPlayer } from "../pages";
 
 const Routes = () => {
   //   const [location, navigate] = useLocation();
@@ -16,12 +14,9 @@ const Routes = () => {
           <PruebaPage params={{ id: "caca" }} />
         </Route>*/}
         <Route path="/video/:id">
-          {(params) => <VideoPlayer params={params} />}
+          {(params) => <VideoContainer params={params} />}
         </Route>
-        <Route path="/top-rated">
-          <TopRated />
-        </Route>
-        <Route path="/" component={Home} />
+        <Route path="/" component={HomeContainer} />
       </Switch>
     </>
   );

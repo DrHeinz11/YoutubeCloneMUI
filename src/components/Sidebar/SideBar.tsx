@@ -10,17 +10,16 @@ const SideBar = ({ ...defaultprops }) => {
   return (
     <Stack
       as="nav"
-      pt="4"
-      pl="4"
+      px={4}
+      py={2}
       minW="264px"
       maxW="264px"
-      borderInlineEnd="1px solid #c1c1c1"
+      border="1px solid #c1c1c1"
       justifyContent={{ base: "space-around", "2xl": "flex-start" }}
       flex={1}
       bgColor={"#fafafa"}
       borderRadius={"xl"}
-      m={2}
-      pb={2}
+ 
       {...defaultprops}
     >
       <ButtonLogo/>

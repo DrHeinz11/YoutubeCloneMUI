@@ -1,7 +1,6 @@
-import { HStack, Heading } from '@chakra-ui/react'
+import { HStack, Heading, Image } from '@chakra-ui/react'
 import { Link } from 'wouter'
 import { HandleScrollToTop } from '../../../utils'
-import { YoutubeIcon } from '../../../assets'
 import { useSidebarContext } from '../context/useSidebarContext'
 
 const ButtonLogo = () => {
@@ -18,9 +17,9 @@ const ButtonLogo = () => {
       }
     >
       <HStack onClick={() => setFocus({ value: 'home' })} _hover={{ opacity: 0.5 }}>
-        <YoutubeIcon />
+        <Image src="/Yt-Draw.png" boxSize={'48px'} alt="YT-Draw Logo" />
         <Heading display="flex" flexDir="row" alignItems="center" as="h4" fontSize="xl">
-          YouTube-Stream
+          YouTube-Draw
         </Heading>
       </HStack>
     </Link>

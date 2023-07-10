@@ -36,7 +36,7 @@ const NavigationLayout = ({ children }: Props) => {
                 "SideBard Content Content"`
         }}
       >
-        <Box as="nav" gridArea="Navbar" h="58px" w="75vw" my={2} mx={4}>
+        <Box as="nav" gridArea="Navbar" h="58px" w={{ base: 'full', md: '75vw' }} my={2} mx={4}>
           <TopNavbar />
         </Box>
         <Stack

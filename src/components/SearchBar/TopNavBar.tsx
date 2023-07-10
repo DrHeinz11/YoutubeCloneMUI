@@ -6,6 +6,7 @@ const TopNavbar = () => {
     <HStack
       position={'fixed'}
       top={4}
+      left={{ base: 0, md: 'auto' }}
       zIndex={'overlay'}
       spacing={0}
       gap={4}
@@ -13,7 +14,7 @@ const TopNavbar = () => {
       borderRadius={'xl'}
       px={4}
       py={2}
-      w={'75vw'}
+      w={{ base: 'full', md: '75vw' }}
       justifyContent={'space-between'}
     >
       <MediaRedirectButton />

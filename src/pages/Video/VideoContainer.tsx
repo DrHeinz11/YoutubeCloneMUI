@@ -59,7 +59,7 @@ const VideoContainer = ({ params: { id } }: Props): JSX.Element => {
   if (isError) return <IsError error={error} />
   if (data) {
     return (
-      <Stack bgColor={'#fafafa'} borderRadius={'xl'} mx={4} my={2} p={4}>
+      <Stack bgColor={'#fafafa'} borderRadius={'xl'} mx={[1, 3]} my={2} p={4}>
         <VideoPlayer id={id} />
         {data.items.map((v) => (
           <DetailVideo

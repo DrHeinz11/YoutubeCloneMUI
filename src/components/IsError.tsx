@@ -1,17 +1,8 @@
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from "@chakra-ui/react";
-import { SerializedError } from "@reduxjs/toolkit";
-import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
+import { Alert, AlertIcon, AlertTitle, AlertDescription } from '@chakra-ui/react'
+import { SerializedError } from '@reduxjs/toolkit'
+import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 
-const IsError = ({
-  error,
-}: {
-  error: FetchBaseQueryError | SerializedError;
-}) => {
+const IsError = ({ error }: { error: FetchBaseQueryError | SerializedError | boolean }) => {
   return (
     <Alert
       status="error"
@@ -27,11 +18,10 @@ const IsError = ({
         Error!
       </AlertTitle>
       <AlertDescription maxWidth="sm">
-        There was an error processing your request, error type:{" "}
-        {JSON.stringify(error)}
+        There was an error processing your request, error type: {JSON.stringify(error)}
       </AlertDescription>
     </Alert>
-  );
-};
+  )
+}
 
-export default IsError;
+export default IsError

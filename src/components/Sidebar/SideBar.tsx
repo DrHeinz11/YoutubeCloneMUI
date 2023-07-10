@@ -1,10 +1,6 @@
-import { Stack } from "@chakra-ui/react";
-import {
-  ButtonLogo,
-  CategoryComponents,
-  General,
-} from "./components";
-import { categoryData } from "../../constant/dataRoute";
+import { Stack } from '@chakra-ui/react'
+import { ButtonLogo, CategoryComponents, General } from './components'
+import { categoryData } from '../../constant/dataRoute'
 
 const SideBar = ({ ...defaultprops }) => {
   return (
@@ -15,14 +11,13 @@ const SideBar = ({ ...defaultprops }) => {
       minW="264px"
       maxW="264px"
       border="1px solid #c1c1c1"
-      justifyContent={{ base: "space-around", "2xl": "flex-start" }}
+      justifyContent={{ base: 'space-around', '2xl': 'flex-start' }}
       flex={1}
-      bgColor={"#fafafa"}
-      borderRadius={"xl"}
- 
+      bgColor={'#fafafa'}
+      borderRadius={'xl'}
       {...defaultprops}
     >
-      <ButtonLogo/>
+      <ButtonLogo />
       {categoryData.map((element) => (
         <CategoryComponents
           category={element.category}
@@ -30,9 +25,9 @@ const SideBar = ({ ...defaultprops }) => {
           dataRoute={element.dataRoute}
         />
       ))}
-      <General/>
+      <General />
     </Stack>
-  );
-};
+  )
+}
 
-export default SideBar;
+export default SideBar

@@ -1,6 +1,6 @@
-import "./App.css";
-import Routes from "./routes/Routes";
-import NavigationLayout from "./templates/NavigationLayout";
+import './App.css'
+import Routes from './routes/Routes'
+import NavigationLayout from './templates/NavigationLayout'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Routes />
     </NavigationLayout>
     // </Container>
-  );
+  )
 }
 
-export default App;
+export default App

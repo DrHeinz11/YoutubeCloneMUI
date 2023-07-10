@@ -10,33 +10,32 @@ import {
   Box,
   Text,
   HStack,
-  Image,
-} from "@chakra-ui/react";
-import { IconType } from "react-icons";
+  Image
+} from '@chakra-ui/react'
+import { IconType } from 'react-icons'
 
-function OptionPopover(props: {
-  icon?: IconType;
-  variant?: string;
-  avatarSrc?: string;
+function OptionPopover({
+  icon: Icon,
+  variant,
+  avatarSrc
+}: {
+  icon: IconType | undefined
+  variant?: string
+  avatarSrc?: string
 }) {
-  const { isOpen, onToggle, onClose } = useDisclosure();
+  const { isOpen, onToggle, onClose } = useDisclosure()
   return (
     <Box position="relative">
       <Button
-        variant={"topNavBar"}
-        margin={"0 !important"}
-        aria-label={"Notifications"}
+        variant={'topNavBar'}
+        margin={'0 !important'}
+        aria-label={'Notifications'}
         onClick={onToggle}
       >
-        {props.variant === "avatar" ? (
-          <Image
-            src={props.avatarSrc}
-            alt={props.variant}
-            boxSize={"24px"}
-            borderRadius={"full"}
-          />
+        {variant === 'avatar' ? (
+          <Image src={avatarSrc} alt={variant} boxSize={'24px'} borderRadius={'full'} />
         ) : (
-          <props.icon size={"24px"} />
+          Icon && <Icon size={'24px'} />
         )}
       </Button>
       <Popover
@@ -51,8 +50,8 @@ function OptionPopover(props: {
           <PopoverArrow />
           <PopoverCloseButton />
           <HStack as={PopoverBody}>
-            {["ASD", "ASD3", "ASD4"].map((item) => (
-              <Box key={item} bgColor={"red.100"} boxSize={"48px"}>
+            {['ASD', 'ASD3', 'ASD4'].map((item) => (
+              <Box key={item} bgColor={'red.100'} boxSize={'48px'}>
                 <Text>{item}</Text>
               </Box>
             ))}
@@ -60,7 +59,7 @@ function OptionPopover(props: {
         </PopoverContent>
       </Popover>
     </Box>
-  );
+  )
 }
 
-export default OptionPopover;
+export default OptionPopover

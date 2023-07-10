@@ -7,35 +7,22 @@ import {
   Button,
   Image,
   Text,
-  ImageProps,
-} from "@chakra-ui/react";
+  ImageProps
+} from '@chakra-ui/react'
 
-type ImageComponentProps = ImageProps;
+type ImageComponentProps = ImageProps
 
-const ImageComponent = ({
-  src,
-  aspectRatio,
-  alt,
-  objectFit,
-  ...rest
-}: ImageComponentProps) => (
-  <Image
-    aspectRatio={aspectRatio}
-    src={src}
-    alt={alt}
-    objectFit={objectFit}
-    {...rest}
-  />
-);
+const ImageComponent = ({ src, aspectRatio, alt, objectFit, ...rest }: ImageComponentProps) => (
+  <Image aspectRatio={aspectRatio} src={src} alt={alt} objectFit={objectFit} {...rest} />
+)
 
 const imageUrls = {
   mainImage:
-    "https://th.bing.com/th/id/OIP.xd0TS_2LBdIPmScswq8SBwHaC2?pid=ImgDet&w=1600&h=616&rs=1",
+    'https://th.bing.com/th/id/OIP.xd0TS_2LBdIPmScswq8SBwHaC2?pid=ImgDet&w=1600&h=616&rs=1',
   secondaryImage:
-    "https://th.bing.com/th/id/OIP.2pAo6vuBfESNl1kDithiewHaDa?pid=ImgDet&w=800&h=369&rs=1",
-  avatar:
-    "https://th.bing.com/th/id/OIP.Y5K4rXG8WqKQYTE_udqmjQHaHC?pid=ImgDet&rs=1",
-};
+    'https://th.bing.com/th/id/OIP.2pAo6vuBfESNl1kDithiewHaDa?pid=ImgDet&w=800&h=369&rs=1',
+  avatar: 'https://th.bing.com/th/id/OIP.Y5K4rXG8WqKQYTE_udqmjQHaHC?pid=ImgDet&rs=1'
+}
 
 const MainImage = () => (
   <ImageComponent
@@ -44,11 +31,11 @@ const MainImage = () => (
     alt=""
     objectFit="fill"
     h="inherit"
-    maxH={{ base: "150px", md: "225px" }}
+    maxH={{ base: '150px', md: '225px' }}
     flex="1 0 250px"
     borderRadius="xl"
   />
-);
+)
 
 const SecondaryImage = () => (
   <ImageComponent
@@ -57,11 +44,11 @@ const SecondaryImage = () => (
     alt=""
     maxH="115px"
     objectFit="cover"
-    objectPosition={{ base: "center", md: "top" }}
+    objectPosition={{ base: 'center', md: 'top' }}
     flex={1}
     borderRadius="xl"
   />
-);
+)
 
 const Avatar = () => (
   <Box bgColor="white" flex="0 0 48px" borderRadius="2xl" boxSize="48px" p={2}>
@@ -74,7 +61,7 @@ const Avatar = () => (
       h="full"
     />
   </Box>
-);
+)
 
 const HeaderPublicity = () => {
   return (
@@ -85,7 +72,7 @@ const HeaderPublicity = () => {
       p={{ base: 2, md: 4 }}
       borderRadius="2xl"
       as="header"
-      minH={"260px"}
+      minH={'260px'}
       gap={4}
     >
       <MainImage />
@@ -103,34 +90,21 @@ const HeaderPublicity = () => {
         >
           <Avatar />
           <Stack color="white" spacing={0} gap={2} flex={1}>
-            <Heading fontSize="md">
-              Call #012# and Get Free McDonald's Meal
-            </Heading>
+            <Heading fontSize="md">Call #012# and Get Free McDonald's Meal</Heading>
             <Text fontSize="14px" display="flex" flexDir="row" gap={2}>
-              <chakra.span
-                px="15px"
-                borderRadius="full"
-                bgColor="yellow"
-                color="black"
-              >
+              <chakra.span px="15px" borderRadius="full" bgColor="yellow" color="black">
                 Ad
               </chakra.span>
               Orange Egypt
             </Text>
-            <Button
-              size="sm"
-              fontSize="xs"
-              w="fit-content"
-              colorScheme="cyan"
-              borderRadius="xl"
-            >
+            <Button size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="xl">
               SEE MORE
             </Button>
           </Stack>
         </HStack>
       </Stack>
     </HStack>
-  );
-};
+  )
+}
 
-export default HeaderPublicity;
+export default HeaderPublicity

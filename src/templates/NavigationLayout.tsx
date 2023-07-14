@@ -19,7 +19,7 @@ const NavigationLayout = ({ children }: Props) => {
         position="relative"
         gridTemplateColumns={{
           base: 'repeat(2, 1fr)',
-          lg: '265px repeat(2, 1fr)'
+          lg: '75px repeat(2, 1fr)'
         }}
         gridTemplateRows={{
           base: 'repeat(2, fit-content)',

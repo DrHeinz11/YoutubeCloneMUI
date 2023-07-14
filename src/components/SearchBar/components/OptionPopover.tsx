@@ -23,14 +23,14 @@ function OptionPopover({
   variant?: string
   avatarSrc?: string
 }) {
-  const { isOpen, onToggle, onClose } = useDisclosure()
+  const { isOpen, onClose } = useDisclosure()
   return (
     <Box position="relative">
       <Button
         variant={'topNavBar'}
         margin={'0 !important'}
         aria-label={'Notifications'}
-        onClick={onToggle}
+        // onClick={onToggle}
       >
         {variant === 'avatar' ? (
           <Image src={avatarSrc} alt={variant} boxSize={'24px'} borderRadius={'full'} />

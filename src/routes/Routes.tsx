@@ -1,5 +1,6 @@
 import { Route, Switch } from 'wouter'
 import { HomeContainer, VideoContainer } from '../pages'
+import { Prueba } from '../pages/Pruebas'
 
 const Routes = () => {
   //   const [location, navigate] = useLocation();
@@ -15,6 +16,7 @@ const Routes = () => {
         </Route>*/}
         <Route path="/video/:id">{(params) => <VideoContainer params={params} />}</Route>
         <Route path="/" component={HomeContainer} />
+        <Route path="/trends" component={Prueba} />
       </Switch>
     </>
   )

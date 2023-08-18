@@ -1,7 +1,6 @@
-import { Stack,chakra } from '@chakra-ui/react'
-import Option from './Option' 
-import Logo from './Short.svg'
-/* Code generated with AutoHTML Plugin for Figma */
+import { Stack, chakra } from '@chakra-ui/react'
+import Option from './Option'
+
 const NewSidebar = (): JSX.Element => {
   return (
     <Stack
@@ -75,7 +74,6 @@ const NewSidebar = (): JSX.Element => {
         px={'15px'}
         className="frame-2__frame-1"
       >
-        <Option optionName="Home" children={Logo} />
         <Option
           optionName="Home"
           children={

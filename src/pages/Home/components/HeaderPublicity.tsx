@@ -33,7 +33,8 @@ const MainImage = () => (
     h="inherit"
     maxH={{ base: '150px', md: '225px' }}
     flex="1 0 250px"
-    borderRadius="xl"
+    borderRadius="0"
+    border={'1px solid #555'}
   />
 )
 
@@ -46,12 +47,20 @@ const SecondaryImage = () => (
     objectFit="cover"
     objectPosition={{ base: 'center', md: 'top' }}
     flex={1}
-    borderRadius="xl"
+    borderRadius="0"
+    border={'1px solid #555'}
   />
 )
 
 const Avatar = () => (
-  <Box bgColor="white" flex="0 0 48px" borderRadius="2xl" boxSize="48px" p={2}>
+  <Box
+    bgColor="white"
+    flex="0 0 48px"
+    borderRadius="0"
+    border={'1px solid #555'}
+    boxSize="48px"
+    p={2}
+  >
     <ImageComponent
       src={imageUrls.avatar}
       aspectRatio="1/1"
@@ -70,7 +79,8 @@ const HeaderPublicity = () => {
       maxW="full"
       flexWrap="wrap"
       p={{ base: 2, md: 4 }}
-      borderRadius="2xl"
+      // borderRadius="2xl"
+      border={'1px solid #555'}
       as="header"
       minH={'260px'}
       gap={4}
@@ -81,7 +91,7 @@ const HeaderPublicity = () => {
         <HStack
           flex={1}
           justifyContent="flex-start"
-          alignItems="center"
+          alignItems="flex-start"
           gap={4}
           px={1}
           maxH="inherit"
@@ -92,12 +102,19 @@ const HeaderPublicity = () => {
           <Stack color="white" spacing={0} gap={2} flex={1}>
             <Heading fontSize="md">Call #012# and Get Free McDonald's Meal</Heading>
             <Text fontSize="14px" display="flex" flexDir="row" gap={2}>
-              <chakra.span px="15px" borderRadius="full" bgColor="yellow" color="black">
+              <chakra.span px="15px" border={'1px solid #555'} bgColor="yellow" color="black">
                 Ad
               </chakra.span>
               Orange Egypt
             </Text>
-            <Button size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="xl">
+            <Button
+              size="sm"
+              fontSize="xs"
+              w="fit-content"
+              colorScheme="cyan"
+              borderRadius="0"
+              border={'1px solid #555'}
+            >
               SEE MORE
             </Button>
           </Stack>

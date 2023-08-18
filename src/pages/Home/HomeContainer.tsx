@@ -19,7 +19,7 @@ const HomeContainer = () => {
   if (isLoading) return <Loader />
   if (isError) return <IsError error={isError} />
   return (
-    <Container variant="section">
+    <Container p={0} variant="section">
       <HeaderPublicity />
       <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={4}>
         {data?.items

@@ -7,7 +7,7 @@ export interface IOptionProps {
   children: React.ReactNode
 }
 
-const Option = ({ optionName = 'Home', children, ...props }: IOptionProps): JSX.Element => {
+const Option = ({ optionName = 'Home', children }: IOptionProps): JSX.Element => {
   return (
     <HStack
       as={'a'}

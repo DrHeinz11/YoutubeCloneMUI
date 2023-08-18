@@ -1,4 +1,4 @@
-import { Stack } from '@chakra-ui/react'
+import { Divider, Stack } from '@chakra-ui/react'
 import { ButtonLogo, CategoryComponents, General } from './components'
 import { categoryData } from '../../constant/dataRoute'
 
@@ -6,21 +6,15 @@ const SideBar = ({ ...defaultprops }) => {
   return (
     <Stack
       as="nav"
-      // px={4}
-      // py={2}
-      p={2}
-      mt={'5px'}
-      // minW="264px"
-      // maxW="264px"
-      border="1px solid #c1c1c1"
-      justifyContent={{ base: 'space-around', '2xl': 'flex-start' }}
-      flex={1}
-      bgColor={'#fafafa'}
-      borderRadius={'xl'}
-      align={'center'}
+      pt={4}
+      w={'fit-content'}
+      borderInlineEnd="1px solid #c1c1c1"
+      minH={'100vh'}
+      gap={4}
       {...defaultprops}
     >
       <ButtonLogo />
+      <Divider />
       {categoryData.map((element) => (
         <CategoryComponents
           category={element.category}
@@ -28,6 +22,7 @@ const SideBar = ({ ...defaultprops }) => {
           dataRoute={element.dataRoute}
         />
       ))}
+      <Divider />
       <General />
     </Stack>
   )

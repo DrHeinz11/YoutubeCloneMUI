@@ -45,7 +45,8 @@ const SearchBar = () => {
         onChange={handleChange}
         placeholder="Ingresa un texto"
         colorScheme={'blackAlpha'}
-        focusBorderColor="black"
+        focusBorderColor="#555"
+        borderRadius={0}
       />
       <Button margin={'0 !important'} variant={'topNavBar'} type="submit" mt={4} colorScheme="blue">
         {toggle ? (

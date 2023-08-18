@@ -18,15 +18,35 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
   const { likeCount, viewCount } = statistics
 
   return (
-    <HStack flexWrap="wrap" alignItems="flex-start">
-      <Stack bgColor="blackAlpha.100" borderRadius="lg" px={2} pt={2} pb={4} flex={1}>
+    <HStack flexWrap="wrap" alignItems="flex-start" wrap={'wrap'}>
+      <Stack
+        bgColor="blackAlpha.100"
+        borderRadius="0"
+        border={'2px solid #555'}
+        px={2}
+        pt={2}
+        pb={4}
+        flex={'2 0 350px'}
+      >
         <Heading fontSize="xl">{title}</Heading>
         <Heading fontSize="xl">{dateVideoFormater(publishedAt)}</Heading>
         <CollapseDescription description={description} tags={tags} />
       </Stack>
-      <Stack>
+
+      <Stack justifyContent={'space-between'} flex={'1 0 300px'} height={'240px'}>
+        {' '}
+        <ChannelDetails channelId={channelId} />
         <HStack flex={1} gap={2} alignItems="stretch">
-          <HStack gap={1} spacing={0} bgColor="blackAlpha.100" borderRadius="lg" px={4} py={2}>
+          <HStack
+            maxH={'60px'}
+            gap={1}
+            spacing={0}
+            bgColor="blackAlpha.100"
+            borderRadius="0"
+            border={'2px solid #555'}
+            px={4}
+            py={2}
+          >
             <Button
               variant="topNavBar"
               flexDir="row"
@@ -44,10 +64,12 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
             </Button>
           </HStack>
           <HStack
+            maxH={'60px'}
             gap={1}
             alignItems="center"
             bgColor="blackAlpha.100"
-            borderRadius="lg"
+            borderRadius="0"
+            border={'2px solid #555'}
             px={4}
             py={2}
             flex={1}
@@ -56,7 +78,6 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
             <Text>{formatearNumero(viewCount)}</Text>
           </HStack>
         </HStack>
-        <ChannelDetails channelId={channelId} />
       </Stack>
     </HStack>
   )

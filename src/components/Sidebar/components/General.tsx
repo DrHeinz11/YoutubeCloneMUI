@@ -3,7 +3,7 @@ import { AiFillSetting } from 'react-icons/ai'
 import { BiLogOut } from 'react-icons/bi'
 const General = () => {
   return (
-    <Stack>
+    <Stack py={4} px={6}>
       {/* <CategoryHeading>General</CategoryHeading> */}
       <Stack>
         <HStack pl={'3px'} className="links" cursor="pointer" justify="flex-start">

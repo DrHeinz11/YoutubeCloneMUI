@@ -21,10 +21,11 @@ const Card = ({
       spacing={0}
       gap={4}
       p={4}
-      bgColor={'#fafafa'}
+      bgColor={'#fff'}
       boxShadow={'xl'}
+      // borderRadius={'2xl'}
+      border={'2px solid #555'}
       _hover={{ boxShadow: 'dark-lg' }}
-      borderRadius={'2xl'}
       minH={'355px'}
       maxW={'355px'}
     >

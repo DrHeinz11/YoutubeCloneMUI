@@ -4,15 +4,12 @@ import { CategoryData } from '../../../types'
 
 const CategoryComponents = ({ dataRoute }: CategoryData) => {
   return (
-    <Stack>
-      {/* <CategoryHeading>{category}</CategoryHeading> */}
-      <Stack>
-        {dataRoute.map((categoryData) => (
-          <CustomOption route={categoryData.route} title={categoryData.title} key={categoryData.id}>
-            <categoryData.iconOptions size={'20px'} />
-          </CustomOption>
-        ))}
-      </Stack>
+    <Stack py={4} px={6}>
+      {dataRoute.map((categoryData) => (
+        <CustomOption route={categoryData.route} title={categoryData.title} key={categoryData.id}>
+          <categoryData.iconOptions size={'20px'} />
+        </CustomOption>
+      ))}
     </Stack>
   )
 }

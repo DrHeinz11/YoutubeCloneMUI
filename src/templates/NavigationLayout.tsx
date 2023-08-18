@@ -1,4 +1,4 @@
-import { Box, Stack } from '@chakra-ui/react'
+import { Container, HStack } from '@chakra-ui/react'
 import React from 'react'
 import SideBar from '../components/Sidebar/SideBar'
 import { SideBarProvider } from '../components/Sidebar/context/context'
@@ -11,7 +11,7 @@ type Props = {
 const NavigationLayout = ({ children }: Props) => {
   return (
     <SideBarProvider>
-      <Box
+      {/* <Box
         display="grid"
         w="full"
         bgColor="#ccc"
@@ -52,10 +52,17 @@ const NavigationLayout = ({ children }: Props) => {
         >
           <SideBar display="flex" />
         </Stack>
-        <Box as="main" minH="50vh" gridArea="Content">
+        <Stack as="main" minH="50vh" gridArea="Content">
           {children}
-        </Box>
-      </Box>
+        </Stack>
+      </Box> */}
+      <HStack bgColor={'#fafafa'} gap={4} alignItems={'flex-start'} overflow={'auto'}>
+        <SideBar display="flex" />
+        <Container position={'relative'} flex={'1'} p="0" pt={'20'} as={'main'} variant={'section'}>
+          <TopNavbar />
+          {children}
+        </Container>
+      </HStack>
     </SideBarProvider>
   )
 }

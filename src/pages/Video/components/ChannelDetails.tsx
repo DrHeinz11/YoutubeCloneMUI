@@ -26,21 +26,33 @@ const ChannelDetails = (props: Props) => {
           key={item.id}
           cursor={'pointer'}
           bgColor={'blackAlpha.100'}
-          borderRadius={'lg'}
+          borderRadius={'0'}
+          border={'2px solid #555'}
           p={2}
           gap={1}
           zIndex={'skipLink'}
         >
+          {' '}
+          <Heading fontSize={'xl'} as={WouterLink} href={`/channels?${item.snippet.customUrl}`}>
+            {item.snippet.title}
+          </Heading>
           <HStack>
             <WouterLink href={`/channels?${item.snippet.customUrl}`}>
               <Image
                 src={item.snippet.thumbnails.default.url}
                 alt={item.snippet.title}
                 boxSize={item.snippet.thumbnails.default.width}
-                borderRadius={'lg'}
+                borderRadius={'0'}
+                border={'2px solid #555'}
               />{' '}
             </WouterLink>
-            <Stack flex={1} bgColor={'blackAlpha.200'} borderRadius={'lg'} p={2}>
+            <Stack
+              flex={1}
+              bgColor={'blackAlpha.200'}
+              borderRadius={'0'}
+              border={'2px solid #555'}
+              p={2}
+            >
               <Text fontWeight={'bold'}>
                 {formatearNumero(item.statistics.subscriberCount)} <span>subscribers</span>
               </Text>
@@ -49,9 +61,6 @@ const ChannelDetails = (props: Props) => {
               </Button>
             </Stack>
           </HStack>
-          <Heading as={WouterLink} href={`/channels?${item.snippet.customUrl}`}>
-            {item.snippet.title}
-          </Heading>
         </Stack>
       ))}
     </>

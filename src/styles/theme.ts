@@ -14,7 +14,7 @@ const colors = {
 }
 const theme = extendTheme({
   colors,
-  components: { Container, Button },
+  components: { Container },
   fonts: {
     heading: `'CabinetGrotesk-Extrabold', sans-serif`,
     body: `'Satoshi-Medium', sans-serif`

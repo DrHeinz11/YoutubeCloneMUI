@@ -1,61 +1,85 @@
+import { useState, useEffect } from 'react'
 import { Button, HStack, Input, Spinner } from '@chakra-ui/react'
-import React, { useState } from 'react'
 import { RiSearch2Line } from 'react-icons/ri'
-import { searchKeyword } from '../../../store/reducers/searchReducer'
 import { useDispatch } from 'react-redux'
+import { searchKeyword } from '../../../store/reducers/searchReducer'
 import { useLocation } from 'wouter'
 import { navigate } from 'wouter/use-location'
 
 const SearchBar = () => {
-  const [texto, setTexto] = useState('')
+  const [searchText, setSearchText] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const [location] = useLocation()
   const dispatch = useDispatch()
-  const [toggle, setToggle] = useState<boolean>(false)
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTexto((event.target as HTMLInputElement).value)
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(event.target.value)
   }
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    // Realiza alguna acción con el valor del campo de texto
-    setToggle(true)
-    dispatch(searchKeyword(texto))
-    if (location !== '/') {
-      setTimeout(() => {
-        navigate('/')
-      }, 1000)
+    if (searchText.trim() === '') {
+      return
     }
+
+    setIsLoading(true)
+    dispatch(searchKeyword(searchText))
+
+    if (location !== '/') {
+      navigate('/')
+    }
+
     setTimeout(() => {
-      setToggle(false)
+      setIsLoading(false)
     }, 1000)
   }
 
+  useEffect(() => {
+    return () => {
+      // Clean up any ongoing processes when component unmounts
+      setIsLoading(false)
+    }
+  }, [])
+
   return (
-    <HStack
-      flex={1}
-      justifyContent={'center'}
-      spacing={0}
-      gap={4}
-      as={'form'}
-      onSubmit={handleSubmit}
-    >
-      <Input
-        value={texto}
-        onChange={handleChange}
-        placeholder="Ingresa un texto"
-        colorScheme={'blackAlpha'}
-        focusBorderColor="#555"
-        borderRadius={0}
-      />
-      <Button margin={'0 !important'} variant={'topNavBar'} type="submit" mt={4} colorScheme="blue">
-        {toggle ? (
-          <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="red.500" size="sm" />
-        ) : (
-          <RiSearch2Line size="22px" />
-        )}
-      </Button>
-    </HStack>
+    <>
+      <HStack
+        as={'form'}
+        onSubmit={handleSubmit}
+        justifyContent="center"
+        spacing={4}
+        flex={1}
+        align="center"
+      >
+        <Input
+          value={searchText}
+          onChange={handleInputChange}
+          placeholder="Search..."
+          colorScheme="blackAlpha"
+          focusBorderColor="#555"
+          borderRadius={0}
+        />
+        <Button
+          margin={'0 !important'}
+          variant={'topNavBar'}
+          type="submit"
+          mt={4}
+          colorScheme="blue"
+        >
+          {isLoading ? (
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="red.500"
+              size="sm"
+            />
+          ) : (
+            <RiSearch2Line size="22px" />
+          )}
+        </Button>
+      </HStack>
+    </>
   )
 }
 

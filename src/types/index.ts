@@ -7,6 +7,7 @@ export type CardDetails = {
   srcChanellAlt: string
   titleName: string
   chanellName: string
+  channelId?: string
   viewsVideos: string
   videoDuration: number | string
   dateVideos: string

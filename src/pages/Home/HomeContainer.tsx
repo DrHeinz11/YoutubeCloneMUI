@@ -33,6 +33,7 @@ const HomeContainer = () => {
               srcChanellAlt={item.snippet.channelTitle}
               titleName={item.snippet.title}
               chanellName={item.snippet.channelTitle}
+              channelId={item.snippet.channelId}
               viewsVideos=""
               videoDuration=""
               idVideo={item.id.videoId}

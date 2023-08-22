@@ -1,18 +1,17 @@
-import { Box, HStack, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import { CardDetails } from '../../../types'
 import { Link as WouterLink } from 'wouter'
 
 const Card = ({
   srcChanell,
   chanellName,
-  dateVideos,
   srcChanellAlt,
   srcImage,
   srcImageAlt,
   titleName,
-  viewsVideos,
   videoDuration,
-  idVideo
+  idVideo,
+  channelId
 }: CardDetails) => {
   return (
     <Stack
@@ -68,14 +67,16 @@ const Card = ({
       </Box>
       <Stack spacing={0} gap={2} p={2}>
         <Heading fontSize={'lg'}>{titleName}</Heading>
-        <Text color={'gray.700'} fontSize={'lg'}>
-          {chanellName}
-        </Text>
-        <HStack spacing={0} gap={1} color={'gray.700'}>
+        <WouterLink href={`/channels/${channelId}`}>
+          <Text color={'gray.700'} fontSize={'lg'}>
+            {chanellName}
+          </Text>
+        </WouterLink>
+        {/* <HStack spacing={0} gap={1} color={'gray.700'}>
           <Text>{viewsVideos} views</Text>
           <>●</>
           <Text>{dateVideos}</Text>
-        </HStack>
+        </HStack> */}
       </Stack>
     </Stack>
   )

@@ -5,6 +5,7 @@ import ChannelDetails from './ChannelDetails'
 import CollapseDescription from './CollapseDescription'
 import { SnippetVideoDetails, Statistics, ContentDetails } from '../../../types/typeAPI'
 import { dateVideoFormater } from '../../../utils/dateVideoFormater'
+import { BiDownload } from 'react-icons/bi'
 
 interface Props {
   snippet: SnippetVideoDetails
@@ -16,7 +17,8 @@ interface Props {
 const DetailVideo = ({ snippet, statistics }: Props) => {
   const { title, description, tags, channelId, publishedAt } = snippet
   const { likeCount, viewCount } = statistics
-
+  // const [location] = useLocation()
+  // console.log(location.split('/').splice(-1).join())
   return (
     <HStack flexWrap="wrap" alignItems="flex-start" wrap={'wrap'}>
       <Stack
@@ -74,8 +76,13 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
             py={2}
             flex={1}
           >
-            <AiOutlineEye size="18px" />
-            <Text>{formatearNumero(viewCount)}</Text>
+            <HStack>
+              <AiOutlineEye size="18px" />
+              <Text>{formatearNumero(viewCount)}</Text>
+            </HStack>
+            <Button type='button' title='Download in MP3' colorScheme="gray">
+              <BiDownload />
+            </Button>
           </HStack>
         </HStack>
       </Stack>

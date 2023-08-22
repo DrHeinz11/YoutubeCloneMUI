@@ -21,7 +21,6 @@ const Home = () => {
       </Center>
     )
   if (isError) return <Heading>Is error : {isError}</Heading>
-  console.log(data)
   return (
     <SimpleGrid minChildWidth={'300px'} justifyItems={'center'} spacing={0} gap={4}>
       {data?.items.map((item: Item) => {

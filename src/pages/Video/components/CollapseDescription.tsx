@@ -12,7 +12,7 @@ const CollapseDescription = ({ description, tags }: Props) => {
       <Collapse onClick={handleToggle} startingHeight={116} in={show}>
         <Text cursor={'pointer'}>{description}</Text>
         <HStack mt={2} gap={1} spacing={0} wrap={'wrap'}>
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <Tag colorScheme="blackAlpha" variant="outline" key={tag}>
               {tag}
             </Tag>

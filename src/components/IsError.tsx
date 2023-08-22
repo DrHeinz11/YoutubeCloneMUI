@@ -2,7 +2,11 @@ import { Alert, AlertIcon, AlertTitle, AlertDescription } from '@chakra-ui/react
 import { SerializedError } from '@reduxjs/toolkit'
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 
-const IsError = ({ error }: { error: FetchBaseQueryError | SerializedError | boolean }) => {
+const IsError = ({
+  error
+}: {
+  error: FetchBaseQueryError | SerializedError | boolean | undefined
+}) => {
   return (
     <Alert
       status="error"

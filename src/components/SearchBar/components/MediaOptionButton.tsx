@@ -7,7 +7,7 @@ import OptionPopover from './OptionPopover'
 
 const MediaOptionButton = () => {
   return (
-    <HStack justifyContent={'flex-end'} spacing={0} gap={4}>
+    <HStack color={'white'} justifyContent={'flex-end'} spacing={0} gap={4}>
       {DataRouteButton.slice(-1).map((buttonItem) => (
         <Button
           variant={'topNavBar'}
@@ -16,6 +16,7 @@ const MediaOptionButton = () => {
           type="button"
           key={buttonItem.id}
           onClick={() => navigate(buttonItem.route)}
+          px={[0,4]}
         >
           <buttonItem.iconOptions size={'22px'} />
         </Button>

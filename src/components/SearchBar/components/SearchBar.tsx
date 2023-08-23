@@ -55,16 +55,19 @@ const SearchBar = () => {
           value={searchText}
           onChange={handleInputChange}
           placeholder="Search..."
-          colorScheme="blackAlpha"
+          colorScheme="whiteAlpha"
+          color={'white'}
           focusBorderColor="#555"
-          borderRadius={0}
+          borderRadius={'lg'}
         />
         <Button
           margin={'0 !important'}
           variant={'topNavBar'}
           type="submit"
           mt={4}
+          p={0}
           colorScheme="blue"
+          color={'white'}
         >
           {isLoading ? (
             <Spinner

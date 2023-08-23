@@ -34,7 +34,6 @@ const MainImage = () => (
     maxH={{ base: '150px', md: '225px' }}
     flex="1 0 250px"
     borderRadius="0"
-    border={'1px solid #555'}
   />
 )
 
@@ -48,19 +47,11 @@ const SecondaryImage = () => (
     objectPosition={{ base: 'center', md: 'top' }}
     flex={1}
     borderRadius="0"
-    border={'1px solid #555'}
   />
 )
 
 const Avatar = () => (
-  <Box
-    bgColor="white"
-    flex="0 0 48px"
-    borderRadius="0"
-    border={'1px solid #555'}
-    boxSize="48px"
-    p={2}
-  >
+  <Box bgColor="white" flex="0 0 48px" borderRadius="0" boxSize="48px" p={2}>
     <ImageComponent
       src={imageUrls.avatar}
       aspectRatio="1/1"
@@ -79,11 +70,11 @@ const HeaderPublicity = () => {
       maxW="full"
       flexWrap="wrap"
       p={{ base: 2, md: 4 }}
-      // borderRadius="2xl"
-      border={'1px solid #555'}
+      borderRadius={'xl'}
       as="header"
       minH={'260px'}
       gap={4}
+      className='card'
     >
       <MainImage />
       <Stack flex="1 0 250px" gap={2}>
@@ -102,19 +93,12 @@ const HeaderPublicity = () => {
           <Stack color="white" spacing={0} gap={2} flex={1}>
             <Heading fontSize="md">Call #012# and Get Free McDonald's Meal</Heading>
             <Text fontSize="14px" display="flex" flexDir="row" gap={2}>
-              <chakra.span px="15px" border={'1px solid #555'} bgColor="yellow" color="black">
+              <chakra.span px="15px" bgColor="yellow" color="black">
                 Ad
               </chakra.span>
               Orange Egypt
             </Text>
-            <Button
-              size="sm"
-              fontSize="xs"
-              w="fit-content"
-              colorScheme="cyan"
-              borderRadius="0"
-              border={'1px solid #555'}
-            >
+            <Button size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="0">
               SEE MORE
             </Button>
           </Stack>

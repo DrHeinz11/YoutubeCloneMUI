@@ -1,5 +1,5 @@
 import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react'
-import { CardDetails } from '../../../types'
+import { CardDetails } from '../types'
 import { Link as WouterLink } from 'wouter'
 
 const Card = ({
@@ -19,14 +19,11 @@ const Card = ({
       href={`/video/${idVideo}`}
       spacing={0}
       gap={4}
-      p={4}
-      bgColor={'#fff'}
-      boxShadow={'xl'}
-      // borderRadius={'2xl'}
-      border={'2px solid #555'}
-      _hover={{ boxShadow: 'dark-lg' }}
+      className="card"
+      p="20px"
       minH={'355px'}
       maxW={'355px'}
+      _hover={{boxShadow:'2xl',backgroundColor:'#1c1c1cbf'}}
     >
       <Box position={'relative'} maxW={'320px'}>
         <Image
@@ -35,6 +32,7 @@ const Card = ({
           aspectRatio={'16/9'}
           borderRadius={'xl'}
           w={'full'}
+          loading='lazy'
         />
         {srcChanell && (
           <Image
@@ -66,17 +64,12 @@ const Card = ({
         )}
       </Box>
       <Stack spacing={0} gap={2} p={2}>
-        <Heading fontSize={'lg'}>{titleName}</Heading>
+        <Heading color={'gray.300'} fontSize={'lg'}>{titleName}</Heading>
         <WouterLink href={`/channels/${channelId}`}>
-          <Text color={'gray.700'} fontSize={'lg'}>
+          <Text color={'gray.500'} fontSize={'lg'}>
             {chanellName}
           </Text>
         </WouterLink>
-        {/* <HStack spacing={0} gap={1} color={'gray.700'}>
-          <Text>{viewsVideos} views</Text>
-          <>●</>
-          <Text>{dateVideos}</Text>
-        </HStack> */}
       </Stack>
     </Stack>
   )

@@ -9,12 +9,12 @@ const TopNavbar = () => {
       zIndex={'overlay'}
       spacing={0}
       gap={4}
-      bgColor={'#fafafa'}
       borderRadius={'xl'}
       py={2}
       pr={1}
       justifyContent={'space-between'}
       w={'-webkit-fill-available'}
+      className='card'
     >
       <MediaRedirectButton />
       <SearchBar />

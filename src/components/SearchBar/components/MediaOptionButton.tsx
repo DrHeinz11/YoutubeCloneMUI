@@ -16,7 +16,7 @@ const MediaOptionButton = () => {
           type="button"
           key={buttonItem.id}
           onClick={() => navigate(buttonItem.route)}
-          px={[0,4]}
+          px={[0, 4]}
         >
           <buttonItem.iconOptions size={'22px'} />
         </Button>

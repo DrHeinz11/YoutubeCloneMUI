@@ -1,5 +1,6 @@
 import { HStack } from '@chakra-ui/react'
 import { MediaRedirectButton, SearchBar, MediaOptionButton } from './components'
+import MenuDrawer from './components/MenuDrawer'
 
 const TopNavbar = () => {
   return (
@@ -14,8 +15,9 @@ const TopNavbar = () => {
       pr={1}
       justifyContent={'space-between'}
       w={'-webkit-fill-available'}
-      className='card'
+      className="card"
     >
+      <MenuDrawer />
       <MediaRedirectButton />
       <SearchBar />
       <MediaOptionButton />

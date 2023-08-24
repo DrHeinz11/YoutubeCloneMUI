@@ -74,7 +74,7 @@ const HeaderPublicity = () => {
       as="header"
       minH={'260px'}
       gap={4}
-      className='card'
+      className="card"
     >
       <MainImage />
       <Stack flex="1 0 250px" gap={2}>

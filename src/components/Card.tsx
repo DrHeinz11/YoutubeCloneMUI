@@ -23,7 +23,7 @@ const Card = ({
       p="20px"
       minH={'355px'}
       maxW={'355px'}
-      _hover={{boxShadow:'2xl',backgroundColor:'#1c1c1cbf'}}
+      _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf' }}
     >
       <Box position={'relative'} maxW={'320px'}>
         <Image
@@ -32,7 +32,7 @@ const Card = ({
           aspectRatio={'16/9'}
           borderRadius={'xl'}
           w={'full'}
-          loading='lazy'
+          loading="lazy"
         />
         {srcChanell && (
           <Image
@@ -64,7 +64,9 @@ const Card = ({
         )}
       </Box>
       <Stack spacing={0} gap={2} p={2}>
-        <Heading color={'gray.300'} fontSize={'lg'}>{titleName}</Heading>
+        <Heading color={'gray.300'} fontSize={'lg'}>
+          {titleName}
+        </Heading>
         <WouterLink href={`/channels/${channelId}`}>
           <Text color={'gray.500'} fontSize={'lg'}>
             {chanellName}

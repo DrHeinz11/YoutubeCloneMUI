@@ -80,7 +80,7 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
               <AiOutlineEye size="18px" />
               <Text>{formatearNumero(viewCount)}</Text>
             </HStack>
-            <Button type='button' title='Download in MP3' colorScheme="gray">
+            <Button type="button" title="Download in MP3" colorScheme="gray">
               <BiDownload />
             </Button>
           </HStack>

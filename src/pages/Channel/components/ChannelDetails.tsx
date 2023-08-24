@@ -81,7 +81,6 @@ const ChannelDetails = ({ channelId }: { channelId: string }): JSX.Element => {
     channelId: channelId
   })
 
-
   return (
     <>
       {useQueryStateResult.currentData?.items?.map(

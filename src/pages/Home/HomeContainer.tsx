@@ -1,8 +1,8 @@
-import { Container, Divider, SimpleGrid } from '@chakra-ui/react'
+import { Container, SimpleGrid } from '@chakra-ui/react'
 import { useSelector } from 'react-redux'
 import { useGetSearchVideosQuery } from '../../store/reducers/apiFetch'
 import { IsError, Loader } from '../../components'
-import { Card, HeaderPublicity } from './components'
+import { Card } from './components'
 import { Item } from '../../types/typeAPI'
 import { RootState } from '../../store'
 
@@ -15,9 +15,7 @@ const HomeContainer = () => {
 
   return (
     <Container p={0} variant="section">
-      <HeaderPublicity />
-      <Divider colorScheme="whiteAlpha" />
-      <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={4}>
+      <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={2}>
         {data?.items
           .filter((item: Item) => item.id.kind !== 'youtube#channel')
           .map((item: Item) => (

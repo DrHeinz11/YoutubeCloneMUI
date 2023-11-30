@@ -16,7 +16,7 @@ const ButtonLogo = () => {
         })
       }
     >
-      <HStack py={4} px={6} onClick={() => setFocus({ value: 'home' })} _hover={{ opacity: 0.5 }}>
+      <HStack p={2} onClick={() => setFocus({ value: 'home' })} _hover={{ opacity: 0.5 }}>
         {/* <Image src="/Yt-Draw.png" boxSize={'48px'} alt="YT-Draw Logo" />
         {/* <Heading display="flex" flexDir="row" alignItems="center" as="h4" fontSize="xl">
           YouTube-Draw

@@ -25,7 +25,14 @@ const CustomOption = ({ route, children, title }: optionCustom) => {
         })
       }}
     >
-      <HStack cursor={'pointer'} gap={2} py={2} w={'fit-content'} align="center" justify="flex-start">
+      <HStack
+        cursor={'pointer'}
+        gap={2}
+        py={2}
+        w={'fit-content'}
+        align="center"
+        justify="flex-start"
+      >
         {children}
         {/* {open && ( )} */}
         <Heading

@@ -19,12 +19,11 @@ import {
   DrawerFooter
 } from '@chakra-ui/react'
 
-import React from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 const MenuDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const firstField = React.useRef()
+  // const firstField = React.useRef()
 
   return (
     <>

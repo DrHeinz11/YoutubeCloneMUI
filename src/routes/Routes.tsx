@@ -1,15 +1,21 @@
 import { Route, Switch } from 'wouter'
-import { HomeContainer, VideoContainer } from '../pages'
-import ChannelContainer from '../pages/Channel/ChannelContainer'
+import { Suspense, lazy } from 'react'
+import { Loader } from '../components'
+
+const VideoContainerLazy = lazy(() => import('../pages/Video/VideoContainer'))
+const ChannelContainerLazy = lazy(() => import('../pages/Channel/ChannelContainer'))
+const HomeContainerLazy = lazy(() => import('../pages/Home/HomeContainer'))
 const Routes = () => {
   return (
     <>
       <Switch>
-        <Route path="/video/:id">{(params) => <VideoContainer params={params} />}</Route>
-        <Route path="/" component={HomeContainer} />
-        <Route path="/channels/:id">
-          {(params: { id: string }) => <ChannelContainer params={params} />}
-        </Route>
+        <Suspense fallback={<Loader />}>
+          <Route path="/video/:id">{(params) => <VideoContainerLazy params={params} />}</Route>
+          <Route path="/" component={HomeContainerLazy} />
+          <Route path="/channels/:id">
+            {(params: { id: string }) => <ChannelContainerLazy params={params} />}
+          </Route>
+        </Suspense>
       </Switch>
     </>
   )

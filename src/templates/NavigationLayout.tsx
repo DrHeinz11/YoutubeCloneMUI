@@ -18,7 +18,7 @@ const NavigationLayout = ({ children }: Props) => {
         overflow={'auto'}
         gap={0}
       >
-        <SideBar display="flex" />
+        <SideBar display="flex" pt={'20'} />
         <Container position={'relative'} flex={'1'} p="0" as={'main'} variant={'section'}>
           <TopNavbar />
           {children}

@@ -42,47 +42,40 @@ const SearchBar = () => {
   }, [])
 
   return (
-    <>
-      <HStack
-        as={'form'}
-        onSubmit={handleSubmit}
-        justifyContent="center"
-        spacing={4}
-        flex={1}
-        align="center"
+    <HStack
+      as={'form'}
+      onSubmit={handleSubmit}
+      justifyContent="center"
+      spacing={4}
+      flex={1}
+      align="center"
+    >
+      <Input
+        value={searchText}
+        onChange={handleInputChange}
+        placeholder="Search..."
+        colorScheme="whiteAlpha"
+        color={'white'}
+        focusBorderColor="#555"
+        borderRadius={'lg'}
+      />
+      <Button
+        margin={'0 !important'}
+        variant={'topNavBar'}
+        type="submit"
+        mt={4}
+        p={0}
+        colorScheme="blue"
+        color={'white'}
+        title="Search Button"
       >
-        <Input
-          value={searchText}
-          onChange={handleInputChange}
-          placeholder="Search..."
-          colorScheme="whiteAlpha"
-          color={'white'}
-          focusBorderColor="#555"
-          borderRadius={'lg'}
-        />
-        <Button
-          margin={'0 !important'}
-          variant={'topNavBar'}
-          type="submit"
-          mt={4}
-          p={0}
-          colorScheme="blue"
-          color={'white'}
-        >
-          {isLoading ? (
-            <Spinner
-              thickness="4px"
-              speed="0.65s"
-              emptyColor="gray.200"
-              color="red.500"
-              size="sm"
-            />
-          ) : (
-            <RiSearch2Line size="22px" />
-          )}
-        </Button>
-      </HStack>
-    </>
+        {isLoading ? (
+          <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="red.500" size="sm" />
+        ) : (
+          <RiSearch2Line size="22px" />
+        )}
+      </Button>
+    </HStack>
   )
 }
 

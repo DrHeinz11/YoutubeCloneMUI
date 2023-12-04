@@ -8,6 +8,7 @@ const HomeContainerLazy = lazy(() => import('../pages/Home/HomeContainer'))
 const Routes = () => {
   return (
     <>
+      {/* <Box marginLeft={'10rem'} paddingRight={'.35rem'} mt={'20'}> */}
       <Switch>
         <Suspense fallback={<Loader />}>
           <Route path="/video/:id">{(params) => <VideoContainerLazy params={params} />}</Route>
@@ -17,6 +18,7 @@ const Routes = () => {
           </Route>
         </Suspense>
       </Switch>
+      {/* </Box> */}
     </>
   )
 }

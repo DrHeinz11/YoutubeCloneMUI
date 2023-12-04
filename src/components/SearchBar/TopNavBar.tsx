@@ -1,5 +1,5 @@
 import { HStack } from '@chakra-ui/react'
-import { MediaRedirectButton, SearchBar, MediaOptionButton } from './components'
+import { SearchBar } from './components'
 import MenuDrawer from './components/MenuDrawer'
 
 const TopNavbar = () => {
@@ -18,9 +18,7 @@ const TopNavbar = () => {
       className="card"
     >
       <MenuDrawer />
-      <MediaRedirectButton />
       <SearchBar />
-      <MediaOptionButton />
     </HStack>
   )
 }

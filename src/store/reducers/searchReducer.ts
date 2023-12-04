@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = { search: 'the weekend' }
+const initialState = { search: 'seven' }
 
 export const searchReducer = createSlice({
   name: 'searchReducer',

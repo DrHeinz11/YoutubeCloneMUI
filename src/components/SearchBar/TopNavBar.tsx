@@ -1,24 +1,28 @@
-import { HStack } from '@chakra-ui/react'
+import { Avatar, HStack } from '@chakra-ui/react'
 import { SearchBar } from './components'
 import MenuDrawer from './components/MenuDrawer'
 
 const TopNavbar = () => {
   return (
     <HStack
-      position={'absolute'}
-      top={4}
+      position={'fixed'}
+      top={0}
+      left={0}
+      right={0}
       zIndex={'overlay'}
       spacing={0}
       gap={4}
-      borderRadius={'xl'}
+      px={4}
       py={2}
-      pr={1}
+      bgColor={'blackAlpha.600'}
+      w={'full'}
+      maxW={'1680px'}
+      margin={'0 auto !important'}
       justifyContent={'space-between'}
-      w={'-webkit-fill-available'}
-      className="card"
     >
       <MenuDrawer />
       <SearchBar />
+      <Avatar size={['sm',"md"]} name='Sasuke Uchiha' src='https://bit.ly/broken-link' />
     </HStack>
   )
 }

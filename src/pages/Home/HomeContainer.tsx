@@ -14,7 +14,7 @@ const HomeContainer = () => {
   if (isError) return <IsError error={isError} />
 
   return (
-    <Container p={0} variant="section">
+    <Container p={0} variant="section" as={'section'} px={2} pb={2}>
       <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={2}>
         {data?.items
           .filter((item: Item) => item.id.kind !== 'youtube#channel')

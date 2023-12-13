@@ -21,11 +21,13 @@ const Card = ({
       gap={4}
       className="card"
       p="20px"
+      flex={1}
       minH={'355px'}
       maxW={'355px'}
+w={'full'}
       _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf' }}
     >
-      <Box position={'relative'} maxW={'320px'}>
+      <Box position={'relative'} maxW={'300px'}>
         <Image
           src={srcImage}
           alt={srcImageAlt}
@@ -63,8 +65,8 @@ const Card = ({
           </Text>
         )}
       </Box>
-      <Stack spacing={0} gap={2} p={2}>
-        <Heading color={'gray.300'} fontSize={'lg'}>
+      <Stack spacing={0} maxW={'275px'} gap={2} p={2}>
+        <Heading flex={1} color={'gray.300'} fontSize={'lg'}>
           {titleName}
         </Heading>
         <WouterLink href={`/channels/${channelId}`}>

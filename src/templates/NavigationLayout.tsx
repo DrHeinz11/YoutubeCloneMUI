@@ -1,6 +1,5 @@
 import { Container, HStack } from '@chakra-ui/react'
 import React from 'react'
-import { SideBarProvider } from '../components/Sidebar/context/context'
 import TopNavbar from '../components/SearchBar/TopNavBar'
 
 type Props = {
@@ -9,30 +8,30 @@ type Props = {
 
 const NavigationLayout = ({ children }: Props) => {
   return (
-    <SideBarProvider>
-      <HStack
-        className="container"
-        minH={'100vh'}
-        alignItems={'flex-start'}
-        overflow={'auto'}
-        gap={0}
-        maxW={'1640px'}
+    // <SideBarProvider>
+    <HStack
+      bgColor={'cyan.300'}
+      minH={'100vh'}
+      alignItems={'flex-start'}
+      overflow={'auto'}
+      gap={0}
+      margin={'0 auto'}
+    >
+      <Container
+        position={'relative'}
         margin={'0 auto'}
+        w={'full'}
+        maxW={'1680px'}
+        flex={'1'}
+        p="0"
+        pt={'4.5rem'}
+        as={'main'}
       >
-        {/* <SideBar display="flex" pt={'20'} /> */}
-        <Container
-          position={'relative'}
-          margin={'0 auto'}
-          flex={'1'}
-          p="0"
-          as={'main'}
-          variant={'section'}
-        >
-          <TopNavbar />
-          {children}
-        </Container>
-      </HStack>
-    </SideBarProvider>
+        <TopNavbar />
+        {children}
+      </Container>
+    </HStack>
+    // {/* </SideBarProvider> */}
   )
 }
 

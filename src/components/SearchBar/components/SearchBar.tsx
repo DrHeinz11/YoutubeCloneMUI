@@ -47,8 +47,12 @@ const SearchBar = () => {
       onSubmit={handleSubmit}
       justifyContent="center"
       spacing={4}
-      flex={1}
       align="center"
+      borderRadius={'full'}
+      bgColor={'grey'}
+      flex={1}
+      maxW={'550px'}
+      gap={0}
     >
       <Input
         value={searchText}
@@ -57,17 +61,22 @@ const SearchBar = () => {
         colorScheme="whiteAlpha"
         color={'white'}
         focusBorderColor="#555"
-        borderRadius={'lg'}
+        w={'full'}
+        borderLeftRadius={'full'}
+        py={1}
+        flex={1}
       />
       <Button
         margin={'0 !important'}
-        variant={'topNavBar'}
+        flex={0.15}
         type="submit"
         mt={4}
         p={0}
-        colorScheme="blue"
+        colorScheme="red"
         color={'white'}
         title="Search Button"
+        bgColor={'black'}
+        borderRightRadius={'full'}
       >
         {isLoading ? (
           <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="red.500" size="sm" />

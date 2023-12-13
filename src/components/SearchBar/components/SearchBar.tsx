@@ -56,11 +56,11 @@ const SearchBar = () => {
       // margin={'0 auto !important'}
     >
       <Input
-      id='searchInput'
+        id="searchInput"
         value={searchText}
         onChange={handleInputChange}
         placeholder="Search..."
-        _placeholder={{color:'whiteAlpha.300'}}
+        _placeholder={{ color: 'whiteAlpha.300' }}
         colorScheme="whiteAlpha"
         color={'white'}
         focusBorderColor="#555"

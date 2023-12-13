@@ -21,10 +21,10 @@ const TopNavbar = () => {
       justifyContent={'space-between'}
     >
       <MenuDrawer />
-      <MediaRedirectButton/>
+      <MediaRedirectButton />
       <SearchBar />
-      <MediaOptionButton/>
-      <Avatar size={['sm',"md"]} name='Sasuke Uchiha' src='https://bit.ly/broken-link' />
+      <MediaOptionButton />
+      <Avatar size={['sm', 'md']} name="Sasuke Uchiha" src="https://bit.ly/broken-link" />
     </HStack>
   )
 }

@@ -7,7 +7,13 @@ import OptionPopover from './OptionPopover'
 
 const MediaOptionButton = () => {
   return (
-    <HStack display={['none','','flex']}  color={'white'} justifyContent={'flex-end'} spacing={0} gap={4}>
+    <HStack
+      display={['none', '', 'flex']}
+      color={'white'}
+      justifyContent={'flex-end'}
+      spacing={0}
+      gap={4}
+    >
       {DataRouteButton.slice(-1).map((buttonItem) => (
         <Button
           variant={'topNavBar'}
@@ -25,7 +31,6 @@ const MediaOptionButton = () => {
         <OptionPopover icon={GoBellFill}>
           <Heading>Prueba a ver si funcionas 2do button</Heading>
         </OptionPopover>
-      
       </HStack>
     </HStack>
   )

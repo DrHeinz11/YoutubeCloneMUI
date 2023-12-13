@@ -7,7 +7,12 @@ interface paramsProps {
   params: { id: string }
 }
 const ChannelContainer = ({ params }: paramsProps) => {
-  const { data:detailChannelVideos, isLoading, isError, error } = useGetDetailChannelVideosQuery({
+  const {
+    data: detailChannelVideos,
+    isLoading,
+    isError,
+    error
+  } = useGetDetailChannelVideosQuery({
     channelId: params.id,
     part: 'snippet,id',
     order: 'date'

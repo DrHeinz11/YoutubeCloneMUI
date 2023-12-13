@@ -10,14 +10,14 @@ const colors = {
     grayText: '#D0D0D0',
     whiteText: '#FFFFFF',
     sectionAbout: '#1A1A2A',
-    background:"#ececec",
-    cardBackground:"#fff",
-    buttonBackground:"#f3f3f3"
+    background: '#ececec',
+    cardBackground: '#fff',
+    buttonBackground: '#f3f3f3'
   }
 }
 const theme = extendTheme({
   colors,
-  components: { Container,ButtonStyle },
+  components: { Container, ButtonStyle },
   fonts: {
     heading: `'CabinetGrotesk-Extrabold', sans-serif`,
     body: `'Satoshi-Medium', sans-serif`

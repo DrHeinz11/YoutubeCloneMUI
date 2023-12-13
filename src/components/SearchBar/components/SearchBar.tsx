@@ -53,12 +53,14 @@ const SearchBar = () => {
       flex={1}
       maxW={'550px'}
       gap={0}
+      // margin={'0 auto !important'}
     >
       <Input
       id='searchInput'
         value={searchText}
         onChange={handleInputChange}
         placeholder="Search..."
+        _placeholder={{color:'whiteAlpha.300'}}
         colorScheme="whiteAlpha"
         color={'white'}
         focusBorderColor="#555"
@@ -77,6 +79,7 @@ const SearchBar = () => {
         color={'white'}
         title="Search Button"
         bgColor={'black'}
+        border={'1px solid black'}
         borderRightRadius={'full'}
       >
         {isLoading ? (

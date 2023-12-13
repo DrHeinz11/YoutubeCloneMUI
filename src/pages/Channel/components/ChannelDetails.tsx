@@ -78,41 +78,39 @@ const ChannelInfo = ({ snippet, statistics }: { snippet: Snippet; statistics: St
 )
 
 const ChannelDetails = ({ channelId }: { channelId: string }): JSX.Element => {
-  // const useQueryStateResult = youtubeAPI.endpoints.getDetailChannel.useQueryState({
-  //   channelId: channelId
-  // })
-  const { data:useQueryStateResult, isLoading, isError } = useGetDetailChannelQuery({channelId})
+  const { data: useQueryStateResult, isLoading, isError } = useGetDetailChannelQuery({ channelId })
   if (isLoading) return <Loader />
   if (isError) return <IsError error={isError} />
   return (
     <>
-      {useQueryStateResult?.items?.map(
-        ({ brandingSettings, id, snippet, statistics }) => (
-          <Stack key={id} as="section">
+      {useQueryStateResult?.items?.map(({ brandingSettings, id, snippet, statistics }) => (
+        <Stack key={id} as="section">
+          {brandingSettings.image.bannerExternalUrl && (
             <ChannelBanner
               bannerUrl={brandingSettings.image.bannerExternalUrl}
               channelTitle={brandingSettings.channel.title}
             />
-            <Box
-              rounded="lg"
-              p="2.5"
-              display="flex"
-              flexDirection="row"
-              gap="15px"
-              alignItems="center"
-              justifyContent="start"
-              w="390px"
-              position="relative"
-            >
-              <ChannelAvatar
-                avatarUrl={snippet.thumbnails.medium.url || snippet.thumbnails.high.url}
-                snippetTitle={snippet.title}
-              />
-              <ChannelInfo snippet={snippet} statistics={statistics} />
-            </Box>
-          </Stack>
-        )
-      )}
+          )}
+
+          <Box
+            rounded="lg"
+            p="2.5"
+            display="flex"
+            flexDirection="row"
+            gap="15px"
+            alignItems="center"
+            justifyContent="start"
+            w="390px"
+            position="relative"
+          >
+            <ChannelAvatar
+              avatarUrl={snippet.thumbnails.medium.url || snippet.thumbnails.high.url}
+              snippetTitle={snippet.title}
+            />
+            <ChannelInfo snippet={snippet} statistics={statistics} />
+          </Box>
+        </Stack>
+      ))}
     </>
   )
 }

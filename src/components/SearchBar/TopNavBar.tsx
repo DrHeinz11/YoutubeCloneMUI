@@ -1,5 +1,5 @@
 import { Avatar, HStack } from '@chakra-ui/react'
-import { SearchBar } from './components'
+import { MediaOptionButton, MediaRedirectButton, SearchBar } from './components'
 import MenuDrawer from './components/MenuDrawer'
 
 const TopNavbar = () => {
@@ -21,7 +21,9 @@ const TopNavbar = () => {
       justifyContent={'space-between'}
     >
       <MenuDrawer />
+      <MediaRedirectButton/>
       <SearchBar />
+      <MediaOptionButton/>
       <Avatar size={['sm',"md"]} name='Sasuke Uchiha' src='https://bit.ly/broken-link' />
     </HStack>
   )

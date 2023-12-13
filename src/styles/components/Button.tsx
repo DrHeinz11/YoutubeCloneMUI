@@ -1,4 +1,4 @@
-const Button = {
+const ButtonStyle = {
   variants: {
     topNavBar: {
       bgColor: '#fff',
@@ -15,4 +15,4 @@ const Button = {
   }
 }
 
-export default Button
+export default ButtonStyle

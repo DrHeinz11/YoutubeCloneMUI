@@ -20,6 +20,7 @@ const Card = ({
       spacing={0}
       gap={4}
       className="card"
+      bgColor={'pallete.cardBackground'}
       p="20px"
       flex={1}
       minH={'355px'}

@@ -8,25 +8,19 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  Stack,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
-  Select,
-  Textarea,
-  DrawerFooter
+  DrawerFooter,
+  Text
 } from '@chakra-ui/react'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { SideBar, SideBarProvider } from '../..'
 
 const MenuDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   // const firstField = React.useRef()
 
   return (
-    <>
+    <SideBarProvider>
       <Button
         margin={'0 !important'}
         type="button"
@@ -38,52 +32,30 @@ const MenuDrawer = () => {
       >
         <GiHamburgerMenu size="22px" />
       </Button>
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <Drawer  isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth="1px">Create a new account</DrawerHeader>
+          <DrawerCloseButton/>
+          <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
 
-          <DrawerBody>
-            <Stack spacing="24px">
-              {/* <Box>
-                <FormLabel htmlFor="username">Name</FormLabel>
-                <Input ref={firstField} id="username" placeholder="Please enter user name" />
-              </Box> */}
-
-              <Box>
-                <FormLabel htmlFor="url">Url</FormLabel>
-                <InputGroup>
-                  <InputLeftAddon>http://</InputLeftAddon>
-                  <Input type="url" id="url" placeholder="Please enter domain" />
-                  <InputRightAddon>.com</InputRightAddon>
-                </InputGroup>
-              </Box>
-
-              <Box>
-                <FormLabel htmlFor="owner">Select Owner</FormLabel>
-                <Select id="owner" defaultValue="segun">
-                  <option value="segun">Segun Adebayo</option>
-                  <option value="kola">Kola Tioluwani</option>
-                </Select>
-              </Box>
-
-              <Box>
-                <FormLabel htmlFor="desc">Description</FormLabel>
-                <Textarea id="desc" />
-              </Box>
-            </Stack>
+          <DrawerBody overflowY={'auto'}>
+            <Box w={'full'} h={'full'}>
+              <SideBar />
+            </Box>
           </DrawerBody>
 
           <DrawerFooter borderTopWidth="1px">
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Submit</Button>
+            {' '}
+            <Box w={'full'} h={'full'} bgColor={'green'}>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, aperiam
+                accusantium!
+              </Text>
+            </Box>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    </>
+    </SideBarProvider>
   )
 }
 

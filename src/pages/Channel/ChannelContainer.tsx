@@ -7,14 +7,14 @@ interface paramsProps {
   params: { id: string }
 }
 const ChannelContainer = ({ params }: paramsProps) => {
-  const { data, isLoading, isError, error } = useGetDetailChannelVideosQuery({
+  const { data:detailChannelVideos, isLoading, isError, error } = useGetDetailChannelVideosQuery({
     channelId: params.id,
     part: 'snippet,id',
     order: 'date'
   })
   isLoading && <Loader />
   isError && <IsError error={error} />
-  !data?.pageInfo.totalResults && <IsError error={error} />
+  !detailChannelVideos?.pageInfo.totalResults && <IsError error={error} />
   return (
     <>
       <Container p={0} variant="section">
@@ -23,7 +23,7 @@ const ChannelContainer = ({ params }: paramsProps) => {
           <ChannelDetails channelId={params.id} />
           <Divider />{' '}
           <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={4}>
-            {data?.items.map((item) => (
+            {detailChannelVideos?.items.map((item) => (
               <Card
                 key={item.id.videoId}
                 srcImage={item.snippet.thumbnails.medium.url}

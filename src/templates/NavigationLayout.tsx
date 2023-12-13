@@ -10,7 +10,7 @@ const NavigationLayout = ({ children }: Props) => {
   return (
     // <SideBarProvider>
     <HStack
-      bgColor={'cyan.300'}
+      bgColor={'palette.background'}
       minH={'100vh'}
       alignItems={'flex-start'}
       overflow={'auto'}

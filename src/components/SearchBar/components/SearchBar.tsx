@@ -55,6 +55,7 @@ const SearchBar = () => {
       gap={0}
     >
       <Input
+      id='searchInput'
         value={searchText}
         onChange={handleInputChange}
         placeholder="Search..."

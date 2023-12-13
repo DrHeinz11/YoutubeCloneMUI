@@ -24,7 +24,7 @@ const Card = ({
       flex={1}
       minH={'355px'}
       maxW={'355px'}
-w={'full'}
+      w={'full'}
       _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf' }}
     >
       <Box position={'relative'} maxW={'300px'}>
@@ -69,11 +69,9 @@ w={'full'}
         <Heading flex={1} color={'gray.300'} fontSize={'lg'}>
           {titleName}
         </Heading>
-        <WouterLink href={`/channels/${channelId}`}>
-          <Text color={'gray.500'} fontSize={'lg'}>
-            {chanellName}
-          </Text>
-        </WouterLink>
+        <Text w={'fit-content'} _hover={{ color: 'gray.300' }} color={'gray.500'} fontSize={'lg'}>
+          <WouterLink href={`/channels/${channelId}`}>{chanellName}</WouterLink>
+        </Text>
       </Stack>
     </Stack>
   )

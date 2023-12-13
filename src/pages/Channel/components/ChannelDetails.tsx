@@ -1,6 +1,7 @@
 import { AspectRatio, Box, HStack, Image, Stack, Text } from '@chakra-ui/react'
-import { youtubeAPI } from '../../../store/reducers/apiFetch'
+import { useGetDetailChannelQuery } from '../../../store/reducers/apiFetch'
 import { Snippet, Statistics } from './responseRaw'
+import { IsError, Loader } from '../../../components'
 
 export interface IChannelDetailProps {
   avatarImage?: boolean
@@ -77,13 +78,15 @@ const ChannelInfo = ({ snippet, statistics }: { snippet: Snippet; statistics: St
 )
 
 const ChannelDetails = ({ channelId }: { channelId: string }): JSX.Element => {
-  const useQueryStateResult = youtubeAPI.endpoints.getDetailChannel.useQueryState({
-    channelId: channelId
-  })
-
+  // const useQueryStateResult = youtubeAPI.endpoints.getDetailChannel.useQueryState({
+  //   channelId: channelId
+  // })
+  const { data:useQueryStateResult, isLoading, isError } = useGetDetailChannelQuery({channelId})
+  if (isLoading) return <Loader />
+  if (isError) return <IsError error={isError} />
   return (
     <>
-      {useQueryStateResult.currentData?.items?.map(
+      {useQueryStateResult?.items?.map(
         ({ brandingSettings, id, snippet, statistics }) => (
           <Stack key={id} as="section">
             <ChannelBanner

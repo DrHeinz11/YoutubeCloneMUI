@@ -25,7 +25,8 @@ export const youtubeAPI = createApi({
       query: ({ videoId }) => `videos?part=contentDetails%2Csnippet%2Cstatistics&id=${videoId}`
     }),
     getDetailChannel: builder.query<rawObjectResponse, { channelId: string }>({
-      query: ({ channelId }) => `channels?part=snippet%2Cstatistics&id=${channelId}`
+      query: ({ channelId }) => `channels?part=snippet%2Cstatistics&id=${channelId}`,
+      keepUnusedDataFor: 600000
     }),
     getDetailChannelVideos: builder.query<
       ChannelVideoRaw,

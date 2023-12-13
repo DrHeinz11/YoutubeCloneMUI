@@ -5,13 +5,23 @@ import { IsError, Loader } from '../../components'
 import { Card } from './components'
 import { Item } from '../../types/typeAPI'
 import { RootState } from '../../store'
+import { useEffect } from 'react'
+import { HandleScrollToTop } from '../../utils'
 
 const HomeContainer = () => {
   const state = useSelector((store: RootState) => store.searchReducer)
   const { data, isLoading, isError } = useGetSearchVideosQuery(state)
 
-  if (isLoading) return <Loader />
-  if (isError) return <IsError error={isError} />
+  useEffect(() => {
+    HandleScrollToTop({ direction: 'top', behavior: '', coordinate: 0 })
+  }, [state])
+
+  if (isLoading) {
+    return <Loader />
+  }
+  if (isError) {
+    return <IsError error={isError} />
+  }
 
   return (
     <Container p={0} variant="section" as={'section'} px={2} pb={2}>

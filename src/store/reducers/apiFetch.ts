@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { rawObjectResponse } from '../../pages/Channel/components/responseRaw'
 import { ChannelVideoRaw } from '../../types/ChannelVideoRaw'
+import { RelatedToVideoResponse } from '../../types/relatedToVideoIdType'
 
 const apiKey: string = import.meta.env.VITE_API_KEY
 const apiHost: string = import.meta.env.VITE_API_HOST
@@ -36,6 +37,15 @@ export const youtubeAPI = createApi({
         `search?part=${part}&channelId=${channelId}${
           token ? '&pageToken=' + token : ''
         }&order=${order}&maxResults=${MAX_RESULT}`
+    }),
+    getRelatedToVideoId: builder.query<
+      RelatedToVideoResponse,
+      { relatedToVideoId: string; part: string; order: string; token?: string }
+    >({
+      query: ({ relatedToVideoId, part = 'snippet,id', order = 'date', token}) =>
+        `search?part=${part}&relatedToVideoId=${relatedToVideoId}${
+          token ? '&pageToken=' + token : ''
+        }&order=${order}&maxResults=${MAX_RESULT}`
     })
   })
 })
@@ -44,5 +54,5 @@ export const {
   useGetSearchVideosQuery,
   useGetDetailVideosQuery,
   useGetDetailChannelQuery,
-  useGetDetailChannelVideosQuery
+  useGetDetailChannelVideosQuery,useGetRelatedToVideoIdQuery
 } = youtubeAPI

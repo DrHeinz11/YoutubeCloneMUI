@@ -1,4 +1,4 @@
-import { Box, Container, HStack } from '@chakra-ui/react'
+import { Grid, GridItem } from '@chakra-ui/react'
 import React from 'react'
 import TopNavbar from '../components/SearchBar/TopNavBar'
 
@@ -8,35 +8,48 @@ type Props = {
 
 const NavigationLayout = ({ children }: Props) => {
   return (
-    // <SideBarProvider>
-    <HStack
+    <Grid
       bgColor={'black'}
-      minH={'100vh'}
-      alignItems={'flex-start'}
-      overflow={'auto'}
-      gap={0}
-      margin={'0 auto'}
-      px={4}
+      templateAreas={{
+        base: `
+      "content"
+      "content"`,
+        lg: `
+    "drawer content"
+    "drawer content"`
+      }}
+      gridTemplateColumns={{ base: '1fr', lg: '20% 1fr' }}
+      minHeight="100vh"
+      gap="2"
+      p="1"
     >
-      <Box display={{ base: 'none', lg: 'flex' }} width={'20%'} h={'full'}>
+      <GridItem
+        display={{ base: 'none', lg: 'flex' }}
+        area={'drawer'}
+        borderRadius={'md'}
+        bgColor={'whiteAlpha.300'}
+        h={'99vh'}
+        position={'fixed'}
+        w={'20%'}
+      >
         Sidebar
-      </Box>
+      </GridItem>
 
-      <Container
+      <GridItem
         position={'relative'}
         margin={'0 auto'}
         w={'100%'}
         maxW={'1680px'}
         flex={'1'}
+        area={'content'}
         p="0"
         pt={'4.5rem'}
         as={'main'}
       >
         <TopNavbar />
         {children}
-      </Container>
-    </HStack>
-    // {/* </SideBarProvider> */}
+      </GridItem>
+    </Grid>
   )
 }
 

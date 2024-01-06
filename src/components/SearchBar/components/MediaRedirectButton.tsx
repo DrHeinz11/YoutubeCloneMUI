@@ -5,7 +5,7 @@ import { navigate } from 'wouter/use-location'
 const MediaRedirectButton = () => {
   const handleClick = (route: string) => navigate(route)
   return (
-    <HStack color={'white'} spacing={0} gap={2}>
+    <HStack display={{base:'none',sm:'flex'}} color={'white'} spacing={0} gap={2}>
       {DataRouteButton.slice(0, -1).map((buttonItem) => (
         <Button
           key={buttonItem.id}

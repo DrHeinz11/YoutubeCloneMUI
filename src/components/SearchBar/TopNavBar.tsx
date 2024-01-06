@@ -15,7 +15,7 @@ const TopNavbar = () => {
       px={4}
       py={2}
       bgColor={'blackAlpha.600'}
-      w={{ base: '100%', lg: '80%' }}
+      w={{ base: '100%', lg: '78%' }}
       maxW={'1680px'}
       margin={'0 auto !important'}
       justifyContent={'space-between'}

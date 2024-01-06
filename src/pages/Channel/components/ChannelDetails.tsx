@@ -1,4 +1,4 @@
-import { AspectRatio, Box, HStack, Image, Stack, Text } from '@chakra-ui/react'
+import { AspectRatio, Box, HStack, Image, Stack, Tag, Text } from '@chakra-ui/react'
 import { useGetDetailChannelQuery } from '../../../store/reducers/apiFetch'
 import { Snippet, Statistics } from './responseRaw'
 import { IsError, Loader } from '../../../components'
@@ -26,55 +26,62 @@ const ChannelAvatar = ({
   avatarUrl: string
   snippetTitle: string
 }) => (
-  <Box bg="#d9d9d9" border="2px solid #555555" flexShrink="0" w="88px" h="88px" position="relative">
-    <Image src={avatarUrl} alt={snippetTitle} aria-label={snippetTitle} />
+  <Box
+    borderRadius={'xl'}
+    bg="#d9d9d9"
+    border="2px solid #555555"
+    flexShrink="0"
+    w="88px"
+    h="88px"
+    position="relative"
+  >
+    <Image borderRadius={'xl'} src={avatarUrl} alt={snippetTitle} aria-label={snippetTitle} />
   </Box>
 )
 
 const ChannelInfo = ({ snippet, statistics }: { snippet: Snippet; statistics: Statistics }) => (
-  <Box
+  <Stack
+    spacing={0}
     display="flex"
     flexDirection="column"
     gap="0"
     alignItems="start"
     justifyContent="center"
     position="relative"
+    w={'full'}
   >
-    <Text fontSize="2xl" color="#000000" display="flex" alignItems="center">
+    <Text fontSize="2xl" color="#fafafa" display="flex" alignItems="center">
       {snippet.title}
     </Text>
-    <Stack
-      display="flex"
-      flexDirection="row"
-      gap="0"
-      alignItems="start"
-      justifyContent="start"
-      flexWrap="wrap"
-      alignSelf="flex-start"
-      flexShrink="0"
-      position="relative"
-    >
-      <Text fontSize="medium" color="#111111" display="block">
+    <HStack gap="4" flexWrap="wrap">
+      <Text fontSize="xl" color="#fefefe" display="block">
         {snippet.customUrl}
       </Text>
       <HStack
         display="flex"
         flexDirection="row"
-        gap="1"
+        gap="4"
         alignItems="center"
         justifyContent="start"
         flexShrink="0"
         position="relative"
       >
-        <Text fontSize="light" color="#1a1a1a" display="block">
-          {statistics.subscriberCount}
-        </Text>
-        <Text fontSize="light" color="#1a1a1a" display="block">
-          {statistics.videoCount}
-        </Text>
+        <Tag borderRadius={'full'} py={1} px={2}>
+          <Text>Subscribers:</Text>
+          <Text fontSize="light" color="#fcfcfc" display="block">
+            {statistics.subscriberCount}
+          </Text>
+        </Tag>
+
+        <Tag borderRadius={'full'} py={1} px={2}>
+          <Text>Videos:</Text>
+          <Text fontSize="light" color="#fcfcfc" display="block">
+            {statistics.videoCount}
+          </Text>
+        </Tag>
       </HStack>
-    </Stack>
-  </Box>
+    </HStack>
+  </Stack>
 )
 
 const ChannelDetails = ({ channelId }: { channelId: string }): JSX.Element => {

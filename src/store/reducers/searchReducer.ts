@@ -18,3 +18,5 @@ export const searchReducer = createSlice({
     }
   }
 });
+
+export const { searchKeyword } = searchReducer.actions

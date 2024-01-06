@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { youtubeAPI } from './reducers/apiFetch'
-import searchReducer from './reducers/searchReducer'
+import { searchReducer } from './reducers/searchReducer'
 
 export const store = configureStore({
   reducer: {

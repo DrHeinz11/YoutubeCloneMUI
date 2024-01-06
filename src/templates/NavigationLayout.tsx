@@ -1,4 +1,4 @@
-import { Container, HStack } from '@chakra-ui/react'
+import { Box, Container, HStack } from '@chakra-ui/react'
 import React from 'react'
 import TopNavbar from '../components/SearchBar/TopNavBar'
 
@@ -10,17 +10,22 @@ const NavigationLayout = ({ children }: Props) => {
   return (
     // <SideBarProvider>
     <HStack
-      bgColor={'palette.background'}
+      bgColor={'black'}
       minH={'100vh'}
       alignItems={'flex-start'}
       overflow={'auto'}
       gap={0}
       margin={'0 auto'}
+      px={4}
     >
+      <Box display={{ base: 'none', lg: 'flex' }} width={'20%'} h={'full'}>
+        Sidebar
+      </Box>
+
       <Container
         position={'relative'}
         margin={'0 auto'}
-        w={'full'}
+        w={'100%'}
         maxW={'1680px'}
         flex={'1'}
         p="0"

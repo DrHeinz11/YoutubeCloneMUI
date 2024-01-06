@@ -1,6 +1,10 @@
 // 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react'
+import { ThemeConfig, extendTheme } from '@chakra-ui/react'
 import { ButtonStyle, Container } from './components'
+const config: ThemeConfig = {
+  initialColorMode: 'light',
+  useSystemColorMode: false
+}
 const colors = {
   palette: {
     mainDarkBlue: '#121220',
@@ -21,7 +25,8 @@ const theme = extendTheme({
   fonts: {
     heading: `'CabinetGrotesk-Extrabold', sans-serif`,
     body: `'Satoshi-Medium', sans-serif`
-  }
+  },
+  config
 })
 
 export default theme

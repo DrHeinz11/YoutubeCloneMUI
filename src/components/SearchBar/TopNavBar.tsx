@@ -7,7 +7,7 @@ const TopNavbar = () => {
     <HStack
       position={'fixed'}
       top={0}
-      left={0}
+      left={{ base: 0, lg: 'auto' }}
       right={0}
       zIndex={'overlay'}
       spacing={0}
@@ -15,7 +15,7 @@ const TopNavbar = () => {
       px={4}
       py={2}
       bgColor={'blackAlpha.600'}
-      w={'full'}
+      w={{ base: '100%', lg: '80%' }}
       maxW={'1680px'}
       margin={'0 auto !important'}
       justifyContent={'space-between'}

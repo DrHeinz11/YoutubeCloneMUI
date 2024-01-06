@@ -9,18 +9,17 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerFooter,
-  Text
+  Text,
+  HStack
 } from '@chakra-ui/react'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { SideBar, SideBarProvider } from '../..'
 
 const MenuDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   // const firstField = React.useRef()
 
-  return (
-    <SideBarProvider>
+  return ( <>
       <Button
         margin={'0 !important'}
         type="button"
@@ -40,22 +39,19 @@ const MenuDrawer = () => {
 
           <DrawerBody overflowY={'auto'}>
             <Box w={'full'} h={'full'}>
-              <SideBar />
+              {/* <SideBar /> */}
+              <HStack>
+                <Text>Hola esto es una prueba</Text>
+                <Box boxSize={'22px'} bgColor={'red'} borderRadius={'full'} />
+              </HStack>
             </Box>
           </DrawerBody>
 
           <DrawerFooter borderTopWidth="1px">
-            {' '}
-            <Box w={'full'} h={'full'} bgColor={'green'}>
-              <Text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, aperiam
-                accusantium!
-              </Text>
-            </Box>
+            <Text>© 2024 Franco Martin</Text>
           </DrawerFooter>
         </DrawerContent>
-      </Drawer>
-    </SideBarProvider>
+      </Drawer> </ >
   )
 }
 

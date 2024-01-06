@@ -69,10 +69,12 @@ const Card = ({
       <Stack spacing={0} maxW={'275px'} gap={2} p={2}>
         <Heading flex={1} color={'gray.300'} fontSize={'lg'}>
           {titleName}
-        </Heading>
-        <Text w={'fit-content'} _hover={{ color: 'gray.300' }} color={'gray.500'} fontSize={'lg'}>
-          <WouterLink href={`/channels/${channelId}`}>{chanellName}</WouterLink>
-        </Text>
+        </Heading>{' '}
+        <WouterLink href={`/channels/${channelId}`}>
+          <Text w={'fit-content'} _hover={{ color: 'gray.300' }} color={'gray.500'} fontSize={'lg'}>
+            {chanellName}
+          </Text>
+        </WouterLink>
       </Stack>
     </Stack>
   )

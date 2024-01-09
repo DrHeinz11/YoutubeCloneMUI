@@ -28,7 +28,7 @@ const MediaOptionButton = () => {
         </Button>
       ))}
       <HStack display={{ base: 'none', lg: 'flex' }} spacing={0} gap={4}>
-        <PopoverAlert  header={'Notifications'} content={<div>Holiis</div>}>
+        <PopoverAlert header={'Notifications'} content={<div>Holiis</div>}>
           <GoBellFill size={'22px'} />
         </PopoverAlert>
         {/* <OptionPopover icon={GoBellFill}>

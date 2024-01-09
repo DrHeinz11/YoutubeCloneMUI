@@ -55,7 +55,7 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
               display="flex"
               gap={1}
               alignItems="center"
-              _hover={{ bgColor: 'green.200',color:'black' }}
+              _hover={{ bgColor: 'green.200', color: 'black' }}
               px={2}
               py={1}
             >

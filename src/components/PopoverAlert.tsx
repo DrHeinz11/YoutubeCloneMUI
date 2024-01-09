@@ -6,7 +6,8 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   PopoverHeader,
-  PopoverBody} from '@chakra-ui/react'
+  PopoverBody
+} from '@chakra-ui/react'
 import { ReactNode, useState } from 'react'
 
 type Props = { children: ReactNode; header: string; content: JSX.Element }
@@ -31,9 +32,9 @@ const PopoverAlert = ({ children, content, header }: Props) => {
   return (
     <Popover onClose={() => setTrigger(false)}>
       <PopoverTrigger>
-          <Button onClick={handleTriggerClick} {...buttonStyles}>
-            {children}
-          </Button>
+        <Button onClick={handleTriggerClick} {...buttonStyles}>
+          {children}
+        </Button>
       </PopoverTrigger>
       <PopoverContent color="black">
         <PopoverArrow />

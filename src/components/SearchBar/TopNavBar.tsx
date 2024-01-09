@@ -8,14 +8,14 @@ const TopNavbar = () => {
       position={'fixed'}
       top={0}
       left={{ base: 0, lg: 'auto' }}
-      right={{base:0,'2xl': 'auto' }}
+      right={{ base: 0, '2xl': 'auto' }}
       zIndex={'overlay'}
       spacing={0}
       gap={4}
       px={4}
       py={2}
       bgColor={'blackAlpha.600'}
-      w={{ base: '100%', lg: '79%', '2xl':'79.5%' }}
+      w={{ base: '100%', lg: '79%', '2xl': '79.5%' }}
       maxW={'1680px'}
       margin={'0 auto !important'}
       justifyContent={'space-between'}
@@ -24,7 +24,12 @@ const TopNavbar = () => {
       <MediaRedirectButton />
       <SearchBar />
       <MediaOptionButton />
-      <Avatar borderRadius={'md'} size={{base:'sm','2xl':'md'}} name="Franco Martin" src="https://bit.ly/broken-link" />
+      <Avatar
+        borderRadius={'md'}
+        size={{ base: 'sm', '2xl': 'md' }}
+        name="Franco Martin"
+        src="https://bit.ly/broken-link"
+      />
     </HStack>
   )
 }

@@ -26,7 +26,7 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
       zIndex="skipLink"
     >
       <RedictLink idRoute={item.id}>
-        <Heading cursor="pointer" _hover={{color:'#fff'}} fontSize="xl">
+        <Heading cursor="pointer" _hover={{ color: '#fff' }} fontSize="xl">
           {item.snippet.title}
         </Heading>
       </RedictLink>

@@ -42,7 +42,7 @@ export const youtubeAPI = createApi({
       RelatedToVideoResponse,
       { relatedToVideoId: string; part: string; order: string; token?: string }
     >({
-      query: ({ relatedToVideoId, part = 'snippet,id', order = 'date', token}) =>
+      query: ({ relatedToVideoId, part = 'snippet,id', order = 'date', token }) =>
         `search?part=${part}&relatedToVideoId=${relatedToVideoId}${
           token ? '&pageToken=' + token : ''
         }&order=${order}&maxResults=${MAX_RESULT}`
@@ -54,5 +54,6 @@ export const {
   useGetSearchVideosQuery,
   useGetDetailVideosQuery,
   useGetDetailChannelQuery,
-  useGetDetailChannelVideosQuery,useGetRelatedToVideoIdQuery
+  useGetDetailChannelVideosQuery,
+  useGetRelatedToVideoIdQuery
 } = youtubeAPI

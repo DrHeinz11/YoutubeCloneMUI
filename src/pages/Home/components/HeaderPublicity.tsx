@@ -20,7 +20,7 @@ const imageUrls = {
   mainImage:
     'https://th.bing.com/th/id/OIP.xd0TS_2LBdIPmScswq8SBwHaC2?pid=ImgDet&w=1600&h=616&rs=1',
   secondaryImage:
-    'https://th.bing.com/th/id/OIP.2pAo6vuBfESNl1kDithiewHaDa?pid=ImgDet&w=800&h=369&rs=1',
+    'https://images.complex.com/complex/image/upload/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/qd5b7mb8bsvbvp5zdvuo.jpg',
   avatar: 'https://th.bing.com/th/id/OIP.Y5K4rXG8WqKQYTE_udqmjQHaHC?pid=ImgDet&rs=1'
 }
 
@@ -44,7 +44,7 @@ const SecondaryImage = () => (
     alt=""
     maxH="115px"
     objectFit="cover"
-    objectPosition={{ base: 'center', md: 'top' }}
+    objectPosition={'center'}
     flex={1}
     borderRadius="xl"
   />
@@ -93,12 +93,20 @@ const HeaderPublicity = () => {
           <Stack color="white" spacing={0} gap={2} flex={1}>
             <Heading fontSize="md">Call #012# and Get Free McDonald's Meal</Heading>
             <Text fontSize="14px" display="flex" flexDir="row" gap={2}>
-              <chakra.span px="15px" bgColor="yellow" borderRadius='xl' color="black">
+              <chakra.span px="15px" bgColor="yellow" borderRadius="xl" color="black">
                 Ad
               </chakra.span>
               Orange Egypt
             </Text>
-            <Button disabled cursor={'not-allowed'} size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="xl">
+            <Button
+              disabled
+              cursor={'not-allowed'}
+              size="sm"
+              fontSize="xs"
+              w="fit-content"
+              colorScheme="cyan"
+              borderRadius="xl"
+            >
               SEE MORE
             </Button>
           </Stack>

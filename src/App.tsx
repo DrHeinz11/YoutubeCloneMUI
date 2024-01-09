@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 function App() {
   const { setColorMode } = useColorMode()
-useEffect(() => {
+  useEffect(() => {
     setColorMode('dark')
   }, [setColorMode])
 

@@ -25,7 +25,7 @@ const HomeContainer = () => {
 
   return (
     <Container p={0} variant="section" as={'section'} px={2} pb={2}>
-      <HeaderPublicity/>
+      <HeaderPublicity />
       <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={2}>
         {data?.items
           .filter((item: Item) => item.id.kind !== 'youtube#channel')

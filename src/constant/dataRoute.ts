@@ -1,78 +1,70 @@
-import { BsFillCameraVideoFill, BsMusicNoteList } from 'react-icons/bs'
+import { BsFillCameraVideoFill } from 'react-icons/bs'
 import { CategoryData, DataRoute as DataRouteType } from '../types'
 import { LuFlame } from 'react-icons/lu'
 import { PiFilmStrip } from 'react-icons/pi'
-import { FaCode } from 'react-icons/fa'
 import { AiFillHome } from 'react-icons/ai'
-import {
-  ExploreIcon,
-  HistoryIcon,
-  LibraryIcon,
-  LikedIcon,
-  ShortIcon,
-  SubscriptionIcon,
-  WatchLaterIcon
-} from '../assets'
+import { GoBookmarkFill, GoHeartFill } from 'react-icons/go'
+import { RiFolderHistoryFill } from 'react-icons/ri'
 
 export const categoryData: CategoryData[] = [
   {
     category: '',
     id: '#001ABC',
     dataRoute: [
-      {
-        route: '/explore',
-        title: 'Explore',
-        id: '#102DEF',
-        iconOptions: ExploreIcon
-      },
-      {
-        route: '/shorts',
-        title: 'Shorts',
-        id: '#005MNO',
-        iconOptions: ShortIcon
-      },
-      {
-        route: '/subscription',
-        title: 'Subcriptions',
-        id: '#006PQR',
-        iconOptions: SubscriptionIcon
-      },
-      {
-        route: '/library/all',
-        title: 'Library',
-        id: '#002DEF',
-        iconOptions: LibraryIcon
-      },
+      // {
+      //   route: '/explore',
+      //   title: 'Explore',
+      //   id: '#102DEF',
+      //   iconOptions: ExploreIcon
+      // },
+      // {
+      //   route: '/shorts',
+      //   title: 'Shorts',
+      //   id: '#005MNO',
+      //   iconOptions: ShortIcon
+      // },
+      // {
+      //   route: '/subscription',
+      //   title: 'Subcriptions',
+      //   id: '#006PQR',
+      //   iconOptions: SubscriptionIcon
+      // },
+      // {
+      //   route: '/library/all',
+      //   title: 'Library',
+      //   id: '#002DEF',
+      //   iconOptions: LibraryIcon
+      // },
       {
         route: '/history/all',
         title: 'History',
         id: '#003GHI',
-        iconOptions: HistoryIcon
+        iconOptions: RiFolderHistoryFill
       },
       {
         route: '/watch-later',
         title: 'Watch later',
         id: '#103GHY',
-        iconOptions: WatchLaterIcon
+        iconOptions: GoBookmarkFill
       },
       {
         route: '/liked-video',
         title: 'Liked video',
         id: '#203YHI',
-        iconOptions: LikedIcon
+        iconOptions: GoHeartFill
       },
-      {
-        route: '/music/kpop',
-        title: 'Kpop',
-        id: '#003GHY',
-        iconOptions: BsMusicNoteList
-      },
-      {
-        route: '/programming',
-        title: 'Programming',
-        id: '#003YHI',
-        iconOptions: FaCode
-      }
+      // {
+      //   route: '/music/kpop',
+      //   title: 'Kpop',
+      //   id: '#003GHY',
+      //   iconOptions: BsMusicNoteList
+      // },
+      // {
+      //   route: '/programming',
+      //   title: 'Programming',
+      //   id: '#003YHI',
+      //   iconOptions: FaCode
+      // }
     ]
   }
   // {

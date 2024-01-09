@@ -1,6 +1,5 @@
 import {
   useDisclosure,
-  Box,
   Button,
   Drawer,
   DrawerOverlay,
@@ -10,10 +9,11 @@ import {
   DrawerBody,
   DrawerFooter,
   Text,
-  HStack
+  Stack
 } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { LogoComponent } from '../..'
+import { CategoryComponents, LogoComponent, SideBarProvider } from '../..'
+import { categoryData } from '../../../constant/dataRoute'
 
 const MenuDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -32,22 +32,26 @@ const MenuDrawer = () => {
       >
         <GiHamburgerMenu size="22px" />
       </Button>
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="left" size={['full','md']} onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader borderBottomWidth="1px">
-            <LogoComponent />
+            <LogoComponent onClose={onClose} />
           </DrawerHeader>
 
           <DrawerBody overflowY={'auto'}>
-            <Box w={'full'} h={'full'}>
-              {/* <SideBar /> */}
-              <HStack>
-                <Text>Hola esto es una prueba</Text>
-                <Box boxSize={'22px'} bgColor={'red'} borderRadius={'full'} />
-              </HStack>
-            </Box>
+            <Stack w={'full'} h={'full'}>
+              <SideBarProvider isOpen={onClose}>
+                {categoryData.map((element) => (
+                  <CategoryComponents
+                    category={element.category}
+                    key={element.id}
+                    dataRoute={element.dataRoute}
+                  />
+                ))}
+              </SideBarProvider>
+            </Stack>
           </DrawerBody>
 
           <DrawerFooter borderTopWidth="1px">

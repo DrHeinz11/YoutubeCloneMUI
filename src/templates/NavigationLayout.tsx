@@ -1,7 +1,8 @@
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Divider, Grid, GridItem, Stack } from '@chakra-ui/react'
 import React from 'react'
 import TopNavbar from '../components/SearchBar/TopNavBar'
-import { LogoComponent } from '../components'
+import { CategoryComponents, LogoComponent, SideBarProvider } from '../components'
+import { categoryData } from '../constant/dataRoute'
 
 type Props = {
   children: React.ReactNode
@@ -35,7 +36,18 @@ const NavigationLayout = ({ children }: Props) => {
         alignItems={'flex-start'}
         p={4}
       >
+        <Stack gap={4} justifyItems={'start'} boxSize={'full'}>
         <LogoComponent />
+        <Divider />
+        <SideBarProvider>
+          {categoryData.map((element) => (
+            <CategoryComponents
+              category={element.category}
+              key={element.id}
+              dataRoute={element.dataRoute}
+            />
+          ))}
+        </SideBarProvider></Stack>
       </GridItem>
 
       <GridItem

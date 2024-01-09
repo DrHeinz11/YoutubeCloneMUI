@@ -7,7 +7,7 @@ const CategoryComponents = ({ dataRoute }: CategoryData) => {
     <Stack p={2} w={'fit-content'}>
       {dataRoute.map((categoryData) => (
         <CustomOption route={categoryData.route} title={categoryData.title} key={categoryData.id}>
-          <categoryData.iconOptions size={'20px'} />
+          <categoryData.iconOptions size={'26px'} />
         </CustomOption>
       ))}
     </Stack>

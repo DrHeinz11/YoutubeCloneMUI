@@ -31,9 +31,6 @@ const MediaOptionButton = () => {
         <PopoverAlert header={'Notifications'} content={<div>Holiis</div>}>
           <GoBellFill size={'22px'} />
         </PopoverAlert>
-        {/* <OptionPopover icon={GoBellFill}>
-          <Heading>Prueba a ver si funcionas 2do button</Heading>
-        </OptionPopover>*/}
       </HStack>
     </HStack>
   )

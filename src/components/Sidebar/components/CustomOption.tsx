@@ -10,8 +10,7 @@ interface optionCustom {
   children: React.ReactNode
 }
 const CustomOption = ({ route, children, title }: optionCustom) => {
-  const { focus, setFocus } = useSidebarContext()
-  // const [open] = useState<boolean>(false)
+  const { focus, setFocus, isOpen } = useSidebarContext()
   return (
     <WouterLink
       className={focus.value === title ? 'links-focus' : 'links'}
@@ -23,6 +22,9 @@ const CustomOption = ({ route, children, title }: optionCustom) => {
           coordinate: 0,
           behavior: 'smooth'
         })
+        if (isOpen) {
+          isOpen()
+        }
       }}
     >
       <HStack
@@ -35,12 +37,7 @@ const CustomOption = ({ route, children, title }: optionCustom) => {
       >
         {children}
         {/* {open && ( )} */}
-        <Heading
-          display={{ base: 'none', lg: 'block' }}
-          textTransform="capitalize"
-          fontWeight="medium"
-          fontSize="lg"
-        >
+        <Heading textTransform="capitalize" fontWeight="medium" fontSize="lg">
           {title}
         </Heading>
       </HStack>

@@ -4,7 +4,7 @@ import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 import { Loader, IsError } from '../../../components'
 import { useGetDetailChannelQuery } from '../../../store/reducers/apiFetch'
 import { ItemChannel, RootChannelData } from '../../../types/ChannelDetailType'
-import { Button, HStack, Heading, Image, Stack, Text } from '@chakra-ui/react'
+import { Button, Divider, HStack, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import { Link as WouterLink } from 'wouter'
 import { formatearNumero } from '../../../utils/ViewsFormater'
 
@@ -18,20 +18,22 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
   return (
     <Stack
       key={item.id}
-      cursor="pointer"
       bgColor="blackAlpha.100"
-      borderRadius='xl'
+      borderRadius="xl"
       border="2px solid #555"
-      p={2}
-      gap={1}
+      p={4}
+      gap={4}
       zIndex="skipLink"
     >
       <RedictLink idRoute={item.id}>
-        <Heading fontSize="xl">{item.snippet.title}</Heading>
+        <Heading cursor="pointer" _hover={{color:'#fff'}} fontSize="xl">
+          {item.snippet.title}
+        </Heading>
       </RedictLink>
       <HStack>
         <RedictLink idRoute={item.id}>
           <Image
+            cursor="pointer"
             src={item.snippet.thumbnails.default.url}
             alt={item.snippet.title}
             boxSize={item.snippet.thumbnails.default.width}
@@ -39,11 +41,26 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
             border="2px solid #555"
           />
         </RedictLink>
-        <Stack flex={1} borderRadius='xl' bgColor="blackAlpha.200" border="2px solid #555" p={2}>
+        <Stack
+          flex={1}
+          borderRadius="xl"
+          bgColor="blackAlpha.200"
+          border="2px solid #555"
+          p={2}
+          gap={1}
+        >
           <Text fontWeight="bold">
-            {formatearNumero(item.statistics.subscriberCount)} <span>Subscribers</span>
+            {formatearNumero(item.statistics.subscriberCount)} suscriptores
           </Text>
-          <Button borderRadius='xl' onClick={() => alert('xd')} zIndex="overlay" variant="topNavBar">
+          <Divider orientation="vertical" />
+          <Button
+            borderRadius="xl"
+            onClick={() => alert('xd')}
+            zIndex="overlay"
+            px={2}
+            py={1}
+            _hover={{ color: 'white', bgColor: 'red.400' }}
+          >
             Subscribe
           </Button>
         </Stack>

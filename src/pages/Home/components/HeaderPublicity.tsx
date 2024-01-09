@@ -98,7 +98,7 @@ const HeaderPublicity = () => {
               </chakra.span>
               Orange Egypt
             </Text>
-            <Button size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="xl">
+            <Button disabled cursor={'not-allowed'} size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="xl">
               SEE MORE
             </Button>
           </Stack>

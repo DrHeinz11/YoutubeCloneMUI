@@ -12,14 +12,14 @@ import {
   Text,
   HStack
 } from '@chakra-ui/react'
-
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { LogoComponent } from '../..'
 
 const MenuDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const firstField = React.useRef()
 
-  return ( <>
+  return (
+    <>
       <Button
         margin={'0 !important'}
         type="button"
@@ -28,6 +28,7 @@ const MenuDrawer = () => {
         px={[0, 4]}
         onClick={onOpen}
         color={'white'}
+        display={{ base: 'contents', lg: 'none' }}
       >
         <GiHamburgerMenu size="22px" />
       </Button>
@@ -35,7 +36,9 @@ const MenuDrawer = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
+          <DrawerHeader borderBottomWidth="1px">
+            <LogoComponent />
+          </DrawerHeader>
 
           <DrawerBody overflowY={'auto'}>
             <Box w={'full'} h={'full'}>
@@ -51,7 +54,8 @@ const MenuDrawer = () => {
             <Text>© 2024 Franco Martin</Text>
           </DrawerFooter>
         </DrawerContent>
-      </Drawer> </ >
+      </Drawer>{' '}
+    </>
   )
 }
 

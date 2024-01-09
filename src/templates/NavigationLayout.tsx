@@ -1,6 +1,7 @@
 import { Grid, GridItem } from '@chakra-ui/react'
 import React from 'react'
 import TopNavbar from '../components/SearchBar/TopNavBar'
+import { LogoComponent } from '../components'
 
 type Props = {
   children: React.ReactNode
@@ -31,8 +32,10 @@ const NavigationLayout = ({ children }: Props) => {
         h={'99vh'}
         position={'fixed'}
         w={'20%'}
+        alignItems={'flex-start'}
+        p={4}
       >
-        Sidebar
+        <LogoComponent />
       </GridItem>
 
       <GridItem

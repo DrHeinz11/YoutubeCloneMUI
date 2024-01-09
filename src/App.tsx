@@ -2,10 +2,14 @@ import { useColorMode } from '@chakra-ui/react'
 import './App.css'
 import Routes from './routes/Routes'
 import NavigationLayout from './templates/NavigationLayout'
+import { useEffect } from 'react'
 
 function App() {
   const { setColorMode } = useColorMode()
-  setColorMode('dark')
+useEffect(() => {
+    setColorMode('dark')
+  }, [setColorMode])
+
   return (
     <NavigationLayout>
       <Routes />

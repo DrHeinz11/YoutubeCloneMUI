@@ -1,4 +1,4 @@
-import { AspectRatio, Box, HStack, Image, Stack, Tag, Text } from '@chakra-ui/react'
+import { AspectRatio, Box, HStack, Heading, Image, Stack, Tag, Text } from '@chakra-ui/react'
 import { useGetDetailChannelQuery } from '../../../store/reducers/apiFetch'
 import { Snippet, Statistics } from './responseRaw'
 import { IsError, Loader } from '../../../components'
@@ -50,17 +50,17 @@ const ChannelInfo = ({ snippet, statistics }: { snippet: Snippet; statistics: St
     position="relative"
     w={'full'}
   >
-    <Text fontSize="2xl" color="#fafafa" display="flex" alignItems="center">
+    <Heading fontSize="2xl" color="#fafafa" display="flex" alignItems="center">
       {snippet.title}
-    </Text>
-    <HStack gap="4" flexWrap="wrap">
+    </Heading>
+    <HStack gap="2" flexWrap="wrap">
       <Text fontSize="xl" color="#fefefe" display="block">
         {snippet.customUrl}
       </Text>
       <HStack
         display="flex"
         flexDirection="row"
-        gap="4"
+        gap="2"
         alignItems="center"
         justifyContent="start"
         flexShrink="0"

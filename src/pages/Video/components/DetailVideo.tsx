@@ -23,7 +23,7 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
     <HStack flexWrap="wrap" alignItems="flex-start" wrap={'wrap'}>
       <Stack
         bgColor="blackAlpha.100"
-        borderRadius="0"
+        borderRadius="xl"
         border={'2px solid #555'}
         px={2}
         pt={2}
@@ -44,7 +44,7 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
             gap={1}
             spacing={0}
             bgColor="blackAlpha.100"
-            borderRadius="0"
+            borderRadius="xl"
             border={'2px solid #555'}
             px={4}
             py={2}
@@ -55,22 +55,30 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
               display="flex"
               gap={1}
               alignItems="center"
-              _hover={{ bgColor: 'green.200' }}
+              _hover={{ bgColor: 'green.200',color:'black' }}
+              px={2}
+              py={1}
             >
               <AiOutlineLike size="18px" />
               {formatearNumero(likeCount)}
             </Button>
             <Divider orientation="vertical" />
-            <Button _hover={{ color: 'black', bgColor: 'red.400' }} variant="topNavBar">
+            <Button
+              px={2}
+              py={1}
+              _hover={{ color: 'black', bgColor: 'red.400' }}
+              variant="topNavBar"
+            >
               <AiOutlineDislike />
             </Button>
           </HStack>
           <HStack
             maxH={'60px'}
-            gap={1}
+            gap={4}
             alignItems="center"
+            justifyContent={'space-around'}
             bgColor="blackAlpha.100"
-            borderRadius="0"
+            borderRadius="xl"
             border={'2px solid #555'}
             px={4}
             py={2}

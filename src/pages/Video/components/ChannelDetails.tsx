@@ -20,7 +20,7 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
       key={item.id}
       cursor="pointer"
       bgColor="blackAlpha.100"
-      borderRadius="0"
+      borderRadius='xl'
       border="2px solid #555"
       p={2}
       gap={1}
@@ -35,15 +35,15 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
             src={item.snippet.thumbnails.default.url}
             alt={item.snippet.title}
             boxSize={item.snippet.thumbnails.default.width}
-            borderRadius="0"
+            borderRadius="xl"
             border="2px solid #555"
           />
         </RedictLink>
-        <Stack flex={1} bgColor="blackAlpha.200" borderRadius="0" border="2px solid #555" p={2}>
+        <Stack flex={1} borderRadius='xl' bgColor="blackAlpha.200" border="2px solid #555" p={2}>
           <Text fontWeight="bold">
-            {formatearNumero(item.statistics.subscriberCount)} <span>subscribers</span>
+            {formatearNumero(item.statistics.subscriberCount)} <span>Subscribers</span>
           </Text>
-          <Button onClick={() => alert('xd')} zIndex="overlay" variant="topNavBar">
+          <Button borderRadius='xl' onClick={() => alert('xd')} zIndex="overlay" variant="topNavBar">
             Subscribe
           </Button>
         </Stack>

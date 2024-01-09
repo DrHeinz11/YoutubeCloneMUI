@@ -2,7 +2,7 @@ import { Container, SimpleGrid } from '@chakra-ui/react'
 import { useSelector } from 'react-redux'
 import { useGetSearchVideosQuery } from '../../store/reducers/apiFetch'
 import { IsError, Loader } from '../../components'
-import { Card } from './components'
+import { Card, HeaderPublicity } from './components'
 import { Item } from '../../types/typeAPI'
 import { RootState } from '../../store'
 import { useEffect } from 'react'
@@ -25,6 +25,7 @@ const HomeContainer = () => {
 
   return (
     <Container p={0} variant="section" as={'section'} px={2} pb={2}>
+      <HeaderPublicity/>
       <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={2}>
         {data?.items
           .filter((item: Item) => item.id.kind !== 'youtube#channel')

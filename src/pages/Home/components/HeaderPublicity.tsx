@@ -33,7 +33,7 @@ const MainImage = () => (
     h="inherit"
     maxH={{ base: '150px', md: '225px' }}
     flex="1 0 250px"
-    borderRadius="0"
+    borderRadius="xl"
   />
 )
 
@@ -46,12 +46,12 @@ const SecondaryImage = () => (
     objectFit="cover"
     objectPosition={{ base: 'center', md: 'top' }}
     flex={1}
-    borderRadius="0"
+    borderRadius="xl"
   />
 )
 
 const Avatar = () => (
-  <Box bgColor="white" flex="0 0 48px" borderRadius="0" boxSize="48px" p={2}>
+  <Box bgColor="white" flex="0 0 48px" borderRadius="xl" boxSize="48px" p={2}>
     <ImageComponent
       src={imageUrls.avatar}
       aspectRatio="1/1"
@@ -93,12 +93,12 @@ const HeaderPublicity = () => {
           <Stack color="white" spacing={0} gap={2} flex={1}>
             <Heading fontSize="md">Call #012# and Get Free McDonald's Meal</Heading>
             <Text fontSize="14px" display="flex" flexDir="row" gap={2}>
-              <chakra.span px="15px" bgColor="yellow" color="black">
+              <chakra.span px="15px" bgColor="yellow" borderRadius='xl' color="black">
                 Ad
               </chakra.span>
               Orange Egypt
             </Text>
-            <Button size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="0">
+            <Button size="sm" fontSize="xs" w="fit-content" colorScheme="cyan" borderRadius="xl">
               SEE MORE
             </Button>
           </Stack>

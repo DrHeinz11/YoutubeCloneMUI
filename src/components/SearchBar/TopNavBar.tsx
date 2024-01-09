@@ -24,7 +24,7 @@ const TopNavbar = () => {
       <MediaRedirectButton />
       <SearchBar />
       <MediaOptionButton />
-      <Avatar size={{base:'sm','2xl':'md'}} name="Franco Martin" src="https://bit.ly/broken-link" />
+      <Avatar borderRadius={'md'} size={{base:'sm','2xl':'md'}} name="Franco Martin" src="https://bit.ly/broken-link" />
     </HStack>
   )
 }

@@ -48,7 +48,8 @@ const SearchBar = () => {
       justifyContent="center"
       spacing={4}
       align="center"
-      borderRadius={'full'}
+      // borderRadius={'full'}
+      borderRadius={'xl'}
       bgColor={'grey'}
       flex={1}
       maxW={'550px'}
@@ -65,7 +66,9 @@ const SearchBar = () => {
         color={'white'}
         focusBorderColor="#555"
         w={'full'}
-        borderLeftRadius={'full'}
+        // borderLeftRadius={'full'}
+        borderRadius={'0'}
+        borderLeftRadius={'xl'}
         py={1}
         flex={1}
       />
@@ -79,8 +82,10 @@ const SearchBar = () => {
         color={'white'}
         title="Search Button"
         bgColor={'black'}
-        border={'1px solid black'}
-        borderRightRadius={'full'}
+        border={'1px solid grey'}
+        // borderRightRadius={'full'}
+        borderRadius={'0'}
+        borderRightRadius={'xl'}
       >
         {isLoading ? (
           <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="red.500" size="sm" />

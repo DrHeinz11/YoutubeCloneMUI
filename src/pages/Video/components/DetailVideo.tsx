@@ -26,7 +26,7 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
       bgColor={'#292929'}
       alignItems="flex-start"
       wrap={'wrap'}
-      p={[1,2,3,4]}
+      p={[1, 2, 3, 4]}
     >
       <Stack
         bgColor="blackAlpha.500"

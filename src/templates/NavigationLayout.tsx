@@ -37,17 +37,18 @@ const NavigationLayout = ({ children }: Props) => {
         p={4}
       >
         <Stack gap={4} justifyItems={'start'} boxSize={'full'}>
-        <LogoComponent />
-        <Divider />
-        <SideBarProvider>
-          {categoryData.map((element) => (
-            <CategoryComponents
-              category={element.category}
-              key={element.id}
-              dataRoute={element.dataRoute}
-            />
-          ))}
-        </SideBarProvider></Stack>
+          <LogoComponent />
+          <Divider />
+          <SideBarProvider>
+            {categoryData.map((element) => (
+              <CategoryComponents
+                category={element.category}
+                key={element.id}
+                dataRoute={element.dataRoute}
+              />
+            ))}
+          </SideBarProvider>
+        </Stack>
       </GridItem>
 
       <GridItem

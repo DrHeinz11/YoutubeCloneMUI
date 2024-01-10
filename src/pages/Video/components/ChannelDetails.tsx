@@ -10,9 +10,13 @@ import { formatearNumero } from '../../../utils/ViewsFormater'
 
 type Props = { channelId: string }
 
-export const RedictLink = ({ children, idRoute }: { children: React.ReactNode; idRoute: string }) => (
-  <WouterLink href={`/channels/${idRoute}`}>{children}</WouterLink>
-)
+export const RedictLink = ({
+  children,
+  idRoute
+}: {
+  children: React.ReactNode
+  idRoute: string
+}) => <WouterLink href={`/channels/${idRoute}`}>{children}</WouterLink>
 
 const ChannelCard = ({ item }: { item: ItemChannel }) => {
   return (

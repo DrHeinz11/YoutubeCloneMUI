@@ -83,12 +83,12 @@ const Card = ({
             {chanellName}
           </Text>
         </WouterLink>
-    
-      {publishedAt && (
-        <Text w={'fit-content'} fontWeight={'thin'} color={'gray.300'} fontSize={'sm'}>
-          {DateFormaterHandler(publishedAt)}
-        </Text>
-      )}  </Stack>{' '}
+        {publishedAt && (
+          <Text w={'fit-content'} fontWeight={'thin'} color={'gray.300'} fontSize={'sm'}>
+            {DateFormaterHandler(publishedAt)}
+          </Text>
+        )}{' '}
+      </Stack>{' '}
     </Stack>
   )
 }

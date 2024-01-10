@@ -32,7 +32,7 @@ const MenuDrawer = () => {
       >
         <GiHamburgerMenu size="22px" />
       </Button>
-      <Drawer isOpen={isOpen} placement="left" size={['full','md']} onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="left" size={['full', 'md']} onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />

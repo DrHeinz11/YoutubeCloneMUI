@@ -52,7 +52,7 @@ export const categoryData: CategoryData[] = [
         title: 'Liked video',
         id: '#203YHI',
         iconOptions: GoHeartFill
-      },
+      }
       // {
       //   route: '/music/kpop',
       //   title: 'Kpop',

@@ -24,7 +24,7 @@ const HomeContainer = () => {
   }
 
   return (
-    <Container p={0} variant="section" as={'section'} px={2} pb={2}>
+    <Container p={0} maxW={'2000px'} variant="section" as={'section'} px={[1,2]} pb={2} m={'0'} mt={[0,8]}>
       <HeaderPublicity />
       <SimpleGrid minChildWidth="300px" justifyItems="center" spacing={0} gap={2}>
         {data?.items

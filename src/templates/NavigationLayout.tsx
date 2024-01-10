@@ -54,12 +54,11 @@ const NavigationLayout = ({ children }: Props) => {
         position={'relative'}
         margin={'0 auto'}
         w={'100%'}
-        maxW={'1680px'}
-        flex={'1'}
+        maxW={'2250px'}
         area={'content'}
         p="0"
-        pt={'4.5rem'}
         as={'main'}
+        gridTemplateRows={'75px 1fr'}
       >
         <TopNavbar />
         {children}

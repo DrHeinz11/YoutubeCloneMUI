@@ -35,7 +35,7 @@ const Card = ({
           aspectRatio={'16/9'}
           borderRadius={'xl'}
           w={'full'}
-          // loading="lazy"
+          loading="lazy"
         />
         {srcChanell && (
           <Image

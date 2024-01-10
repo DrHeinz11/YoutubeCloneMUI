@@ -5,19 +5,15 @@ import MenuDrawer from './components/MenuDrawer'
 const TopNavbar = () => {
   return (
     <HStack
-      position={'fixed'}
-      top={[0,0,0,1]}
-      left={{ base: 0, lg: 'auto' }}
-      right={{ base: 0, 'lg': '10px' }}
-      backgroundColor={'#5e5e5e'}
+      position={'sticky'}
+      top={'4px'}
+      backgroundColor={'#292929'}
       borderRadius={'md'}
       zIndex={'overlay'}
       spacing={0}
       gap={4}
       px={4}
       py={2}
-      w={{ base: '100%', lg: '78%',}}
-      maxW={'1680px'}
       margin={'0 auto !important'}
       justifyContent={'space-between'}
     >

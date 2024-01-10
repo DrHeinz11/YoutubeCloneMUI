@@ -67,12 +67,13 @@ const HeaderPublicity = () => {
   return (
     <HStack
       bgColor="black"
-      maxW="full"
+      margin={'0 auto'}
+      maxW="1125px"
+      minH={'260px'}
       flexWrap="wrap"
       p={{ base: 2, md: 4 }}
       borderRadius={'xl'}
       as="header"
-      minH={'260px'}
       gap={4}
       className="card"
     >

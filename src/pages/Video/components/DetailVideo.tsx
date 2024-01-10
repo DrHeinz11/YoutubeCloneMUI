@@ -20,9 +20,16 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
   // const [location] = useLocation()
   // console.log(location.split('/').splice(-1).join())
   return (
-    <HStack flexWrap="wrap" alignItems="flex-start" wrap={'wrap'}>
+    <HStack
+      flexWrap="wrap"
+      borderRadius="xl"
+      bgColor={'#292929'}
+      alignItems="flex-start"
+      wrap={'wrap'}
+      p={[1,2,3,4]}
+    >
       <Stack
-        bgColor="blackAlpha.100"
+        bgColor="blackAlpha.500"
         borderRadius="xl"
         border={'2px solid #555'}
         px={2}
@@ -43,7 +50,7 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
             maxH={'60px'}
             gap={1}
             spacing={0}
-            bgColor="blackAlpha.100"
+            bgColor="blackAlpha.400"
             borderRadius="xl"
             border={'2px solid #555'}
             px={4}
@@ -77,7 +84,7 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
             gap={4}
             alignItems="center"
             justifyContent={'space-around'}
-            bgColor="blackAlpha.100"
+            bgColor="blackAlpha.400"
             borderRadius="xl"
             border={'2px solid #555'}
             px={4}

@@ -11,6 +11,8 @@ export type CardDetails = {
   viewsVideos: string
   videoDuration: number | string
   dateVideos: string
+  publishedAt: Date
+  liveBroadcastContent: string
   iconVideos?: IconType
   key?: string
   idVideo: string

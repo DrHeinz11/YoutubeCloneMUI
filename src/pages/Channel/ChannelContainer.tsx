@@ -41,6 +41,8 @@ const ChannelContainer = ({ params }: paramsProps) => {
                 videoDuration=""
                 idVideo={item.id.videoId}
                 dateVideos=""
+                liveBroadcastContent={item.snippet.liveBroadcastContent}
+                publishedAt={item.snippet.publishedAt}
               />
             ))}{' '}
           </SimpleGrid>

@@ -1,5 +1,7 @@
 export { default as Card } from './Card';
+export { default as ChannelCard } from './ChannelCard';
 export { default as IsError } from './IsError';
+export { default as LiveTag } from './LiveTag';
 export { default as Loader } from './Loader';
 export { default as LogoComponent } from './LogoComponent';
 export { default as PopoverAlert } from './PopoverAlert';

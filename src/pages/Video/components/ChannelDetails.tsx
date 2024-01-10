@@ -10,7 +10,7 @@ import { formatearNumero } from '../../../utils/ViewsFormater'
 
 type Props = { channelId: string }
 
-const RedictLink = ({ children, idRoute }: { children: React.ReactNode; idRoute: string }) => (
+export const RedictLink = ({ children, idRoute }: { children: React.ReactNode; idRoute: string }) => (
   <WouterLink href={`/channels/${idRoute}`}>{children}</WouterLink>
 )
 

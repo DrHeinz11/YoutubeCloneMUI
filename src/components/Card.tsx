@@ -1,6 +1,8 @@
 import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import { CardDetails } from '../types'
 import { Link as WouterLink } from 'wouter'
+import { LiveTag } from '.'
+import DateFormaterHandler from '../utils/DateFormatHandler'
 
 const Card = ({
   srcChanell,
@@ -10,7 +12,9 @@ const Card = ({
   srcImageAlt,
   titleName,
   videoDuration,
+  publishedAt,
   idVideo,
+  liveBroadcastContent,
   channelId
 }: CardDetails) => {
   return (
@@ -26,17 +30,21 @@ const Card = ({
       minH={'355px'}
       maxW={'355px'}
       w={'full'}
+      justifyContent={'space-between'}
       _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf' }}
     >
       <Box position={'relative'} maxW={'300px'}>
         <Image
           src={srcImage}
           alt={srcImageAlt}
-          aspectRatio={'16/9'}
+          boxSize={'150px'}
           borderRadius={'xl'}
           w={'full'}
           loading="lazy"
         />
+        {liveBroadcastContent === 'live' && (
+          <LiveTag position={'absolute'} bottom={2} right={'10px'} />
+        )}
         {srcChanell && (
           <Image
             src={srcChanell}
@@ -66,7 +74,7 @@ const Card = ({
           </Text>
         )}
       </Box>
-      <Stack spacing={0} maxW={'275px'} gap={2} p={2}>
+      <Stack spacing={0} maxW={'full'} gap={2}>
         <Heading flex={1} color={'gray.300'} fontSize={'lg'}>
           {titleName}
         </Heading>{' '}
@@ -75,7 +83,12 @@ const Card = ({
             {chanellName}
           </Text>
         </WouterLink>
-      </Stack>
+    
+      {publishedAt && (
+        <Text w={'fit-content'} fontWeight={'thin'} color={'gray.300'} fontSize={'sm'}>
+          {DateFormaterHandler(publishedAt)}
+        </Text>
+      )}  </Stack>{' '}
     </Stack>
   )
 }

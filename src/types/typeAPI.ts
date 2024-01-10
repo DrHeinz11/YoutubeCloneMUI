@@ -79,7 +79,7 @@ export interface SnippetVideoDetails {
   description: string
   liveBroadcastContent: string
   localized: Localized
-  publishedAt: string
+  publishedAt: Date
   tags: string[]
   thumbnails: ThumbnailsVideoDetails
   title: string

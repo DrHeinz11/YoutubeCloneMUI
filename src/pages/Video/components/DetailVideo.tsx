@@ -4,8 +4,8 @@ import { formatearNumero } from '../../../utils/ViewsFormater'
 import ChannelDetails from './ChannelDetails'
 import CollapseDescription from './CollapseDescription'
 import { SnippetVideoDetails, Statistics, ContentDetails } from '../../../types/typeAPI'
-import { dateVideoFormater } from '../../../utils/dateVideoFormater'
 import { BiDownload } from 'react-icons/bi'
+import DateFormaterHandler from '../../../utils/DateFormatHandler'
 
 interface Props {
   snippet: SnippetVideoDetails
@@ -38,8 +38,8 @@ const DetailVideo = ({ snippet, statistics }: Props) => {
         flex={'2 0 350px'}
       >
         <Heading fontSize="xl">{title}</Heading>
-        <Heading fontSize="xl">{dateVideoFormater(publishedAt)}</Heading>
-        <CollapseDescription description={description} tags={tags} />
+        <Heading fontSize="lg">{DateFormaterHandler(publishedAt)}</Heading>
+        {description && <CollapseDescription description={description} tags={tags} />}
       </Stack>
 
       <Stack justifyContent={'space-between'} flex={'1 0 300px'} height={'240px'}>

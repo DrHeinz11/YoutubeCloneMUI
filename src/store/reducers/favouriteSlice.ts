@@ -10,7 +10,8 @@ export const FavouriteSlice = createSlice({
   reducers: {
     addToFavouriteList: (state, action: PayloadAction<Snippet>) => {
       // Modificar el estado directamente para agregar un nuevo like
-      state.push(action.payload)
+      state = [action.payload, ...state]
+      // state.push(action.payload)
     }
   }
 })

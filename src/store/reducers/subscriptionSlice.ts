@@ -1,16 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { Snippet } from '../../types/typeAPI'
+import { SubscriptionType } from '../../types'
 // const initialState: Snippet[] | null = {
 //   value: null
 // }
-const initialState: Snippet[] = []
+const initialState: SubscriptionType[] = []
 
 // Crear el slice
-export const LikeSlice = createSlice({
-  name: 'LikeContainer',
+export const SubscriptionSlice = createSlice({
+  name: 'SubscriptionSlice',
   initialState,
   reducers: {
-    addLike: (state, action: PayloadAction<Snippet>) => {
+    addSubscription: (state, action: PayloadAction<SubscriptionType>) => {
       // Modificar el estado directamente para agregar un nuevo like
       state.push(action.payload)
     }
@@ -18,7 +18,7 @@ export const LikeSlice = createSlice({
 })
 
 // Exportar las acciones generadas por el slice
-export const { addLike } = LikeSlice.actions
+export const { addSubscription } = SubscriptionSlice.actions
 
 // Exportar el reducer para ser utilizado en el store
 // export default likeSlice.reducer

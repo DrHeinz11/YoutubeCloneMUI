@@ -5,6 +5,7 @@ import { LiveTag } from '.'
 import DateFormaterHandler from '../utils/DateFormatHandler'
 import { useDispatch } from 'react-redux'
 import { addVideoToHistoryList } from '../store/reducers'
+import { useCallback } from 'react'
 
 const Card = ({
   srcChanell,
@@ -20,7 +21,8 @@ const Card = ({
   channelId
 }: CardDetails) => {
   const dispatch = useDispatch()
-  const handleSetHistory = () =>
+
+  const handleSetHistory = useCallback(() => {
     dispatch(
       addVideoToHistoryList({
         srcImage,
@@ -29,9 +31,22 @@ const Card = ({
         chanellName,
         idVideo,
         publishedAt,
-        videoDuration
+        videoDuration,
+        channelId
       })
     )
+  }, [
+    dispatch,
+    srcImage,
+    srcImageAlt,
+    titleName,
+    chanellName,
+    idVideo,
+    publishedAt,
+    videoDuration,
+    channelId
+  ])
+
   return (
     <Stack
       as={WouterLink}

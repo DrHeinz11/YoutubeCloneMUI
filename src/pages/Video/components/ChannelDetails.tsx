@@ -7,6 +7,8 @@ import { ItemChannel, RootChannelData } from '../../../types/ChannelDetailType'
 import { Button, Divider, HStack, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import { Link as WouterLink } from 'wouter'
 import { formatearNumero } from '../../../utils/ViewsFormater'
+import { useDispatch } from 'react-redux'
+import { addSubscription } from '../../../store/reducers'
 
 type Props = { channelId: string }
 
@@ -19,6 +21,18 @@ export const RedictLink = ({
 }) => <WouterLink href={`/channels/${idRoute}`}>{children}</WouterLink>
 
 const ChannelCard = ({ item }: { item: ItemChannel }) => {
+  const dispatch = useDispatch()
+
+  const handleSetSubscription = () => {
+    dispatch(
+      addSubscription({
+        imgUrl: item.snippet.thumbnails.default.url,
+        title: item.snippet.title,
+        channelId: item.id
+      })
+    )
+  }
+
   return (
     <Stack
       key={item.id}
@@ -59,7 +73,7 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
           <Divider orientation="vertical" />
           <Button
             borderRadius="xl"
-            onClick={() => alert('xd')}
+            onClick={() => handleSetSubscription()}
             zIndex="overlay"
             px={2}
             py={1}

@@ -1,7 +1,7 @@
 import { HStack, Heading, Image, Stack, Tag, Text } from '@chakra-ui/react'
 import { Link as WouterLink } from 'wouter'
-import { HistoryDetails } from '../../types'
-import { DateFormatHandler } from '../../utils'
+import { HistoryDetails } from '../../../types'
+import { DateFormatHandler } from '../../../utils'
 
 const HistoryCard = ({
   chanellName,
@@ -10,17 +10,18 @@ const HistoryCard = ({
   srcImage,
   srcImageAlt,
   titleName,
-  videoDuration
+  videoDuration,
+  channelId
 }: HistoryDetails) => {
   return (
     <HStack
       as={WouterLink}
       href={`/video/${idVideo}`}
-      _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf' }}
+      _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf', borderColor: '#fafafa' }}
       bgColor={'pallete.cardBackground'}
       gap={4}
       borderRadius={'lg'}
-      border={'.5px solid #fafafa'}
+      border={'.5px solid #1a1a1a'}
       justifyContent={'center'}
       flexWrap={'wrap'}
       py={2}
@@ -39,9 +40,11 @@ const HistoryCard = ({
           {titleName}
         </Heading>
         {videoDuration && <Tag>{videoDuration}</Tag>}
-        <Text w={'fit-content'} _hover={{ color: 'gray.300' }} color={'gray.500'} fontSize={'lg'}>
-          {chanellName}
-        </Text>
+        <WouterLink href={`/channels/${channelId}`}>
+          <Text w={'fit-content'} _hover={{ color: 'gray.300' }} color={'gray.500'} fontSize={'lg'}>
+            {chanellName}
+          </Text>{' '}
+        </WouterLink>
         {publishedAt && <Text>{DateFormatHandler(publishedAt)}</Text>}
       </Stack>
     </HStack>

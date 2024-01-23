@@ -92,7 +92,7 @@ const ChannelDetails = ({ channelId }: { channelId: string }): JSX.Element => {
     <>
       {useQueryStateResult?.items?.map(({ brandingSettings, id, snippet, statistics }) => (
         <Stack key={id} as="section">
-          {brandingSettings.image.bannerExternalUrl && (
+          {brandingSettings?.image?.bannerExternalUrl && (
             <ChannelBanner
               bannerUrl={brandingSettings.image.bannerExternalUrl}
               channelTitle={brandingSettings.channel.title}

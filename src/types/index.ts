@@ -39,4 +39,11 @@ export interface HistoryDetails {
   videoDuration: string | number
   publishedAt?: Date
   idVideo: string
+  channelId?: string
+}
+
+export interface SubscriptionType {
+  imgUrl: string
+  title: string
+  channelId: string
 }

@@ -1,6 +1,7 @@
 import { Stack } from '@chakra-ui/react'
 import CustomOption from './CustomOption'
 import { CategoryData } from '../../../types'
+import SubscriptionContainer from './SubscriptionContainer'
 
 const CategoryComponents = ({ dataRoute }: CategoryData) => {
   return (
@@ -10,6 +11,7 @@ const CategoryComponents = ({ dataRoute }: CategoryData) => {
           <categoryData.iconOptions size={'22px'} />
         </CustomOption>
       ))}
+      <SubscriptionContainer />
     </Stack>
   )
 }

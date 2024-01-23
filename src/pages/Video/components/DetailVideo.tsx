@@ -17,8 +17,6 @@ interface Props {
 const DetailVideo = ({ snippet, statistics }: Props) => {
   const { title, description, tags, channelId, publishedAt } = snippet
   const { likeCount, viewCount } = statistics
-  // const [location] = useLocation()
-  // console.log(location.split('/').splice(-1).join())
   return (
     <HStack
       flexWrap="wrap"

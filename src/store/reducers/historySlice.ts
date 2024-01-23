@@ -11,6 +11,7 @@ export const HistorySlice = createSlice({
     addVideoToHistoryList: (state, action: PayloadAction<HistoryDetails>) => {
       // Modificar el estado directamente para agregar un nuevo like
       state.push(action.payload)
+      // state = [action.payload,...state]
     }
   }
 })

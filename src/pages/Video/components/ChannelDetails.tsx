@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SerializedError } from '@reduxjs/toolkit'
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 import { Loader, IsError } from '../../../components'
@@ -22,6 +22,7 @@ export const RedictLink = ({
 
 const ChannelCard = ({ item }: { item: ItemChannel }) => {
   const dispatch = useDispatch()
+  const [variant, setVariant] = useState<boolean | null>(null)
 
   const handleSetSubscription = () => {
     dispatch(
@@ -31,6 +32,7 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
         channelId: item.id
       })
     )
+    setVariant((prev) => !prev)
   }
 
   return (
@@ -77,7 +79,9 @@ const ChannelCard = ({ item }: { item: ItemChannel }) => {
             zIndex="overlay"
             px={2}
             py={1}
+            variant={variant ? 'solid' : 'outline'}
             _hover={{ color: 'white', bgColor: 'red.400' }}
+            bgColor={variant?'red.400':'whiteAlpha.300'}
           >
             Subscribe
           </Button>

@@ -1,12 +1,14 @@
-import { Container, SimpleGrid } from '@chakra-ui/react'
-import { useSelector } from 'react-redux'
-import { useGetSearchVideosQuery } from '../../store/reducers/apiFetch'
-import { ChannelCard, IsError, Loader } from '../../components'
-import { Card, HeaderPublicity } from './components'
 import { Item } from '../../types/typeAPI'
-import { RootState } from '../../store'
+
+import { Container, SimpleGrid } from '@chakra-ui/react'
 import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { HeaderPublicity, Card } from '..'
+import { Loader, IsError } from '../../components'
+import { RootState } from '../../store'
+import { useGetSearchVideosQuery } from '../../store/reducers'
 import { HandleScrollToTop } from '../../utils'
+import ChannelCard from './components/ChannelCard'
 
 const HomeContainer = () => {
   const state = useSelector((store: RootState) => store.SearchReducer)

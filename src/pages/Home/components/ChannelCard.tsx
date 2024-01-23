@@ -1,6 +1,6 @@
 import { Box, Center, Heading, Image, Stack } from '@chakra-ui/react'
-import { CardDetails } from '../types'
-import { RedictLink } from '../pages/Video/components/ChannelDetails'
+import { CardDetails } from '../../../types'
+import { RedictLink } from '../../Video/components/ChannelDetails'
 
 const ChannelCard = ({
   srcImage,

@@ -12,7 +12,12 @@ export const SubscriptionSlice = createSlice({
   reducers: {
     addSubscription: (state, action: PayloadAction<SubscriptionType>) => {
       // Modificar el estado directamente para agregar un nuevo like
-      state.push(action.payload)
+      state.length === 0 && state.push(action.payload)
+
+      const callback = (currentElement: SubscriptionType) =>
+        currentElement.channelId === action.payload.channelId
+
+      !state?.some(callback) && state.push(action.payload)
     }
   }
 })

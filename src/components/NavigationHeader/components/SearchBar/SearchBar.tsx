@@ -4,7 +4,7 @@ import { RiSearch2Line } from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
 import { useLocation } from 'wouter'
 import { navigate } from 'wouter/use-location'
-import { searchKeyword } from '../../../store/reducers'
+import { searchKeyword } from '../../../../store/reducers'
 
 const SearchBar = () => {
   const [searchText, setSearchText] = useState('')

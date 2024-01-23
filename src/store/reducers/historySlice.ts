@@ -10,7 +10,12 @@ export const HistorySlice = createSlice({
   reducers: {
     addVideoToHistoryList: (state, action: PayloadAction<HistoryDetails>) => {
       // Modificar el estado directamente para agregar un nuevo like
-      state.push(action.payload)
+      state.length === 0 && state.push(action.payload)
+
+      const callback = (currentElement: HistoryDetails) =>
+        currentElement.idVideo === action.payload.idVideo
+
+      !state?.some(callback) && state.push(action.payload)
       // state = [action.payload,...state]
     }
   }

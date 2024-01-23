@@ -1,5 +1,5 @@
 import { Button, HStack } from '@chakra-ui/react'
-import { DataRouteButton } from '../../../constant/dataRoute'
+import { DataRouteButton } from '../../../../constant/dataRoute'
 import { navigate } from 'wouter/use-location'
 
 const MediaRedirectButton = () => {

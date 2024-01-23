@@ -12,8 +12,8 @@ import {
   Stack
 } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { CategoryComponents, LogoComponent, SideBarProvider } from '../..'
-import { categoryData } from '../../../constant/dataRoute'
+import { CategoryComponents, LogoComponent, SideBarProvider } from '../../..'
+import { categoryData } from '../../../../constant/dataRoute'
 
 const MenuDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

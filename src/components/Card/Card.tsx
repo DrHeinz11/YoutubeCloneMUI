@@ -1,10 +1,10 @@
 import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react'
-import { CardDetails } from '../types'
+import { CardDetails } from '../../types'
 import { Link as WouterLink } from 'wouter'
-import { LiveTag } from '.'
-import DateFormaterHandler from '../utils/DateFormatHandler'
+import { LiveTag } from '..'
+import DateFormaterHandler from '../../utils/DateFormatHandler'
 import { useDispatch } from 'react-redux'
-import { addVideoToHistoryList } from '../store/reducers'
+import { addVideoToHistoryList } from '../../store/reducers'
 import { useCallback } from 'react'
 
 const Card = ({

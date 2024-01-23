@@ -9,13 +9,12 @@ import { useEffect } from 'react'
 import { HandleScrollToTop } from '../../utils'
 
 const HomeContainer = () => {
-  const state = useSelector((store: RootState) => store.searchReducer)
+  const state = useSelector((store: RootState) => store.SearchReducer)
   const { data, isLoading, isError } = useGetSearchVideosQuery(state)
 
   useEffect(() => {
     HandleScrollToTop({ direction: 'top', behavior: '', coordinate: 0 })
   }, [state])
-
   if (isLoading) {
     return <Loader />
   }

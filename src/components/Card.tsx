@@ -3,11 +3,13 @@ import { CardDetails } from '../types'
 import { Link as WouterLink } from 'wouter'
 import { LiveTag } from '.'
 import DateFormaterHandler from '../utils/DateFormatHandler'
+import { useDispatch } from 'react-redux'
+import { addVideoToHistoryList } from '../store/reducers'
 
 const Card = ({
   srcChanell,
-  chanellName,
   srcChanellAlt,
+  chanellName,
   srcImage,
   srcImageAlt,
   titleName,
@@ -17,21 +19,35 @@ const Card = ({
   liveBroadcastContent,
   channelId
 }: CardDetails) => {
+  const dispatch = useDispatch()
+  const handleSetHistory = () =>
+    dispatch(
+      addVideoToHistoryList({
+        srcImage,
+        srcImageAlt,
+        titleName,
+        chanellName,
+        idVideo,
+        publishedAt,
+        videoDuration
+      })
+    )
   return (
     <Stack
       as={WouterLink}
       href={`/video/${idVideo}`}
-      spacing={0}
-      gap={4}
-      className="card"
+      _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf' }}
       bgColor={'pallete.cardBackground'}
+      gap={4}
+      spacing={0}
+      className="card"
       p="20px"
       flex={1}
       minH={'355px'}
       maxW={'355px'}
       w={'full'}
       justifyContent={'space-between'}
-      _hover={{ boxShadow: '2xl', backgroundColor: '#1c1c1cbf' }}
+      onClick={handleSetHistory}
     >
       <Box position={'relative'} maxW={'300px'}>
         <Image

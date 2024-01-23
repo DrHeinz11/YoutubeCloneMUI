@@ -5,6 +5,7 @@ import { Loader } from '../components'
 const VideoContainerLazy = lazy(() => import('../pages/Video/VideoContainer'))
 const ChannelContainerLazy = lazy(() => import('../pages/Channel/ChannelContainer'))
 const HomeContainerLazy = lazy(() => import('../pages/Home/HomeContainer'))
+const HistoryContainerLazy = lazy(() => import('../pages/History/HistoryPage'))
 const Routes = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Routes = () => {
         <Suspense fallback={<Loader />}>
           <Route path="/video/:id">{(params) => <VideoContainerLazy params={params} />}</Route>
           <Route path="/" component={HomeContainerLazy} />
+          <Route path="/history/all" component={HistoryContainerLazy} />
           <Route path="/channels/:id">
             {(params: { id: string }) => <ChannelContainerLazy params={params} />}
           </Route>

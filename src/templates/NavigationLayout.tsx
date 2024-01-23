@@ -30,7 +30,7 @@ const NavigationLayout = ({ children }: Props) => {
         area={'drawer'}
         borderRadius={'md'}
         bgColor={'whiteAlpha.300'}
-        h={'99vh'}
+        h={'98.5vh'}
         position={'fixed'}
         w={'20%'}
         alignItems={'flex-start'}

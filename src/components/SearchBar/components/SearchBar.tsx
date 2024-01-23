@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { Button, HStack, Input, Spinner } from '@chakra-ui/react'
 import { RiSearch2Line } from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
-import { searchKeyword } from '../../../store/reducers/searchReducer'
 import { useLocation } from 'wouter'
 import { navigate } from 'wouter/use-location'
+import { searchKeyword } from '../../../store/reducers'
 
 const SearchBar = () => {
   const [searchText, setSearchText] = useState('')

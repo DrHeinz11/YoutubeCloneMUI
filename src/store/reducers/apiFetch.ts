@@ -7,8 +7,8 @@ const apiKey: string = import.meta.env.VITE_API_KEY
 const apiHost: string = import.meta.env.VITE_API_HOST
 const MAX_RESULT = '25'
 
-export const youtubeAPI = createApi({
-  reducerPath: 'youtubeAPI',
+export const YoutubeAPI = createApi({
+  reducerPath: 'YoutubeAPI',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://youtube-v31.p.rapidapi.com',
     prepareHeaders: (headers) => {
@@ -56,4 +56,4 @@ export const {
   useGetDetailChannelQuery,
   useGetDetailChannelVideosQuery,
   useGetRelatedToVideoIdQuery
-} = youtubeAPI
+} = YoutubeAPI

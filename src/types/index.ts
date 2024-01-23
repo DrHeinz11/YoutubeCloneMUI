@@ -30,3 +30,13 @@ export interface CategoryData {
   id?: string
   dataRoute: DataRoute[]
 }
+
+export interface HistoryDetails {
+  chanellName: string
+  srcImage: string
+  srcImageAlt: string
+  titleName: string
+  videoDuration: string | number
+  publishedAt?: Date
+  idVideo: string
+}

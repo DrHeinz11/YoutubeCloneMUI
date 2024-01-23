@@ -9,8 +9,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = { search: 'seven' }
-export const searchReducer = createSlice({
-  name: 'searchReducer',
+export const SearchReducer = createSlice({
+  name: 'SearchReducer',
   initialState,
   reducers: {
     searchKeyword: (state, action) => {
@@ -19,4 +19,4 @@ export const searchReducer = createSlice({
   }
 })
 
-export const { searchKeyword } = searchReducer.actions
+export const { searchKeyword } = SearchReducer.actions

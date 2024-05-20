@@ -11,7 +11,7 @@ const colors = {
     mainCyan: '#94E4E2',
     primaryViolet: '#26263D',
     secondaryPurple: '#6F5BC6',
-    grayText: '#D0D0D0',
+    grayText: '#838383',
     whiteText: '#FFFFFF',
     sectionAbout: '#1A1A2A',
     background: '#ececec',

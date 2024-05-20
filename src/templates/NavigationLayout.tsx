@@ -10,7 +10,7 @@ type Props = {
 const NavigationLayout = ({ children }: Props) => {
   return (
     <Grid
-      bgColor={'black'}
+      bgColor={'#202228'}
       templateAreas={{
         base: `
       "content"

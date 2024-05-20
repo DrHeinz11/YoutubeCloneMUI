@@ -5,12 +5,18 @@ import { RelatedToVideoResponse } from '../../types/relatedToVideoIdType'
 
 const apiKey: string = import.meta.env.VITE_API_KEY
 const apiHost: string = import.meta.env.VITE_API_HOST
-const MAX_RESULT = '25'
+const baseUrl: string = import.meta.env.VITE_BASE_URL
+const ENV: string = import.meta.env.VITE_ENV
 
+const isProduction = (search: string) => {
+  if (ENV === 'PRODUCTION') return `search?q=${search}&part=id%2Csnippet&maxResults=50`
+  return `search?query=${search}`
+}
+const MAX_RESULT = '25'
 export const YoutubeAPI = createApi({
   reducerPath: 'YoutubeAPI',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://youtube-v31.p.rapidapi.com',
+    baseUrl,
     prepareHeaders: (headers) => {
       // Agregar los encabezados personalizados aquí
       headers.set('X-RapidAPI-Key', apiKey)
@@ -20,7 +26,7 @@ export const YoutubeAPI = createApi({
   }),
   endpoints: (builder) => ({
     getSearchVideos: builder.query({
-      query: ({ search }) => `search?q=${search}&part=id%2Csnippet&maxResults=50`
+      query: ({ search }) => isProduction(search)
     }),
     getDetailVideos: builder.query({
       query: ({ videoId }) => `videos?part=contentDetails%2Csnippet%2Cstatistics&id=${videoId}`

@@ -141,17 +141,17 @@ const HomeContainer = () => {
             </WouterLink>{' '}
           </Box>
           <Stack>
-            <Heading color={'#fff'} fontSize={'16px'}>
+            <Heading color={'text.primary'} fontSize={'16px'}>
               {itemVideo.title}
             </Heading>
             <HStack fontSize={'14px'}>
               {itemVideo.viewCount && (
-                <Text color={'#d8d8d8'}>{formatNumber(itemVideo.viewCount)} views</Text>
+                <Text color={'text.secondary'}>{formatNumber(itemVideo.viewCount)} views</Text>
               )}
               {itemVideo.publishDate && (
                 <>
                   <Text as={'span'}>•</Text>
-                  <Text color={'palette.grayText'}>
+                  <Text color={'text.tertiary'}>
                     {itemVideo.publishedTimeText ?? daysAgo(itemVideo.publishedAt ?? '')}
                   </Text>
                 </>

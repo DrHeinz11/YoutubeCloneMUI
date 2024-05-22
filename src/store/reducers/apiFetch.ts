@@ -3,10 +3,13 @@ import { rawObjectResponse } from '../../pages/Channel/components/responseRaw'
 import { ChannelVideoRaw } from '../../types/ChannelVideoRaw'
 import { RelatedToVideoResponse } from '../../types/relatedToVideoIdType'
 
-const apiKey: string = import.meta.env.VITE_API_KEY
-const apiHost: string = import.meta.env.VITE_API_HOST
-const baseUrl: string = import.meta.env.VITE_BASE_URL
 const ENV: string = import.meta.env.VITE_ENV
+const apiKey: string =
+  ENV === 'PRODUCTION' ? import.meta.env.VITE_API_KEY : import.meta.env.VITE_API_KEY_DEV
+const apiHost: string =
+  ENV === 'PRODUCTION' ? import.meta.env.VITE_API_HOST : import.meta.env.VITE_API_HOST_DEV
+const baseUrl: string =
+  ENV === 'PRODUCTION' ? import.meta.env.VITE_BASE_URL : import.meta.env.VITE_BASE_URL_DEV
 
 const isProduction = (search: string) => {
   if (ENV === 'PRODUCTION') return `search?q=${search}&part=id%2Csnippet&maxResults=50`

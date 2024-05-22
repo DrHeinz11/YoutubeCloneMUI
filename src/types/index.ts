@@ -11,7 +11,7 @@ export type CardDetails = {
   viewsVideos: string
   videoDuration: number | string
   dateVideos: string
-  publishedAt: Date
+  publishedAt: Date | string
   liveBroadcastContent: string
   iconVideos?: IconType
   key?: string
@@ -41,7 +41,18 @@ export interface HistoryDetails {
   idVideo: string
   channelId?: string
 }
-
+export interface HistoryDetailsTest {
+  videoId: string | undefined
+  thumbnail: string | undefined
+  channelHandle: string | undefined
+  channelId: string | undefined
+  channelThumbnail: string | undefined
+  title: string | undefined
+  viewCount: string | undefined | null
+  publishDate: string | undefined
+  publishedTimeText: string | undefined
+  publishedAt: string | undefined
+}
 export interface SubscriptionType {
   imgUrl: string
   title: string

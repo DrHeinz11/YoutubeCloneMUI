@@ -1,7 +1,7 @@
 import { useColorMode } from '@chakra-ui/react'
 import './App.css'
 import Routes from './routes/Routes'
-import NavigationLayout from './templates/NavigationLayout'
+import NavigationLayout from './template/NavigationLayout'
 import { useEffect } from 'react'
 
 function App() {

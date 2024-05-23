@@ -168,7 +168,7 @@ const HomeContainer = () => {
               channelHandle: itemVideo.channelHandle,
               channelId: itemVideo.channelId,
               channelThumbnail: itemVideo.channelThumbnail && itemVideo.channelThumbnail[0].url,
-              title: itemVideo.channelTitle,
+              title: itemVideo.title,
               viewCount: itemVideo.videoCount,
               publishDate: itemVideo.publishDate,
               publishedTimeText: itemVideo.publishedTimeText,

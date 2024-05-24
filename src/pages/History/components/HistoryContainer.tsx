@@ -5,11 +5,11 @@ import { HistoryDetailsTest } from '../../../types'
 import { Link as WouterLink } from 'wouter'
 
 const HistoryContainer = () => {
-  const sliceData = useSelector<RootState, [] | HistoryDetailsTest[]>(
+  const historyData = useSelector<RootState, [] | HistoryDetailsTest[]>(
     (state) => state.persisted.HistorySlice
   )
 
-  if (!sliceData.length) {
+  if (!historyData.length) {
     return (
       <Center flexDir={'column'} w={'full'} height={'full'} flex={1} gap={4}>
         <Heading>No hay historial de reproducciones</Heading>
@@ -29,7 +29,7 @@ const HistoryContainer = () => {
 
   return (
     <HStack my={2} gap={4} p={2} flexWrap={'wrap'}>
-      {sliceData?.map((item: HistoryDetailsTest) => (
+      {historyData?.map((item: HistoryDetailsTest) => (
         <HStack key={item.videoId ?? item.channelId} flex={'1 0 375px'} gap={4}>
           <Image
             src={item?.thumbnail}

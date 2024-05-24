@@ -6,12 +6,12 @@ import { Center, HStack, Heading, Image, Text } from '@chakra-ui/react'
 import { Link as WouterLink } from 'wouter'
 
 const FavouriteView = () => {
-  const sliceData = useSelector<RootState, [] | FavouriteDetails[]>(
+  const preferencesData = useSelector<RootState, [] | FavouriteDetails[]>(
     (state) => state.persisted.FavouriteList
   )
 
-  console.log(sliceData)
-  if (!sliceData.length) {
+  console.log(preferencesData)
+  if (!preferencesData.length) {
     return (
       <Center flexDir={'column'} w={'full'} height={'full'} flex={1} gap={4}>
         <Heading>No hay videos favoritos</Heading>
@@ -30,7 +30,7 @@ const FavouriteView = () => {
   }
   return (
     <HStack my={2} gap={4} p={2} flexWrap={'wrap'}>
-      {sliceData?.map((item: FavouriteDetails) => (
+      {preferencesData?.map((item: FavouriteDetails) => (
         <HStack flex={'1 0 375px'} gap={4}>
           <Image
             src={item?.thumbnail}

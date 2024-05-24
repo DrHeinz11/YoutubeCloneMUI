@@ -6,6 +6,7 @@ const VideoContainerLazy = lazy(() => import('../pages/Video/VideoContainer'))
 const ChannelContainerLazy = lazy(() => import('../pages/Channel/ChannelContainer'))
 const HomeContainerLazy = lazy(() => import('../pages/Home/HomeContainer'))
 const HistoryContainerLazy = lazy(() => import('../pages/History/HistoryPage'))
+const LikedContainerLazy = lazy(() => import('../pages/Favourite/FavouriteView'))
 const Routes = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const Routes = () => {
           <Route path="/video/:id">{(params) => <VideoContainerLazy params={params} />}</Route>
           <Route path="/" component={HomeContainerLazy} />
           <Route path="/history/all" component={HistoryContainerLazy} />
+          <Route path="/liked-video" component={LikedContainerLazy} />
           <Route path="/channels/:id">
             {(params: { id: string }) => <ChannelContainerLazy params={params} />}
           </Route>

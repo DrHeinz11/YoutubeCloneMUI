@@ -58,3 +58,17 @@ export interface SubscriptionType {
   title: string
   channelId: string
 }
+
+export interface FavouriteDetails {
+  videoId: string | undefined
+  thumbnail: string | undefined
+  channelHandle: string | undefined
+  channelId: string | undefined
+  channelThumbnail: string | undefined
+  title: string | undefined
+  viewCount: string | undefined | null
+  publishDate: string | undefined
+  publishedTimeText: string | undefined
+  publishedAt: string | undefined
+  isLiked: boolean
+}

@@ -15,14 +15,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import { HeaderPublicity, Card } from '..'
 import { Loader, IsError } from '../../components'
 import { RootState } from '../../store'
-import { addVideoToHistoryList, useGetSearchVideosQuery } from '../../store/reducers'
+import {
+  addToFavouriteList,
+  addVideoToHistoryList,
+  useGetSearchVideosQuery
+} from '../../store/reducers'
 import { HandleScrollToTop } from '../../utils'
 import ChannelCard from './components/ChannelCard'
 import { DataType, SearchResponseType, Thumbnail } from '../../types/SearchType'
 import { daysAgo } from '../../utils/dayAgo'
 import { formatNumber } from '../../utils/formatNumber'
 import { Link as WouterLink } from 'wouter'
-import { HistoryDetailsTest } from '../../types'
+import { FavouriteDetails, HistoryDetailsTest } from '../../types'
 const ENV: string = import.meta.env.VITE_ENV
 
 const HomeContainer = () => {
@@ -59,7 +63,39 @@ const HomeContainer = () => {
     },
     [dispatch]
   )
-
+  const handleLikedVideos = useCallback(
+    ({
+      videoId,
+      thumbnail,
+      channelHandle,
+      channelId,
+      channelThumbnail,
+      title,
+      viewCount,
+      publishDate,
+      publishedTimeText,
+      publishedAt,
+      isLiked
+    }: FavouriteDetails) => {
+      dispatch(
+        addToFavouriteList({
+          videoId,
+          thumbnail,
+          channelHandle,
+          channelId,
+          channelThumbnail,
+          title,
+          viewCount,
+          publishDate,
+          publishedTimeText,
+          publishedAt,
+          isLiked
+        })
+      )
+    },
+    [dispatch]
+  )
+  
   useEffect(() => {
     HandleScrollToTop({ direction: 'top', behavior: '', coordinate: 0 })
   }, [state])
@@ -177,6 +213,26 @@ const HomeContainer = () => {
           }
         >
           Pruba
+        </Button>
+        <Button
+          colorScheme="red"
+          onClick={() =>
+            handleLikedVideos({
+              videoId: itemVideo.videoId,
+              thumbnail: itemVideo.thumbnail && itemVideo.thumbnail[0].url,
+              channelHandle: itemVideo.channelHandle,
+              channelId: itemVideo.channelId,
+              channelThumbnail: itemVideo.channelThumbnail && itemVideo.channelThumbnail[0].url,
+              title: itemVideo.title,
+              viewCount: itemVideo.videoCount,
+              publishDate: itemVideo.publishDate,
+              publishedTimeText: itemVideo.publishedTimeText,
+              publishedAt: itemVideo.publishedAt,
+              isLiked: true
+            })
+          }
+        >
+          liked
         </Button>
       </Stack>
     )

@@ -1,18 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Snippet } from '../../pages'
+import { FavouriteDetails } from '../../types'
 
-const initialState: Snippet[] = []
+const initialState: FavouriteDetails[] = []
 
 // Crear el slice
 export const FavouriteSlice = createSlice({
   name: 'FavouriteList',
   initialState,
   reducers: {
-    addToFavouriteList: (state, action: PayloadAction<Snippet>) => {
+    addToFavouriteList: (state, action: PayloadAction<FavouriteDetails>) => {
       // Modificar el estado directamente para agregar un nuevo like
-      state = [action.payload, ...state]
-      // state.push(action.payload)
-    }
+      const filterElement = state.filter(
+        (element: FavouriteDetails) => element.videoId === action.payload.videoId
+      )
+      console.log(action.payload)
+      !filterElement.length && state.push(action.payload)
+    },
   }
 })
 

@@ -30,7 +30,7 @@ const HistoryContainer = () => {
   return (
     <HStack my={2} gap={4} p={2} flexWrap={'wrap'}>
       {sliceData?.map((item: HistoryDetailsTest) => (
-        <HStack flex={'1 0 375px'} gap={4}>
+        <HStack key={item.videoId ?? item.channelId} flex={'1 0 375px'} gap={4}>
           <Image
             src={item?.thumbnail}
             w={'140px'}

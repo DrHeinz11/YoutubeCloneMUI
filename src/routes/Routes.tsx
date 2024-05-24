@@ -23,9 +23,9 @@ const Routes = () => {
           <Route path="/channels/:id">
             {(params: { id: string }) => <ChannelContainerLazy params={params} />}
           </Route>
-          <Route path="*">
-            <NotFoundPageLazy />
-          </Route>
+          <Suspense fallback={<Loader />}>
+            <Route path="*" component={(props) => <NotFoundPageLazy {...props} />} />
+          </Suspense>
         </Suspense>
       </Switch>
       {/* </Box> */}

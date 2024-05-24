@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { FavouriteDetails } from '../../types'
+import { PreferencesItem } from '../../types'
 import { Center, HStack, Heading, Image, Text } from '@chakra-ui/react'
 
 import { Link as WouterLink } from 'wouter'
 
 const FavouriteView = () => {
-  const preferencesData = useSelector<RootState, [] | FavouriteDetails[]>(
-    (state) => state.persisted.FavouriteList
+  const preferencesData = useSelector<RootState, PreferencesItem[]>(
+    (state) => state.persisted.PreferenceList.unLiked
   )
 
   console.log(preferencesData)
@@ -30,7 +30,7 @@ const FavouriteView = () => {
   }
   return (
     <HStack my={2} gap={4} p={2} flexWrap={'wrap'}>
-      {preferencesData?.map((item: FavouriteDetails) => (
+      {preferencesData?.map((item: PreferencesItem) => (
         <HStack flex={'1 0 375px'} gap={4}>
           <Image
             src={item?.thumbnail}

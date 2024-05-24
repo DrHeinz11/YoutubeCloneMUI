@@ -26,7 +26,7 @@ import { DataType, SearchResponseType, Thumbnail } from '../../types/SearchType'
 import { daysAgo } from '../../utils/dayAgo'
 import { formatNumber } from '../../utils/formatNumber'
 import { Link as WouterLink } from 'wouter'
-import { FavouriteDetails, HistoryDetailsTest } from '../../types'
+import { PreferencesItem, HistoryDetailsTest } from '../../types'
 const ENV: string = import.meta.env.VITE_ENV
 
 const HomeContainer = () => {
@@ -76,7 +76,7 @@ const HomeContainer = () => {
       publishedTimeText,
       publishedAt,
       isLiked
-    }: FavouriteDetails) => {
+    }: PreferencesItem) => {
       dispatch(
         addToFavouriteList({
           videoId,

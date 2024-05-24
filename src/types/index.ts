@@ -59,7 +59,12 @@ export interface SubscriptionType {
   channelId: string
 }
 
-export interface FavouriteDetails {
+export interface PreferenceDetails {
+  liked:PreferencesItem[]
+  unLiked:PreferencesItem[]
+}
+
+export interface PreferencesItem {
   videoId: string | undefined
   thumbnail: string | undefined
   channelHandle: string | undefined

@@ -8,11 +8,13 @@ import {
 } from './reducers'
 import storage from 'redux-persist/lib/storage'
 import { persistReducer, persistStore } from 'redux-persist'
+import { SeeLaterReducer } from './reducers/seeLaterSlice'
 
 const persistedReducer = combineReducers({
   [SubscriptionSlice.name]: SubscriptionSlice.reducer,
   [HistorySlice.name]: HistorySlice.reducer,
-  [FavouriteSlice.name]: FavouriteSlice.reducer
+  [FavouriteSlice.name]: FavouriteSlice.reducer,
+  [SeeLaterReducer.name]: SeeLaterReducer.reducer
 })
 
 const persistConfig = {

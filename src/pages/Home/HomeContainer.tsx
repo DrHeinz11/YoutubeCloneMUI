@@ -1,101 +1,21 @@
 import { Item } from '../../types/typeAPI'
-import {
-  Box,
-  Button,
-  Container,
-  HStack,
-  Heading,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text
-} from '@chakra-ui/react'
-import { useCallback, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { Container, SimpleGrid } from '@chakra-ui/react'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { HeaderPublicity, Card } from '..'
 import { Loader, IsError } from '../../components'
 import { RootState } from '../../store'
-import {
-  addToFavouriteList,
-  addVideoToHistoryList,
-  useGetSearchVideosQuery
-} from '../../store/reducers'
+import { useGetSearchVideosQuery } from '../../store/reducers'
 import { HandleScrollToTop } from '../../utils'
 import ChannelCard from './components/ChannelCard'
-import { DataType, SearchResponseType, Thumbnail } from '../../types/SearchType'
-import { daysAgo } from '../../utils/dayAgo'
-import { formatNumber } from '../../utils/formatNumber'
-import { Link as WouterLink } from 'wouter'
-import { PreferencesItem, HistoryDetailsTest } from '../../types'
+import CardRework from '../../components/CardRework/CardRework'
+import { DataType } from '../../types/SearchType'
 const ENV: string = import.meta.env.VITE_ENV
 
 const HomeContainer = () => {
   const state = useSelector((store: RootState) => store.SearchReducer)
   const { data, isLoading, isError } = useGetSearchVideosQuery(state)
-  const dispatch = useDispatch()
-  const handleSetPersistData = useCallback(
-    ({
-      videoId,
-      thumbnail,
-      channelHandle,
-      channelId,
-      channelThumbnail,
-      title,
-      viewCount,
-      publishDate,
-      publishedTimeText,
-      publishedAt
-    }: HistoryDetailsTest) => {
-      dispatch(
-        addVideoToHistoryList({
-          videoId,
-          thumbnail,
-          channelHandle,
-          channelId,
-          channelThumbnail,
-          title,
-          viewCount,
-          publishDate,
-          publishedTimeText,
-          publishedAt
-        })
-      )
-    },
-    [dispatch]
-  )
-  const handleLikedVideos = useCallback(
-    ({
-      videoId,
-      thumbnail,
-      channelHandle,
-      channelId,
-      channelThumbnail,
-      title,
-      viewCount,
-      publishDate,
-      publishedTimeText,
-      publishedAt,
-      isLiked
-    }: PreferencesItem) => {
-      dispatch(
-        addToFavouriteList({
-          videoId,
-          thumbnail,
-          channelHandle,
-          channelId,
-          channelThumbnail,
-          title,
-          viewCount,
-          publishDate,
-          publishedTimeText,
-          publishedAt,
-          isLiked
-        })
-      )
-    },
-    [dispatch]
-  )
-  
+
   useEffect(() => {
     HandleScrollToTop({ direction: 'top', behavior: '', coordinate: 0 })
   }, [state])
@@ -108,7 +28,7 @@ const HomeContainer = () => {
     return <IsError error={isError} />
   }
 
-  const renderItem = (item: Item) => {
+  const RenderItem = (item: Item) => {
     if (item.id.kind === 'youtube#channel') {
       return (
         <ChannelCard
@@ -139,105 +59,6 @@ const HomeContainer = () => {
     )
   }
 
-  const renderDevItem = (itemVideo: DataType) => {
-    if (
-      itemVideo.type === SearchResponseType.Channel ||
-      itemVideo.type === SearchResponseType.ShortsListing
-    ) {
-      return null
-    }
-    return (
-      <Stack key={itemVideo.videoId} spacing={0} gap={4} maxW={'375px'}>
-        {itemVideo.thumbnail &&
-          [itemVideo.thumbnail[0]].map((thumbnail: Thumbnail) => (
-            <Image
-              key={thumbnail.url}
-              src={thumbnail.url}
-              w={'full'}
-              maxW={'375px'}
-              h={'215px'}
-              borderRadius={'lg'}
-              boxShadow="dark-lg"
-              objectFit={'cover'}
-            />
-          ))}
-        <HStack gap={4} spacing={0}>
-          <Box boxSize={'38px'} flex={'0 0 38px'}>
-            <WouterLink href={`/channels/${itemVideo.channelHandle ?? itemVideo.channelId}`}>
-              {itemVideo.channelThumbnail &&
-                itemVideo.channelThumbnail.map((item) => (
-                  <Image
-                    key={item.url}
-                    boxShadow="dark-lg"
-                    borderRadius={'full'}
-                    src={item.url}
-                    boxSize={'full'}
-                  />
-                ))}
-            </WouterLink>{' '}
-          </Box>
-          <Stack>
-            <Heading color={'text.primary'} fontSize={'16px'}>
-              {itemVideo.title}
-            </Heading>
-            <HStack fontSize={'14px'}>
-              {itemVideo.viewCount && (
-                <Text color={'text.secondary'}>{formatNumber(itemVideo.viewCount)} views</Text>
-              )}
-              {itemVideo.publishDate && (
-                <>
-                  <Text as={'span'}>•</Text>
-                  <Text color={'text.tertiary'}>
-                    {itemVideo.publishedTimeText ?? daysAgo(itemVideo.publishedAt ?? '')}
-                  </Text>
-                </>
-              )}
-            </HStack>
-          </Stack>
-        </HStack>
-        <Button
-          colorScheme="red"
-          onClick={() =>
-            handleSetPersistData({
-              videoId: itemVideo.videoId,
-              thumbnail: itemVideo.thumbnail && itemVideo.thumbnail[0].url,
-              channelHandle: itemVideo.channelHandle,
-              channelId: itemVideo.channelId,
-              channelThumbnail: itemVideo.channelThumbnail && itemVideo.channelThumbnail[0].url,
-              title: itemVideo.title,
-              viewCount: itemVideo.videoCount,
-              publishDate: itemVideo.publishDate,
-              publishedTimeText: itemVideo.publishedTimeText,
-              publishedAt: itemVideo.publishedAt
-            })
-          }
-        >
-          Pruba
-        </Button>
-        <Button
-          colorScheme="red"
-          onClick={() =>
-            handleLikedVideos({
-              videoId: itemVideo.videoId,
-              thumbnail: itemVideo.thumbnail && itemVideo.thumbnail[0].url,
-              channelHandle: itemVideo.channelHandle,
-              channelId: itemVideo.channelId,
-              channelThumbnail: itemVideo.channelThumbnail && itemVideo.channelThumbnail[0].url,
-              title: itemVideo.title,
-              viewCount: itemVideo.videoCount,
-              publishDate: itemVideo.publishDate,
-              publishedTimeText: itemVideo.publishedTimeText,
-              publishedAt: itemVideo.publishedAt,
-              isLiked: true
-            })
-          }
-        >
-          liked
-        </Button>
-      </Stack>
-    )
-  }
-
   return (
     <Container
       p={0}
@@ -251,7 +72,13 @@ const HomeContainer = () => {
     >
       <HeaderPublicity />
       <SimpleGrid minChildWidth="325px" justifyItems="center" spacing={0} gap={4}>
-        {ENV === 'PRODUCTION' ? data?.items.map(renderItem) : data?.data.map(renderDevItem)}
+        {ENV === 'PRODUCTION'
+          ? data?.items.map((item: Item) => (
+              <RenderItem key={item.id.videoId ?? item.snippet.channelId} {...item} />
+            ))
+          : data?.data.map((element: DataType) => (
+              <CardRework key={element.videoId} {...element} />
+            ))}
       </SimpleGrid>
     </Container>
   )

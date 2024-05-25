@@ -2,18 +2,17 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { rawObjectResponse } from '../../pages/Channel/components/responseRaw'
 import { ChannelVideoRaw } from '../../types/ChannelVideoRaw'
 import { RelatedToVideoResponse } from '../../types/relatedToVideoIdType'
+import { config, ENV } from '../../../env.config';
 
-const ENV: string = import.meta.env.VITE_ENV
-const apiKey: string =
-  ENV === 'PRODUCTION' ? import.meta.env.VITE_API_KEY : import.meta.env.VITE_API_KEY_DEV
-const apiHost: string =
-  ENV === 'PRODUCTION' ? import.meta.env.VITE_API_HOST : import.meta.env.VITE_API_HOST_DEV
-const baseUrl: string =
-  ENV === 'PRODUCTION' ? import.meta.env.VITE_BASE_URL : import.meta.env.VITE_BASE_URL_DEV
+const apiKey: string = config.apiKey;
+const apiHost: string = config.apiHost;
+const baseUrl: string = config.baseUrl;
 
+console.log({apiHost,apiKey,baseUrl})
 const isProduction = (search: string) => {
-  if (ENV === 'PRODUCTION') return `search?q=${search}&part=id%2Csnippet&maxResults=50`
-  return `search?query=${search}`
+  return ENV === 'PRODUCTION' 
+    ? `search?q=${search}&part=id%2Csnippet&maxResults=50` 
+    : `search?query=${search}`;
 }
 const MAX_RESULT = '25'
 export const YoutubeAPI = createApi({

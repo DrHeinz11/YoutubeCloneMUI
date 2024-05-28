@@ -71,6 +71,7 @@ const Card = ({
           boxSize={'150px'}
           borderRadius={'xl'}
           w={'full'}
+          objectFit={'cover'}
           loading="lazy"
         />
         {liveBroadcastContent === 'live' && (

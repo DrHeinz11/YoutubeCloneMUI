@@ -44,7 +44,7 @@ const HomeContainer = () => {
         srcChanell=""
         key={item.id.videoId}
         liveBroadcastContent={item.snippet.liveBroadcastContent}
-        srcImage={item.snippet.thumbnails.medium.url}
+        srcImage={item.snippet.thumbnails.high.url ?? item.snippet.thumbnails.medium.url}
         srcImageAlt={item.snippet.title}
         srcChanellAlt={item.snippet.channelTitle}
         titleName={item.snippet.title}

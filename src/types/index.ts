@@ -37,7 +37,7 @@ export interface HistoryDetails {
   srcImageAlt: string
   titleName: string
   videoDuration: string | number
-  publishedAt?: Date
+  publishedAt?: string | Date
   idVideo: string
   channelId?: string
 }
@@ -51,7 +51,7 @@ export interface HistoryDetailsTest {
   viewCount: string | undefined | null
   publishDate: string | undefined
   publishedTimeText: string | undefined
-  publishedAt: string | undefined
+  publishedAt?: string
 }
 export interface SubscriptionType {
   imgUrl: string

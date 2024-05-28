@@ -8,12 +8,12 @@ const apiKey: string = config.apiKey;
 const apiHost: string = config.apiHost;
 const baseUrl: string = config.baseUrl;
 
-console.log({apiHost,apiKey,baseUrl})
 const isProduction = (search: string) => {
   return ENV === 'PRODUCTION' 
     ? `search?q=${search}&part=id%2Csnippet&maxResults=50` 
     : `search?query=${search}`;
 }
+
 const MAX_RESULT = '25'
 export const YoutubeAPI = createApi({
   reducerPath: 'YoutubeAPI',

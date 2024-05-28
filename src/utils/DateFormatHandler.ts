@@ -1,4 +1,4 @@
-function DateFormaterHandler(publishedAt: Date): string {
+function DateFormaterHandler(publishedAt: string | Date): string {
   const fechaPublicacion = new Date(publishedAt)
   const fechaActual = new Date()
 

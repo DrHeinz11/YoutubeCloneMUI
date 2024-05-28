@@ -7,7 +7,7 @@ import { SubscriptionType } from '../../../types'
 
 const SubscriptionContainer = () => {
   const SubscriptionData = useSelector<RootState, SubscriptionType[]>(
-    (store) => store.SubscriptionSlice
+    (store) => store.persisted.SubscriptionSlice
   )
   return (
     <Stack>

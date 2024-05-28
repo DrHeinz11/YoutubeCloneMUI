@@ -33,7 +33,12 @@ const HomeContainer = () => {
       return (
         <ChannelCard
           key={item.id.channelId}
-          srcImage={item.snippet.thumbnails.medium.url}
+          srcImage={
+            item.snippet.thumbnails.medium.url ??
+            item.snippet.thumbnails.default ??
+            item.snippet.thumbnails.high ??
+            item.snippet.thumbnails.medium
+          }
           titleName={item.snippet.title}
           channelId={item.id.channelId}
         />
@@ -44,7 +49,11 @@ const HomeContainer = () => {
         srcChanell=""
         key={item.id.videoId}
         liveBroadcastContent={item.snippet.liveBroadcastContent}
-        srcImage={item.snippet.thumbnails.high.url ?? item.snippet.thumbnails.medium.url}
+        srcImage={
+          item.snippet.thumbnails.high.url ??
+          item.snippet.thumbnails.medium.url ??
+          item.snippet.thumbnails.default
+        }
         srcImageAlt={item.snippet.title}
         srcChanellAlt={item.snippet.channelTitle}
         titleName={item.snippet.title}
